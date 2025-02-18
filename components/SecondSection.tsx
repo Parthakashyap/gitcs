@@ -51,18 +51,12 @@ export default function SecondSection() {
       <div className="absolute inset-0 bg-[#f5f5f5]">
         <div className="container mx-auto px-4 py-20">
           <div className="max-w-6xl mx-auto">
-            <div className="hidden md:flex mb-16">
-              <h2 className="text-6xl font-light mb-6">
-                Advanced Leadership
-                <br />
-                Strategies
+            <div className="hidden md:block mb-16">
+              <h2 className="text-6xl font-bold mb-6">
+                WHY STUDY ABROAD WITH US
               </h2>
-              <p className="text-gray-600 max-w-2xl">
-                Explore case studies and real-world examples that illustrate the
-                application of advanced leadership strategies in various
-                industries. Enhance your decision-making skills, refine your
-                communication techniques, and develop the ability to influence
-                and motivate others.
+              <p className="text-blue-600 max-w-2xl ">
+              Professional-Streamlined-Simple
               </p>
             </div>
 

@@ -54,19 +54,39 @@ export default function HeroSection() {
       )}
     >
       <div className="absolute inset-0 bg-gradient-to-br from-purple-900 to-black">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/bg.png')" }}
+        ></div>
+
         <div className="container mx-auto px-4 h-full flex flex-col justify-center relative z-10">
           <nav className="absolute top-0 left-0 right-0 p-6 flex justify-between items-center">
-            <div className="text-white text-2xl font-bold flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">N</div>
-              NETWORKING
+            <div className="flex items-center gap-2">
+              <img
+                src="/images/Group.png"
+                alt="logo"
+                className="h-16 w-auto"
+              />
             </div>
             <div className="hidden md:flex gap-8 text-white text-sm">
-              <a href="#" className="hover:text-purple-400">Home</a>
-              <a href="#" className="hover:text-purple-400">Program</a>
-              <a href="#" className="hover:text-purple-400">Career & Guidance</a>
-              <a href="#" className="hover:text-purple-400">Student Resources</a>
-              <a href="#" className="hover:text-purple-400">Media & Community</a>
-              <a href="#" className="hover:text-purple-400">About Us</a>
+              <a href="#" className="hover:text-purple-400">
+                Home
+              </a>
+              <a href="#" className="hover:text-purple-400">
+                Program
+              </a>
+              <a href="#" className="hover:text-purple-400">
+                Career & Guidance
+              </a>
+              <a href="#" className="hover:text-purple-400">
+                Student Resources
+              </a>
+              <a href="#" className="hover:text-purple-400">
+                Media & Community
+              </a>
+              <a href="#" className="hover:text-purple-400">
+                About Us
+              </a>
             </div>
             <button className="hidden md:block bg-white text-purple-900 px-6 py-2 rounded-full hover:bg-purple-100 transition-colors">
               Contact
@@ -75,18 +95,34 @@ export default function HeroSection() {
               className="md:hidden text-white"
               onClick={() => setMenuOpen(!menuOpen)}
             >
-              {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {menuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </nav>
 
           {menuOpen && (
             <div className="absolute top-16 left-0 w-full bg-black/90 p-6 flex flex-col items-center gap-4 text-white md:hidden">
-              <a href="#" className="hover:text-purple-400">Home</a>
-              <a href="#" className="hover:text-purple-400">Program</a>
-              <a href="#" className="hover:text-purple-400">Career & Guidance</a>
-              <a href="#" className="hover:text-purple-400">Student Resources</a>
-              <a href="#" className="hover:text-purple-400">Media & Community</a>
-              <a href="#" className="hover:text-purple-400">About Us</a>
+              <a href="#" className="hover:text-purple-400">
+                Home
+              </a>
+              <a href="#" className="hover:text-purple-400">
+                Program
+              </a>
+              <a href="#" className="hover:text-purple-400">
+                Career & Guidance
+              </a>
+              <a href="#" className="hover:text-purple-400">
+                Student Resources
+              </a>
+              <a href="#" className="hover:text-purple-400">
+                Media & Community
+              </a>
+              <a href="#" className="hover:text-purple-400">
+                About Us
+              </a>
               <button className="bg-white text-purple-900 px-6 py-2 rounded-full hover:bg-purple-100 transition-colors">
                 Contact
               </button>
@@ -108,25 +144,33 @@ export default function HeroSection() {
                   <span className="text-4xl md:text-6xl font-semibold mb-2">
                     {counts.visa}%
                   </span>
-                  <span className="text-xs md:text-sm uppercase tracking-wider">VISA GRANT (2023-24)</span>
+                  <span className="text-xs md:text-sm uppercase tracking-wider">
+                    VISA GRANT (2023-24)
+                  </span>
                 </div>
                 <div className="flex flex-col items-center">
                   <span className="text-4xl md:text-6xl font-semibold mb-2">
                     {counts.service}x7
                   </span>
-                  <span className="text-xs md:text-sm uppercase tracking-wider">SERVICE</span>
+                  <span className="text-xs md:text-sm uppercase tracking-wider">
+                    SERVICE
+                  </span>
                 </div>
                 <div className="flex flex-col items-center">
                   <span className="text-4xl md:text-6xl font-semibold mb-2">
                     {counts.rating}★
                   </span>
-                  <span className="text-xs md:text-sm uppercase tracking-wider">GOOGLE RATING</span>
+                  <span className="text-xs md:text-sm uppercase tracking-wider">
+                    GOOGLE RATING
+                  </span>
                 </div>
                 <div className="flex flex-col items-center">
                   <span className="text-4xl md:text-6xl font-semibold mb-2">
                     {counts.students}+
                   </span>
-                  <span className="text-xs md:text-sm uppercase tracking-wider">Students Abroad</span>
+                  <span className="text-xs md:text-sm uppercase tracking-wider">
+                    Students Abroad
+                  </span>
                 </div>
               </div>
             </div>
