@@ -1,0 +1,93 @@
+"use client";
+
+import { useEffect, useState } from 'react';
+
+export default function ThirdSection() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      const threshold = window.innerHeight * 1.5;
+      setScrolled(offset > threshold);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    
+    const rotateX = ((y - centerY) / 10) * -1;
+    const rotateY = (x - centerX) / 10;
+    
+    card.style.transform = `
+      perspective(1000px) 
+      rotateX(${rotateX}deg) 
+      rotateY(${rotateY}deg)
+      translateZ(30px)
+      scale(1.05)
+    `;
+  };
+
+  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.currentTarget.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0) scale(1)';
+  };
+
+  const destinations = [
+    { country: "USA", flag: "https://images.unsplash.com/photo-1610312278520-bcc893a3ff1d?q=80&w=500&auto=format&fit=crop" },
+    { country: "UK", flag: "https://images.unsplash.com/photo-1589657068463-ef4077ce0d10?q=80&w=500&auto=format&fit=crop" },
+    { country: "Canada", flag: "https://images.unsplash.com/photo-1535041422672-8c3254ab9ab2?q=80&w=500&auto=format&fit=crop" },
+    { country: "Australia", flag: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?q=80&w=500&auto=format&fit=crop" },
+    { country: "Italy", flag: "https://images.unsplash.com/photo-1529178983631-23b9398051fe?q=80&w=500&auto=format&fit=crop" },
+    { country: "New Zealand", flag: "https://images.unsplash.com/photo-1589196728426-11fd0db5bb45?q=80&w=500&auto=format&fit=crop" }
+  ];
+
+  return (
+    <section className={`fixed w-full h-screen transition-transform duration-700 ease-in-out z-[40] ${
+      scrolled ? "-translate-y-full" : "translate-y-0"
+    }`}>
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 to-black">
+        <div className="container mx-auto px-4 h-full flex flex-col justify-center">
+          <div className="text-center mb-16 text-white">
+            <h2 className="text-5xl font-bold mb-4">EXPLORE TOP STUDY DESTINATIONS</h2>
+            <p className="text-blue-400">Professional·Streamlined·Simple</p>
+          </div>
+
+          <div className="grid grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {destinations.map((dest) => (
+              <div
+                key={dest.country}
+                className="card-3d group cursor-pointer"
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+              >
+                <div className="relative overflow-hidden rounded-2xl">
+                  <div className="aspect-[4/3]">
+                    <img
+                      src={dest.flag}
+                      alt={`Study in ${dest.country}`}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="text-2xl font-bold text-center text-white">Study in {dest.country}</h3>
+                  </div>
+                  <div className="absolute inset-0 bg-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
