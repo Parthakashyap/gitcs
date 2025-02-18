@@ -66,13 +66,13 @@ export default function FifthSection() {
 
             <div className="relative">
               
-              <div className=' -mb-32'>
+              <div className='mt-8 md:mt-0 md:-mb-32'>
               <CarouselDemo/>
               </div>
 
 
 
-              <div className="grid grid-cols-4 gap-4 mt-8">
+              <div className="hidden md:grid grid-cols-4 gap-4 mt-8">
                 <img
                   src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=500&auto=format&fit=crop"
                   alt="Students 1"
