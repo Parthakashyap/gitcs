@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 export default function ThirdSection() {
   const [scrolled, setScrolled] = useState(false);
@@ -41,13 +42,14 @@ export default function ThirdSection() {
     e.currentTarget.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0) scale(1)';
   };
 
+  
   const destinations = [
-    { country: "USA", flag: "https://images.unsplash.com/photo-1610312278520-bcc893a3ff1d?q=80&w=500&auto=format&fit=crop" },
-    { country: "UK", flag: "https://images.unsplash.com/photo-1589657068463-ef4077ce0d10?q=80&w=500&auto=format&fit=crop" },
-    { country: "Canada", flag: "https://images.unsplash.com/photo-1535041422672-8c3254ab9ab2?q=80&w=500&auto=format&fit=crop" },
-    { country: "Australia", flag: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?q=80&w=500&auto=format&fit=crop" },
-    { country: "Italy", flag: "https://images.unsplash.com/photo-1529178983631-23b9398051fe?q=80&w=500&auto=format&fit=crop" },
-    { country: "New Zealand", flag: "https://images.unsplash.com/photo-1589196728426-11fd0db5bb45?q=80&w=500&auto=format&fit=crop" }
+    { country: "USA", flag: "/images/USA.avif" },
+    { country: "UK", flag: "/images/UK.png" },
+    { country: "Canada", flag: "/images/canada.avif" },
+    { country: "Australia", flag: "/images/Aus.jpg" },
+    { country: "Italy", flag: "/images/italy.avif" },
+    { country: "New Zealand", flag: "/images/NZ.png" }
   ];
 
   return (
@@ -56,7 +58,7 @@ export default function ThirdSection() {
     }`}>
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 to-black">
         <div className="container mx-auto px-4 h-full flex flex-col justify-center">
-          <div className="text-center mb-16 text-white">
+          <div className="text-center mb-12 text-white">
             <h2 className="md:text-5xl text-3xl font-bold mb-4">EXPLORE TOP STUDY DESTINATIONS</h2>
             <p className="text-blue-400">Professional·Streamlined·Simple</p>
           </div>
