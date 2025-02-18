@@ -57,11 +57,11 @@ export default function ThirdSection() {
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 to-black">
         <div className="container mx-auto px-4 h-full flex flex-col justify-center">
           <div className="text-center mb-16 text-white">
-            <h2 className="text-5xl font-bold mb-4">EXPLORE TOP STUDY DESTINATIONS</h2>
+            <h2 className="md:text-5xl text-3xl font-bold mb-4">EXPLORE TOP STUDY DESTINATIONS</h2>
             <p className="text-blue-400">Professional·Streamlined·Simple</p>
           </div>
 
-          <div className="grid grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 grid-cols-2 md:gap-8 gap-4 max-w-6xl mx-auto">
             {destinations.map((dest) => (
               <div
                 key={dest.country}
