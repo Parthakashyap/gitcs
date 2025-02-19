@@ -83,170 +83,158 @@ export default function Career() {
 
       {/* Online Career Counseling Section */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-purple-900 mb-2">ONLINE CAREER COUNSELING</h2>
-            <p className="text-blue-500">We offer a wide range of programs to help students and<br />professionals enhance their skills and career prospects.</p>
-          </div>
+  <div className="container mx-auto px-4">
+    <div className="text-center mb-12 md:mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-purple-900 mb-2">
+        ONLINE CAREER COUNSELING
+      </h2>
+      <p className="text-blue-500 text-base md:text-lg">
+        We offer a wide range of programs to help students and
+        <br className="hidden md:block" /> professionals enhance their skills and career prospects.
+      </p>
+    </div>
 
-          <div className="grid grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
-            <div>
-              <h3 className="text-3xl font-bold text-purple-900 mb-6">
-                EXPERT GUIDANCE FOR<br />YOUR CAREER PATH
-              </h3>
-              <p className="text-gray-600 mb-8">
-                Get personalized career counseling from experienced professionals to explore career options, study paths, and skill development opportunities.
-              </p>
-              <ul className="space-y-6 mb-8">
-                <li className="flex items-center gap-4">
-                  <div className="w-3 h-3 rounded-full bg-purple-900"></div>
-                  <span>One-on-one virtual counseling sessions</span>
-                </li>
-                <li className="flex items-center gap-4">
-                  <div className="w-3 h-3 rounded-full bg-purple-900"></div>
-                  <span>Career roadmap planning</span>
-                </li>
-                <li className="flex items-center gap-4">
-                  <div className="w-3 h-3 rounded-full bg-purple-900"></div>
-                  <span>Industry-specific guidance</span>
-                </li>
-                <li className="flex items-center gap-4">
-                  <div className="w-3 h-3 rounded-full bg-purple-900"></div>
-                  <span>College and university recommendations</span>
-                </li>
-              </ul>
-              <Button className="bg-purple-900 text-white hover:bg-purple-800">
-                Join Now
-              </Button>
-            </div>
-            <div>
-              <img 
-                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070"
-                alt="Career Guidance"
-                className="rounded-3xl shadow-xl"
-              />
-            </div>
-          </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center max-w-6xl mx-auto">
+      <div className="text-center md:text-left">
+        <h3 className="text-2xl md:text-3xl font-bold text-purple-900 mb-6">
+          EXPERT GUIDANCE FOR<br className="hidden md:block" />YOUR CAREER PATH
+        </h3>
+        <p className="text-gray-600 mb-6 md:mb-8 text-sm md:text-base">
+          Get personalized career counseling from experienced professionals to explore career options, study paths, and skill development opportunities.
+        </p>
+        <ul className="space-y-4 md:space-y-6 mb-6 md:mb-8">
+          {[
+            "One-on-one virtual counseling sessions",
+            "Career roadmap planning",
+            "Industry-specific guidance",
+            "College and university recommendations",
+          ].map((item, index) => (
+            <li key={index} className="flex items-center gap-3 md:gap-4 justify-center md:justify-start">
+              <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-purple-900"></div>
+              <span className="text-sm md:text-base">{item}</span>
+            </li>
+          ))}
+        </ul>
+        <div className="flex justify-center md:justify-start">
+          <Button className="bg-purple-900 text-white hover:bg-purple-800 px-6 py-2 md:px-8 md:py-3">
+            Join Now
+          </Button>
         </div>
-      </section>
+      </div>
+
+      <div>
+        <img 
+          src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070"
+          alt="Career Guidance"
+          className="rounded-3xl shadow-xl w-full max-w-lg mx-auto"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Career Fair Section */}
       <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-purple-900 text-center mb-16">
-            ONLINE CAREER FAIR / UNIVERSITY FAIR
-          </h2>
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl md:text-4xl font-bold text-purple-900 text-center mb-12 md:mb-16">
+      ONLINE CAREER FAIR / UNIVERSITY FAIR
+    </h2>
 
-          <div className="grid grid-cols-4 gap-8 max-w-6xl mx-auto">
-            <div className="col-span-1">
-              <div className="relative rounded-2xl overflow-hidden mb-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1000"
-                  alt="Live Sessions"
-                  className="w-full aspect-square object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <p className="text-sm">Live sessions with university officers</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-span-1">
-              <div className="relative rounded-2xl overflow-hidden mb-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000"
-                  alt="Career Fair"
-                  className="w-full aspect-square object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <p className="text-sm">Career fair networking with industry experts</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-span-1">
-              <div className="relative rounded-2xl overflow-hidden mb-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1000"
-                  alt="Scholarship Info"
-                  className="w-full aspect-square object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <p className="text-sm">Scholarship and funding information</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-span-1 flex flex-col justify-center">
-              <h3 className="text-xl font-bold text-purple-900 mb-4">
-                CONNECT WITH GLOBAL UNIVERSITIES AND EMPLOYERS
-              </h3>
-              <p className="text-gray-600 mb-6">
-                Participate in virtual career and university fairs to meet representatives from top institutions and companies.
-              </p>
-              <Button className="bg-purple-900 text-white hover:bg-purple-800">
-                Join the Fair
-              </Button>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      {[
+        {
+          img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1000",
+          alt: "Live Sessions",
+          text: "Live sessions with university officers",
+        },
+        {
+          img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000",
+          alt: "Career Fair",
+          text: "Career fair networking with industry experts",
+        },
+        {
+          img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1000",
+          alt: "Scholarship Info",
+          text: "Scholarship and funding information",
+        },
+      ].map((item, index) => (
+        <div key={index} className="col-span-1">
+          <div className="relative rounded-2xl overflow-hidden mb-4">
+            <img 
+              src={item.img}
+              alt={item.alt}
+              className="w-full aspect-square object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+            <div className="absolute bottom-4 left-4 right-4 text-white">
+              <p className="text-sm">{item.text}</p>
             </div>
           </div>
         </div>
-      </section>
+      ))}
+
+      <div className="col-span-1 flex flex-col justify-center text-center lg:text-left">
+        <h3 className="text-lg md:text-xl font-bold text-purple-900 mb-4">
+          CONNECT WITH GLOBAL UNIVERSITIES AND EMPLOYERS
+        </h3>
+        <p className="text-gray-600 mb-6 text-sm md:text-base">
+          Participate in virtual career and university fairs to meet representatives from top institutions and companies.
+        </p>
+        <div className="flex justify-center lg:justify-start">
+          <Button className="bg-purple-900 text-white hover:bg-purple-800 px-6 py-2 md:px-8 md:py-3">
+            Join the Fair
+          </Button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Career Assessment Section */}
       <section className="py-20 bg-white">
   <div className="container mx-auto px-4">
     {/* Heading Section */}
     <div className="text-center mb-12">
-      <h2 className="text-4xl font-bold text-purple-900 mb-2">CAREER ASSESSMENT TEST</h2>
-      <p className="text-blue-500">
-        Take our career assessment test to identify your skills, interests,<br />
+      <h2 className="text-3xl md:text-4xl font-bold text-purple-900 mb-4">
+        CAREER ASSESSMENT TEST
+      </h2>
+      <p className="text-blue-500 text-sm md:text-base leading-relaxed">
+        Take our career assessment test to identify your skills, interests,<br className="hidden md:block" />
         and potential career paths.
       </p>
     </div>
 
     {/* Steps Section */}
-    <div className="flex justify-center gap-16 max-w-6xl mx-auto">
-      {/* Step 1 */}
-      <div className="relative flex flex-col items-center text-center">
-        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-purple-900 text-white text-lg font-bold absolute -top-6 left-1/2 -translate-x-1/2 translate-x-2">
-          1
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 max-w-6xl mx-auto">
+      {[
+        {
+          step: "1",
+          text: "Scientifically designed aptitude and personality assessments",
+        },
+        {
+          step: "2",
+          text: "Detailed career suggestions and report analysis",
+        },
+        {
+          step: "3",
+          text: "Personalized study and career recommendations",
+        },
+      ].map((item, index) => (
+        <div key={index} className="relative flex flex-col items-center text-center">
+          <div className="w-12 h-12 flex items-center justify-center rounded-full bg-purple-900 text-white text-lg font-bold absolute -top-6">
+            {item.step}
+          </div>
+          <div className="w-48 md:w-60 h-48 md:h-60 border-2 border-purple-900 rounded-full flex items-center justify-center px-6">
+            <h3 className="text-sm md:text-lg font-semibold">{item.text}</h3>
+          </div>
         </div>
-        <div className="w-60 h-60 border-2 border-purple-900 rounded-full flex items-center justify-center px-6">
-          <h3 className="text-lg font-semibold">
-            Scientifically designed aptitude and personality assessments
-          </h3>
-        </div>
-      </div>
-
-      {/* Step 2 */}
-      <div className="relative flex flex-col items-center text-center">
-        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-purple-900 text-white text-lg font-bold absolute -top-6 left-1/2 -translate-x-1/2 translate-x-2">
-          2
-        </div>
-        <div className="w-60 h-60 border-2 border-purple-900 rounded-full flex items-center justify-center px-6">
-          <h3 className="text-lg font-semibold">
-            Detailed career suggestions and report analysis
-          </h3>
-        </div>
-      </div>
-
-      {/* Step 3 */}
-      <div className="relative flex flex-col items-center text-center">
-        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-purple-900 text-white text-lg font-bold absolute -top-6 left-1/2 -translate-x-1/2 translate-x-2">
-          3
-        </div>
-        <div className="w-60 h-60 border-2 border-purple-900 rounded-full flex items-center justify-center px-6">
-          <h3 className="text-lg font-semibold">
-            Personalized study and career recommendations
-          </h3>
-        </div>
-      </div>
+      ))}
     </div>
   </div>
 </section>
+
 
 
 {/* Help Section */}
