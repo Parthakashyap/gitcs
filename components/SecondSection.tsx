@@ -8,7 +8,7 @@ export default function SecondSection() {
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      const threshold = window.innerHeight * 1;
+      const threshold = window.innerHeight * 1.5;
       setScrolled(offset > threshold);
     };
 

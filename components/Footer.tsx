@@ -1,25 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React from "react";
 
 export default function Footer() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const offset = window.scrollY;
-      const threshold = window.innerHeight * 6;
-      setScrolled(offset > threshold);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <section className={`fixed w-full h-screen transition-transform duration-700 ease-in-out z-[0] ${
-      scrolled ? "-translate-y-full" : "translate-y-0"
-    }`}>
+    <section className="fixed w-full h-screen z-[0]">
       <footer className="bg-[#1c1f2a] text-white h-screen">
         <div className="max-w-7xl mx-auto px-6 py-12">
               <div className="mb-6">
