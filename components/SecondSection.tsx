@@ -60,7 +60,7 @@ export default function SecondSection() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 relative">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 -mt-16 md:-mt-0 relative">
               {[
                 {
                   title: "Adaptive Leadership Framework",

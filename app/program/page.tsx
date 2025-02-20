@@ -46,17 +46,29 @@ export default function SummerProgram() {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="absolute top-16 left-0 w-full bg-purple-900/90 text-white flex flex-col items-center space-y-4 py-4">
-            <a href="#" className="hover:text-purple-400">Home</a>
-            <a href="/program" className="hover:text-purple-400">Program</a>
-            <a href="#" className="hover:text-purple-400">Career & Guidance</a>
-            <a href="#" className="hover:text-purple-400">Student Resources</a>
-            <a href="#" className="hover:text-purple-400">Media & Community</a>
-            <a href="#" className="hover:text-purple-400">About Us</a>
-            <button className="bg-white text-purple-900 px-6 py-2 rounded-full hover:bg-purple-100 transition-colors">
-              Contact
-            </button>
-          </div>
+          <div className="absolute top-16 left-0 w-full bg-black/90 p-6 flex flex-col items-center gap-4 text-white md:hidden">
+          <a href="#" className="hover:text-purple-400">
+            Home
+          </a>
+          <a href="/program" className="hover:text-purple-400">
+            Program
+          </a>
+          <a href="/career" className="hover:text-purple-400">
+            Career & Guidance
+          </a>
+          <a href="/studentResource" className="hover:text-purple-400">
+            Student Resources
+          </a>
+          <a href="#" className="hover:text-purple-400">
+            Media & Community
+          </a>
+          <a href="#" className="hover:text-purple-400">
+            About Us
+          </a>
+          <button className="bg-white text-purple-900 px-6 py-2 rounded-full hover:bg-purple-100 transition-colors">
+            Contact
+          </button>
+        </div>
         )}
 
         <div className="container mx-auto px-6 md:px-4 h-full flex flex-col justify-center items-center text-center">

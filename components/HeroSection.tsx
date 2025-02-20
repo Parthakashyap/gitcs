@@ -108,13 +108,13 @@ export default function HeroSection() {
               <a href="#" className="hover:text-purple-400">
                 Home
               </a>
-              <a href="#" className="hover:text-purple-400">
+              <a href="/program" className="hover:text-purple-400">
                 Program
               </a>
-              <a href="#" className="hover:text-purple-400">
+              <a href="/career" className="hover:text-purple-400">
                 Career & Guidance
               </a>
-              <a href="#" className="hover:text-purple-400">
+              <a href="/studentResource" className="hover:text-purple-400">
                 Student Resources
               </a>
               <a href="#" className="hover:text-purple-400">

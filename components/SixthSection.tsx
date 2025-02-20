@@ -33,13 +33,13 @@ export default function ContactSection() {
                 <h2 className="text-3xl md:text-4xl font-semibold">
                   Got a question? Ask our team!
                 </h2>
-                <p className="text-gray-600">
+                <p className="hidden md:block text-gray-600">
                   Fill out the contact form, and we will get back to you with the
                   right answer.
                 </p>
               </div>
 
-              <form className="space-y-4">
+              <form className="space-y-2 md:space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input
                     type="text"
