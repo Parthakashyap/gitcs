@@ -12,7 +12,7 @@ export default function FifthSection() {
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      const threshold = window.innerHeight * 3.5;
+      const threshold = window.innerHeight * 4;
       setScrolled(offset > threshold);
     };
 

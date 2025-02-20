@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 
 export default function Footer() {
   const [scrolled, setScrolled] = useState(false);
@@ -9,7 +8,7 @@ export default function Footer() {
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      const threshold = window.innerHeight * 5.5;
+      const threshold = window.innerHeight * 6;
       setScrolled(offset > threshold);
     };
 
