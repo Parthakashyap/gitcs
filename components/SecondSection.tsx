@@ -93,7 +93,7 @@ export default function SecondSection() {
                   onMouseMove={handleMouseMove}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <div className="bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] text-white p-[1.6rem] md:p-8 rounded- md:h-[300px] w-full  relative overflow-hidden flex flex-col justify-between">
+                  <div className="bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] text-white p-[1.6rem] md:p-8 rounded-2xl md:h-[300px] w-full  relative overflow-hidden flex flex-col justify-between">
                     <div
                       className={`absolute inset-0 bg-gradient-to-br ${item.bg} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                     ></div>

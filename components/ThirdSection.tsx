@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 
 export default function ThirdSection() {
   const [scrolled, setScrolled] = useState(false);
@@ -42,46 +41,43 @@ export default function ThirdSection() {
           </div>
 
           <div className="grid md:grid-cols-3 grid-cols-2 md:gap-20 gap-4 max-w-6xl mx-auto">
-  {destinations.map((dest) => (
-    <div key={dest.country} className="flex flex-col items-center">
-      <div className="flip-card group w-[300px] h-[200px]">
-        <div className="flip-inner w-full h-full">
-          {/* Front Side */}
-          <div className="flip-front">
-            <img
-              src={dest.flag}
-              alt={`Study in ${dest.country}`}
-              className="w-full h-full object-contain"
-            />
+            {destinations.map((dest) => (
+              <div key={dest.country} className="flex flex-col items-center">
+                <div className="flip-card group md:w-[300px] md:h-[200px] w-[160px] max-w-[300px] aspect-[3/2]">
+                  <div className="flip-inner w-full h-full">
+                    {/* Front Side */}
+                    <div className="flip-front">
+                      <img
+                        src={dest.flag}
+                        alt={`Study in ${dest.country}`}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+
+                    {/* Back Side */}
+                    <div className="flip-back">
+                      <img
+                        src={dest.backFlag}
+                        alt={`Study in ${dest.country}`}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Country Name Below Image */}
+                <p className="text-center mt-2 text-lg font-medium text-purple-900">
+                  {dest.country}
+                </p>
+              </div>
+            ))}
           </div>
-
-          {/* Back Side */}
-          <div className="flip-back">
-            <img
-              src={dest.backFlag}
-              alt={`Study in ${dest.country}`}
-              className="w-full h-full object-contain"
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Country Name Below Image */}
-      <p className="text-center mt-2 text-lg font-medium text-purple-900">
-        {dest.country}
-      </p>
-    </div>
-  ))}
-</div>
-
         </div>
       </div>
 
       <style jsx>{`
         .flip-card {
           perspective: 1000px;
-          width: 300px;
-          height: 200px;
         }
 
         .flip-inner {
