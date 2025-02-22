@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { GlobeDemo } from "./ui/globeDemo";
 
 export default function ContactSection() {
   const [scrolled, setScrolled] = useState(false);
@@ -22,7 +23,7 @@ export default function ContactSection() {
       }`}
     >
       <div className="absolute inset-0 bg-white">
-        <div className="max-w-6xl mx-auto px-6 py-12">
+        <div className="max-w-9xl mx-auto px-6 pl-10 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* Contact Form Section */}
             <div className="space-y-8">
@@ -86,7 +87,8 @@ export default function ContactSection() {
             </div>
 
             {/* Image Section */}
-            <div className="hidden md:flex justify-center">
+            <div className="hidden -mt-60 md:flex justify-center">
+              <GlobeDemo/>
             </div>
           </div>
 
