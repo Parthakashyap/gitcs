@@ -57,10 +57,10 @@ export default function SecondSection() {
         <div className="container mx-auto px-4 py-20">
           <div className="max-w-6xl mx-auto">
             <div className=" mb-16">
-              <h2 className="md:text-5xl text-3xl font-bold mb-4 text-purple-900">
+              <h2 className="md:text-5xl text-3xl font-bold mb-4 text-[#230344]">
                 WHY STUDY ABROAD WITH US
               </h2>
-              <p className="text-blue-600  mb-2">
+              <p className="text-[#1F94F3]  mb-2">
                 Professional-Streamlined-Simple
               </p>
             </div>
@@ -95,7 +95,7 @@ export default function SecondSection() {
                   onMouseMove={handleMouseMove}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <div className="bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] text-white p-[1.6rem] md:p-8 rounded-2xl md:h-[300px] w-full  relative overflow-hidden flex flex-col justify-between">
+                  <div className="bg-gradient-to-br from-[#230344] to-[#2a2a2a] text-white p-[1.6rem] md:p-8 rounded-2xl md:h-[300px] w-full  relative overflow-hidden flex flex-col justify-between">
                     <div
                       className={`absolute inset-0 bg-gradient-to-br ${item.bg} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                     ></div>
@@ -123,7 +123,7 @@ export default function SecondSection() {
                       <div className="absolute w-full h-full bg-[#f5f5f5] rounded-2xl transition-all duration-300 ease-in-out group-hover:opacity-0"></div>
 
                       {/* Image Container */}
-                      <div className="relative w-24 h-24 flex items-center justify-center bg-[#372749] rounded-full">
+                      <div className="relative w-24 h-24 flex items-center justify-center bg-[#2a2a2a] rounded-full">
                         <img src={icons[index].src} alt={item.title} className="w-16 h-16" />
                       </div>
                     </div>

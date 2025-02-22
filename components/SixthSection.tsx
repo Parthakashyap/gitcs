@@ -34,6 +34,7 @@ export default function ContactSection() {
                 <h2 className="text-3xl md:text-4xl font-semibold">
                   Got a question? Ask our team!
                 </h2>
+                <div className="w-24 h-[.15rem] bg-[#1F94F3]"></div>
                 <p className="hidden md:block text-gray-600">
                   Fill out the contact form, and we will get back to you with the
                   right answer.
@@ -80,9 +81,11 @@ export default function ContactSection() {
                   rows={4}
                   className="w-full p-3 border rounded-md bg-gray-50"
                 />
-                <Button className="w-full md:w-auto bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md">
+                <div className="flex justify-center">
+                <Button className="w-full md:w-auto bg-[#230344] hover:bg-purple-900 text-white px-6 py-3 rounded-3xl">
                   Send Message
                 </Button>
+                </div>
               </form>
             </div>
 

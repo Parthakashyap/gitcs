@@ -31,15 +31,15 @@ export default function FourthSection() {
               {/* Left Section */}
               <div className="space-y-6 md:space-y-8 text-center md:text-left">
                 <div>
-                  <h2 className="md:text-5xl text-3xl font-bold mb-4 text-purple-900">
+                  <h2 className="md:text-5xl text-3xl font-bold mb-4 text-[#230344]">
                     WHO WE ARE
                   </h2>
-                  <p className="text-blue-600  mb-2">
+                  <p className="text-[#1F94F3]  mb-2">
                     Endless possibilities begin here
                   </p>
                 </div>
 
-                <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+                <p className="text-black text-base md:text-lg leading-relaxed">
                   We are a team of dedicated education consultants passionate
                   about helping students achieve their dream of studying abroad.
                   With years of experience, we provide expert guidance,
@@ -62,7 +62,7 @@ export default function FourthSection() {
                   ))}
                 </div>
 
-                <Button className="bg-purple-900 text-white px-6 md:px-8 py-4 md:py-6 rounded-full text-lg md:text-xl hover:bg-purple-800 transition-colors">
+                <Button className="bg-[#230344] text-white px-6 md:px-8 py-4 md:py-6 rounded-full text-lg md:text-xl hover:bg-purple-900 transition-colors">
                   Learn More About Us
                 </Button>
               </div>
@@ -72,7 +72,7 @@ export default function FourthSection() {
                 <div className="aspect-[4/3] w-full max-w-md md:max-w-full rounded-2xl overflow-hidden">
                   <ImagesSliderDemo />
                 </div>
-                <div className="absolute -bottom-4 right-4 md:-right-8 w-24 md:w-32 h-24 md:h-32 bg-purple-900 rounded-full flex items-center justify-center shadow-lg">
+                <div className="absolute -bottom-4 right-4 md:-right-8 w-24 md:w-32 h-24 md:h-32 bg-[#230344] rounded-full flex items-center justify-center shadow-lg">
                   <div className="text-white text-center">
                     <div className="text-2xl md:text-3xl font-bold">15+</div>
                     <div className="text-xs md:text-sm">

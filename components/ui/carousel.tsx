@@ -61,18 +61,18 @@ const Slide = ({ slide, index, current }: SlideProps) => {
           transformOrigin: "bottom",
         }}
       >
-        <div className="absolute top-0 left-0 w-full h-[22rem] bg-blue-900/50 backdrop-blur-sm rounded-xl transition-all duration-150 ease-out">
+        <div className="absolute top-0 left-0 w-full h-[22rem] bg-purple-900/50 backdrop-blur-sm rounded-xl transition-all duration-150 ease-out">
           <Image
             src="/images/Grains.png"
             alt="grains"
             fill
             className="w-full h-full object-cover absolute"
           />
-          <div className="absolute inset-0 bg-gradient-to-b border-2 rounded-xl border-white from-blue-900/10 to-blue-900/90 opacity-80" />
+          <div className="absolute inset-0 bg-gradient-to-b border-2 rounded-xl border-white from-[#230344] to-[#230344]/50 opacity-80" />
 
           <article
             className={`relative -mt-12 md:-mt-0 z-20 p-[4vmin] transition-opacity duration-1000 ease-in-out flex flex-col items-center justify-center text-center h-full ${
-              current === index ? "opacity-100 visible" : "opacity-0 invisible"
+              current === index ? "opacity-100 visible" : "opacity-30 visible"
             }`}
           >
             <blockquote className="text-sm md:w-96 md:text-base lg:text-md mb-4 italic">

@@ -36,7 +36,7 @@ export default function FifthSection() {
               
               <div className="relative w-full md:mt-0 mt-24">
                 <div className="flex space-x-4 animate-marquee w-max">
-                  {[...Array(2)].flatMap(() => [
+                  {[...Array(4)].flatMap(() => [
                     <img
                       key="1"
                       src="/images/slide1.png"

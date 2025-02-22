@@ -17,12 +17,12 @@ export default function ThirdSection() {
   }, []);
 
   const destinations = [
-    { country: "USA", flag: "/images/USA.avif", backFlag: "/images/usaBack.png" },
-    { country: "UK", flag: "/images/UK.png", backFlag: "/images/ukBack.png" },
-    { country: "Canada", flag: "/images/canada.avif", backFlag: "/images/canadaBack.png" },
-    { country: "Australia", flag: "/images/Aus.jpg", backFlag: "/images/ausBack.png" },
-    { country: "Italy", flag: "/images/italy.avif", backFlag: "/images/italyBack.png" },
-    { country: "New Zealand", flag: "/images/NZ.png", backFlag: "/images/nzBack.png" },
+    { country: "USA", flag: "/images/USA.avif", backFlag: "/images/L1.png" },
+    { country: "UK", flag: "/images/UK.png", backFlag: "/images/L2.png" },
+    { country: "Canada", flag: "/images/canada.avif", backFlag: "/images/L3.png" },
+    { country: "Australia", flag: "/images/Aus.jpg", backFlag: "/images/L4.png" },
+    { country: "Italy", flag: "/images/italy.avif", backFlag: "/images/L5.png" },
+    { country: "New Zealand", flag: "/images/NZ.png", backFlag: "/images/L6.png" },
   ];
 
   return (
@@ -34,46 +34,71 @@ export default function ThirdSection() {
       <div className="absolute inset-0 bg-white">
         <div className="container mx-auto px-4 h-full flex flex-col justify-center">
           <div className="text-center mb-12 text-white">
-            <h2 className="md:text-5xl text-3xl font-bold mb-4 text-purple-900">
+            <h2 className="md:text-5xl text-3xl font-bold mb-4 text-[#230344]">
               EXPLORE TOP STUDY DESTINATIONS
             </h2>
-            <p className="text-blue-600 mb-2">Professional·Streamlined·Simple</p>
+            <p className="text-[#1F94F3] mb-2">Professional·Streamlined·Simple</p>
           </div>
 
           <div className="grid md:grid-cols-3 grid-cols-2 md:gap-20 gap-4 max-w-6xl mx-auto">
             {destinations.map((dest) => (
-              <div key={dest.country} className="flex flex-col items-center">
-                <div className="flip-card group md:w-[300px] md:h-[200px] w-[160px] max-w-[300px] aspect-[3/2]">
-                  <div className="flip-inner w-full h-full">
-                    {/* Front Side */}
-                    <div className="flip-front">
-                      <img
-                        src={dest.flag}
-                        alt={`Study in ${dest.country}`}
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-
-                    {/* Back Side */}
-                    <div className="flip-back">
-                      <img
-                        src={dest.backFlag}
-                        alt={`Study in ${dest.country}`}
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Country Name Below Image */}
-                <p className="text-center mt-2 text-lg font-medium text-purple-900">
-                  {dest.country}
-                </p>
-              </div>
+              <FlipCard key={dest.country} dest={dest} />
             ))}
           </div>
         </div>
       </div>
+    </section>
+  );
+}
+
+function FlipCard({ dest }: { dest: { country: string; flag: string; backFlag: string } }) {
+  const [count, setCount] = useState(0);
+
+  const handleMouseEnter = () => {
+    setCount(0); // Reset count when hover starts
+    let currentCount = 0;
+    const interval = setInterval(() => {
+      currentCount += 1;
+      setCount(currentCount);
+      if (currentCount >= 100) clearInterval(interval);
+    }, 15);
+  };
+
+  return (
+    <div className="flex flex-col items-center">
+      <div
+        className="flip-card group md:w-[300px] md:h-[200px] w-[160px] max-w-[300px] aspect-[3/2]"
+        onMouseEnter={handleMouseEnter}
+      >
+        <div className="flip-inner w-full h-full">
+          {/* Front Side */}
+          <div className="flip-front">
+            <img
+              src={dest.flag}
+              alt={`Study in ${dest.country}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* Back Side */}
+          <div className="flip-back relative">
+            {/* Back Image */}
+            <img
+              src={dest.backFlag}
+              alt={`Study in ${dest.country}`}
+              className="w-full h-full object-cover opacity-70"
+            />
+            {/* Counter Overlay */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-white font-semibold text-3xl">
+              <p>{count}+</p>
+              <p className="text-xl">Admission</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Country Name Below Image */}
+      <p className="text-center mt-2 text-lg font-medium text-black">{dest.country}</p>
 
       <style jsx>{`
         .flip-card {
@@ -104,9 +129,9 @@ export default function ThirdSection() {
 
         .flip-back {
           transform: rotateY(180deg);
-          background: rgba(0, 0, 0, 0.3);
+          background: rgba(0, 0, 0, 0.5);
         }
       `}</style>
-    </section>
+    </div>
   );
 }
