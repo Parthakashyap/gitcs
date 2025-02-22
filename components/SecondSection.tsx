@@ -51,77 +51,39 @@ export default function SecondSection() {
       <div className="absolute inset-0 bg-[#f5f5f5]">
         <div className="container mx-auto px-4 py-20">
           <div className="max-w-6xl mx-auto">
-            <div className="hidden md:block mb-16">
-              <h2 className="text-6xl font-bold mb-6">
+            <div className=" mb-16">
+              <h2 className="md:text-6xl text-4xl font-bold md:mb-6 mb-2">
                 WHY STUDY ABROAD WITH US
               </h2>
-              <p className="text-blue-600 max-w-2xl ">
-              Professional-Streamlined-Simple
+              <p className="text-blue-600 max-w-2xl mb-2">
+                Professional-Streamlined-Simple
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 -mt-16 md:-mt-0 relative">
               {[
                 {
-                  title: "Adaptive Leadership Framework",
+                  title: "Expert Guidance & Support",
                   description:
-                    "Learn to navigate and lead through complex and rapidly changing environments.",
-                  icon: (
-                    <svg
-                      className="w-12 h-12 text-white/80"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                    >
-                      <path d="M4 4h16M4 12h16M4 20h16" strokeLinecap="round" />
-                      <path
-                        d="M4 4L12 12L20 4M4 12L12 20L20 12"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  ),
+                    "Our experienced advisors assist you every step of the way, from application to arrival.",
+                  icon: "🎓",
+                  position: "bottom",
                   bg: "from-purple-500/10 to-blue-500/10",
                 },
                 {
-                  title: "Transformational Leadership Techniques",
+                  title: "Wide Range of Study Destinations",
                   description:
-                    "Discover powerful strategies to inspire and drive positive organizational change.",
-                  icon: (
-                    <svg
-                      className="w-12 h-12 text-white/80"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                    >
-                      <path d="M12 4v16m-8-8h16" strokeLinecap="round" />
-                      <path d="M12 4l-4 4m4-4l4 4" strokeLinecap="round" />
-                      <path d="M12 20l-4-4m4 4l4-4" strokeLinecap="round" />
-                    </svg>
-                  ),
+                    "Choose from top universities across multiple countries worldwide.",
+                  icon: "🌍",
+                  position: "top",
                   bg: "from-green-500/10 to-teal-500/10",
                 },
                 {
-                  title: "Influential Communication Mastery",
+                  title: "Career-Focused Programs",
                   description:
-                    "Develop advanced communication skills to effectively engage and influence stakeholders.",
-                  icon: (
-                    <svg
-                      className="w-12 h-12 text-white/80"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                    >
-                      <path
-                        d="M8 12h.01M12 12h.01M16 12h.01"
-                        strokeLinecap="round"
-                      />
-                      <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z" />
-                      <path d="M15 9l-3 3-3-3" strokeLinecap="round" />
-                    </svg>
-                  ),
+                    "Find programs designed to enhance your career prospects and global opportunities.",
+                  icon: "💼",
+                  position: "bottom",
                   bg: "from-amber-500/10 to-orange-500/10",
                 },
               ].map((item, index) => (
@@ -131,33 +93,37 @@ export default function SecondSection() {
                   onMouseMove={handleMouseMove}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <div className="bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] text-white p-[1.6rem] md:p-8 rounded-3xl md:h-[300px] w-full shadow-xl relative overflow-hidden flex flex-col justify-between">
+                  <div className="bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] text-white p-[1.6rem] md:p-8 rounded- md:h-[300px] w-full  relative overflow-hidden flex flex-col justify-between">
                     <div
                       className={`absolute inset-0 bg-gradient-to-br ${item.bg} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                     ></div>
 
                     <div className="relative z-10">
-                      <div className="mb-4">{item.icon}</div>
-                      <h3 className="text-2xl font-light mb-3">{item.title}</h3>
-                      <p className="text-white/70 text-sm">
+                      <h3 className="text-2xl font-light mb-3 w-44">{item.title}</h3>
+                      <p className="text-white/70 text-sm w-52">
                         {item.description}
                       </p>
                     </div>
 
-                    <div className="absolute bottom-6 right-6 bg-white/10 p-2 rounded-full backdrop-blur-sm group-hover:bg-white/20 transition-colors">
-                      <svg
-                        className="w-4 h-4 transform rotate-45"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 12h14M12 5l7 7-7 7"
-                        />
-                      </svg>
+                    {/* Icon Placement */}
+                    <div
+                      className={`absolute transition-all duration-300 ease-in-out group ${
+                        item.position === "top"
+                          ? "-top-3 -right-3"
+                          : "-bottom-3 -right-3"
+                      } w-32 h-32 flex items-center justify-center rounded-2xl ${
+                        index !== 3
+                          ? "group-hover:top-2 group-hover:-right-2 transform group-hover:-translate-x-1 group-hover:-translate-y-1"
+                          : ""
+                      }`}
+                    >
+                      {/* Light Background */}
+                      <div className="absolute w-full h-full bg-[#f5f5f5] rounded-2xl transition-all duration-300 ease-in-out group-hover:opacity-0"></div>
+
+                      {/* Icon Container */}
+                      <div className="relative w-24 h-24 flex items-center justify-center bg-[#372749] rounded-full">
+                        <span className="text-6xl">{item.icon}</span>
+                      </div>
                     </div>
                   </div>
                 </div>
