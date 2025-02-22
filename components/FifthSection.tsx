@@ -25,8 +25,8 @@ export default function FifthSection() {
         <div className="container mx-auto px-4 h-full">
           <div className="max-w-7xl mx-auto h-full flex flex-col justify-center">
             <div className="text-center mb-2">
-              <h2 className="md:text-5xl text-3xl font-bold mb-4 text-purple-900">STUDENT SUCCESS STORIES</h2>
-              <p className="text-blue-600  mb-2">Endless possibilities begin here</p>
+              <h2 className="md:text-5xl text-3xl font-bold mb-4 text-[#230344]">STUDENT SUCCESS STORIES</h2>
+              <p className="text-[#1F94F3] mb-2">Endless possibilities begin here</p>
             </div>
 
             <div className="relative">

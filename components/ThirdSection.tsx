@@ -17,12 +17,12 @@ export default function ThirdSection() {
   }, []);
 
   const destinations = [
-    { country: "USA", flag: "/images/USA.avif", backFlag: "/images/L1.png" },
-    { country: "UK", flag: "/images/UK.png", backFlag: "/images/L2.png" },
-    { country: "Canada", flag: "/images/canada.avif", backFlag: "/images/L3.png" },
-    { country: "Australia", flag: "/images/Aus.jpg", backFlag: "/images/L4.png" },
-    { country: "Italy", flag: "/images/italy.avif", backFlag: "/images/L5.png" },
-    { country: "New Zealand", flag: "/images/NZ.png", backFlag: "/images/L6.png" },
+    { country: "Study in USA", flag: "/images/USA.avif", backFlag: "/images/L1.png" },
+    { country: "Study in UK", flag: "/images/UK.png", backFlag: "/images/L2.png" },
+    { country: "Study in Canada", flag: "/images/canada.avif", backFlag: "/images/L3.png" },
+    { country: "Study in Australia", flag: "/images/Aus.jpg", backFlag: "/images/L4.png" },
+    { country: "Study in Italy", flag: "/images/italy.avif", backFlag: "/images/L5.png" },
+    { country: "Study in New Zealand", flag: "/images/NZ.png", backFlag: "/images/L6.png" },
   ];
 
   return (
@@ -98,7 +98,7 @@ function FlipCard({ dest }: { dest: { country: string; flag: string; backFlag: s
       </div>
 
       {/* Country Name Below Image */}
-      <p className="text-center mt-2 text-lg font-medium text-black">{dest.country}</p>
+      <p className="text-center mt-2 text-lg font-bold text-black">{dest.country}</p>
 
       <style jsx>{`
         .flip-card {
