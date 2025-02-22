@@ -10,7 +10,7 @@ export default function FourthSection() {
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      const threshold = window.innerHeight * 3.5;
+      const threshold = window.innerHeight * 3;
       setScrolled(offset > threshold);
     };
 

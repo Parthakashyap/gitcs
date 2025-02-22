@@ -8,7 +8,7 @@ export default function ThirdSection() {
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      const threshold = window.innerHeight * 2.5;
+      const threshold = window.innerHeight * 2;
       setScrolled(offset > threshold);
     };
 
