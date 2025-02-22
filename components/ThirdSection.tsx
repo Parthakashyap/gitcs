@@ -17,12 +17,12 @@ export default function ThirdSection() {
   }, []);
 
   const destinations = [
-    { country: "USA", flag: "/images/USA.avif", backFlag: "/images/USA-back.avif" },
-    { country: "UK", flag: "/images/UK.png", backFlag: "/images/UK-back.png" },
-    { country: "Canada", flag: "/images/canada.avif", backFlag: "/images/canada-back.avif" },
-    { country: "Australia", flag: "/images/Aus.jpg", backFlag: "/images/Aus-back.jpg" },
-    { country: "Italy", flag: "/images/italy.avif", backFlag: "/images/italy-back.avif" },
-    { country: "New Zealand", flag: "/images/NZ.png", backFlag: "/images/NZ-back.png" },
+    { country: "USA", flag: "/images/USA.avif", backFlag: "/images/usaBack.png" },
+    { country: "UK", flag: "/images/UK.png", backFlag: "/images/ukBack.png" },
+    { country: "Canada", flag: "/images/canada.avif", backFlag: "/images/canadaBack.png" },
+    { country: "Australia", flag: "/images/Aus.jpg", backFlag: "/images/ausBack.png" },
+    { country: "Italy", flag: "/images/italy.avif", backFlag: "/images/italyBack.png" },
+    { country: "New Zealand", flag: "/images/NZ.png", backFlag: "/images/nzBack.png" },
   ];
 
   return (
@@ -37,7 +37,7 @@ export default function ThirdSection() {
             <h2 className="md:text-5xl text-3xl font-bold mb-4 text-purple-900">
               EXPLORE TOP STUDY DESTINATIONS
             </h2>
-            <p className="text-blue-400">Professional·Streamlined·Simple</p>
+            <p className="text-blue-600 mb-2">Professional·Streamlined·Simple</p>
           </div>
 
           <div className="grid md:grid-cols-3 grid-cols-2 md:gap-20 gap-4 max-w-6xl mx-auto">

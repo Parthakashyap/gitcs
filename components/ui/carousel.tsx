@@ -63,7 +63,7 @@ const Slide = ({ slide, index, current }: SlideProps) => {
       >
         <div className="absolute top-0 left-0 w-full h-[22rem] bg-blue-900/50 backdrop-blur-sm rounded-xl transition-all duration-150 ease-out">
           <Image
-            src="/images/Rectangle.png"
+            src="/images/Grains.png"
             alt="grains"
             fill
             className="w-full h-full object-cover absolute"
@@ -79,7 +79,7 @@ const Slide = ({ slide, index, current }: SlideProps) => {
               {testimonial}
             </blockquote>
 
-            <div className="md:w-24 md:h-24 w-12 h-12 rounded-full overflow-hidden border-2 border-white mb-4 mt-2">
+            <div className="md:w-24 md:h-24 w-12 h-12 rounded-full overflow-hidden border-2 border-white mb-4 mt-2 z-50">
               <Image
                 src={src}
                 alt={title}

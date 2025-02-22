@@ -25,8 +25,8 @@ export default function FifthSection() {
         <div className="container mx-auto px-4 h-full">
           <div className="max-w-7xl mx-auto h-full flex flex-col justify-center">
             <div className="text-center mb-2">
-              <h2 className="text-5xl font-bold text-purple-900 mb-2">STUDENT SUCCESS STORIES</h2>
-              <p className="text-blue-500">Endless possibilities begin here</p>
+              <h2 className="md:text-5xl text-3xl font-bold mb-4 text-purple-900">STUDENT SUCCESS STORIES</h2>
+              <p className="text-blue-600  mb-2">Endless possibilities begin here</p>
             </div>
 
             <div className="relative">
@@ -34,32 +34,32 @@ export default function FifthSection() {
                 <CarouselDemo />
               </div>
               
-              <div className="hidden md:flex   relative w-full">
+              <div className="relative w-full md:mt-0 mt-24">
                 <div className="flex space-x-4 animate-marquee w-max">
                   {[...Array(2)].flatMap(() => [
                     <img
                       key="1"
-                      src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=500&auto=format&fit=crop"
+                      src="/images/slide1.png"
                       alt="Students 1"
-                      className="h-48 object-contain rounded-xl"
+                      className="w-56 object-contain rounded-xl"
                     />, 
                     <img
                       key="2"
-                      src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=500&auto=format&fit=crop"
+                      src="/images/slide2.png"
                       alt="Students 2"
-                      className="h-56 object-contain rounded-xl"
+                      className="w-56 object-contain rounded-xl"
                     />, 
                     <img
                       key="3"
-                      src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=500&auto=format&fit=crop"
+                      src="/images/slide3.png"
                       alt="Students 3"
-                      className="h-48 object-contain rounded-xl"
+                      className="w-56 object-contain rounded-xl"
                     />, 
                     <img
                       key="4"
-                      src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=500&auto=format&fit=crop"
+                      src="/images/slide4.png"
                       alt="Students 4"
-                      className="h-56 object-contain rounded-xl"
+                      className="w-56 object-contain rounded-xl"
                     />
                   ])}
                 </div>

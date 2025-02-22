@@ -31,10 +31,10 @@ export default function FourthSection() {
               {/* Left Section */}
               <div className="space-y-6 md:space-y-8 text-center md:text-left">
                 <div>
-                  <h2 className="text-3xl md:text-5xl font-bold text-purple-900 mb-2">
+                  <h2 className="md:text-5xl text-3xl font-bold mb-4 text-purple-900">
                     WHO WE ARE
                   </h2>
-                  <p className="text-blue-500 text-lg md:text-xl">
+                  <p className="text-blue-600  mb-2">
                     Endless possibilities begin here
                   </p>
                 </div>
@@ -48,16 +48,16 @@ export default function FourthSection() {
 
                 <div className="flex flex-wrap justify-center md:justify-start gap-4">
                   {[
-                    "https://images.unsplash.com/photo-1564981797816-1043664bf78d?q=80&w=150&auto=format&fit=crop",
-                    "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?q=80&w=150&auto=format&fit=crop",
-                    "https://images.unsplash.com/photo-1599687267812-35c05ff70ee9?q=80&w=150&auto=format&fit=crop",
-                    "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=150&auto=format&fit=crop",
+                    "/images/Uni1.png",
+                    "/images/Uni2.png",
+                    "/images/Uni3.png",
+                    "/images/Uni4.png",
                   ].map((src, index) => (
                     <img
                       key={index}
                       src={src}
                       alt={`University Logo ${index + 1}`}
-                      className="h-12 md:h-16 w-auto object-contain max-w-full"
+                      className="h-12 md:h-24 w-auto object-contain max-w-full"
                     />
                   ))}
                 </div>
