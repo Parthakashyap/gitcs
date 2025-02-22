@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import CapIcon from "@/public/images/cap.svg";
 import GlobeIcon from "@/public/images/globe.svg";
 import BagIcon from "@/public/images/bag.svg";
-import Image from "next/image";
 
 export default function SecondSection() {
   const [scrolled, setScrolled] = useState(false);
@@ -46,6 +45,8 @@ export default function SecondSection() {
       "perspective(1000px) rotateX(0) rotateY(0) translateZ(0) scale(1)";
   };
 
+  const icons = [CapIcon, GlobeIcon, BagIcon];
+
   return (
     <section
       className={`fixed w-full h-screen transition-transform duration-700 ease-in-out z-[50] ${
@@ -55,11 +56,11 @@ export default function SecondSection() {
       <div className="absolute inset-0 bg-[#f5f5f5]">
         <div className="container mx-auto px-4 py-20">
           <div className="max-w-6xl mx-auto">
-            <div className="mb-16">
+            <div className=" mb-16">
               <h2 className="md:text-5xl text-3xl font-bold mb-4 text-purple-900">
                 WHY STUDY ABROAD WITH US
               </h2>
-              <p className="text-blue-600 mb-2">
+              <p className="text-blue-600  mb-2">
                 Professional-Streamlined-Simple
               </p>
             </div>
@@ -70,7 +71,6 @@ export default function SecondSection() {
                   title: "Expert Guidance & Support",
                   description:
                     "Our experienced advisors assist you every step of the way, from application to arrival.",
-                  icon: CapIcon,
                   position: "bottom",
                   bg: "from-purple-500/10 to-blue-500/10",
                 },
@@ -78,7 +78,6 @@ export default function SecondSection() {
                   title: "Wide Range of Study Destinations",
                   description:
                     "Choose from top universities across multiple countries worldwide.",
-                  icon: GlobeIcon,
                   position: "top",
                   bg: "from-green-500/10 to-teal-500/10",
                 },
@@ -86,7 +85,6 @@ export default function SecondSection() {
                   title: "Career-Focused Programs",
                   description:
                     "Find programs designed to enhance your career prospects and global opportunities.",
-                  icon: BagIcon,
                   position: "bottom",
                   bg: "from-amber-500/10 to-orange-500/10",
                 },
@@ -97,26 +95,36 @@ export default function SecondSection() {
                   onMouseMove={handleMouseMove}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <div className="bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] text-white p-[1.6rem] md:p-8 rounded-2xl md:h-[300px] w-full relative overflow-hidden flex flex-col justify-between">
+                  <div className="bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] text-white p-[1.6rem] md:p-8 rounded-2xl md:h-[300px] w-full  relative overflow-hidden flex flex-col justify-between">
                     <div
                       className={`absolute inset-0 bg-gradient-to-br ${item.bg} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                     ></div>
 
                     <div className="relative z-10">
                       <h3 className="text-2xl font-light mb-3 w-44">{item.title}</h3>
-                      <p className="text-white/70 text-sm w-52">{item.description}</p>
+                      <p className="text-white/70 text-sm w-52">
+                        {item.description}
+                      </p>
                     </div>
 
+                    {/* Image Placement */}
                     <div
                       className={`absolute transition-all duration-300 ease-in-out group ${
                         item.position === "top"
                           ? "-top-3 -right-3"
                           : "-bottom-3 -right-3"
-                      } w-32 h-32 flex items-center justify-center rounded-2xl`}
+                      } w-32 h-32 flex items-center justify-center rounded-2xl ${
+                        index !== 3
+                          ? "group-hover:top-2 group-hover:-right-2 transform group-hover:-translate-x-1 group-hover:-translate-y-1"
+                          : ""
+                      }`}
                     >
+                      {/* Light Background */}
                       <div className="absolute w-full h-full bg-[#f5f5f5] rounded-2xl transition-all duration-300 ease-in-out group-hover:opacity-0"></div>
+
+                      {/* Image Container */}
                       <div className="relative w-24 h-24 flex items-center justify-center bg-[#372749] rounded-full">
-                        <Image src={item.icon} alt={item.title} width={64} height={64} />
+                        <img src={icons[index].src} alt={item.title} className="w-16 h-16" />
                       </div>
                     </div>
                   </div>
