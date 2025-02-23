@@ -54,7 +54,7 @@ export default function SecondSection() {
       }`}
     >
       <div className="absolute inset-0 bg-[#f5f5f5]">
-        <div className="container mx-auto px-4 py-20">
+        <div className="container mx-auto px-4 py-2 md:py-20">
           <div className="max-w-6xl mx-auto">
             <div className="mb-16">
               <h2 className="md:text-5xl text-3xl font-bold mb-4 text-[#230344]">
