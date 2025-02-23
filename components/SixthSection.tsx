@@ -24,9 +24,9 @@ export default function ContactSection() {
     >
       <div className="absolute inset-0 bg-white">
         <div className="max-w-9xl mx-auto px-6 pl-10 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
             {/* Contact Form Section */}
-            <div className="space-y-8">
+            <div className="space-y-8 w-[90%] pl-24">
               <div className="space-y-4">
                 <p className="text-sm text-gray-600 uppercase">
                   Send us an email
@@ -90,13 +90,13 @@ export default function ContactSection() {
             </div>
 
             {/* Image Section */}
-            <div className="hidden -mt-60 md:flex justify-center">
+            <div className="hidden -mt-40 md:flex justify-center">
               <GlobeDemo/>
             </div>
           </div>
 
           {/* Counseling Pathway Section */}
-          <div className=" hidden md:block max-w-lg mx-auto md:absolute md:left-1/2 md:bottom-0 md:transform md:-translate-x-1/2 w-full">
+          {/* <div className=" hidden md:block max-w-lg mx-auto md:absolute md:left-1/2 md:bottom-0 md:transform md:-translate-x-1/2 w-full">
             <div className="bg-gray-50 p-6 rounded-lg mt-8 border-t-4 border-blue-500 shadow-md">
               <h3 className="text-lg font-semibold mb-4 text-center md:text-left">
                 Get your counseling pathway
@@ -112,7 +112,7 @@ export default function ContactSection() {
                 </Button>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
