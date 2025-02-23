@@ -19,10 +19,10 @@ export default function SummerProgram() {
     document.body.style.height = "auto";
   }, []);
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative h-screen bg-[url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070')] bg-cover bg-center">
-      <div className="absolute inset-0 bg-purple-900/30">
+      <div className="absolute inset-0 bg-[#230344]/30">
         <nav className="absolute top-0 left-0 right-0 p-6 flex justify-between items-center px-6 md:px-[10%]">
           <div className="flex items-center gap-2">
             <img src="/images/Group.png" alt="logo" className="h-12 md:h-16 w-auto" />
@@ -30,15 +30,15 @@ export default function SummerProgram() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex gap-8 text-white text-sm">
-            <a href="#" className="hover:text-purple-400">Home</a>
+            <a href="/" className="hover:text-purple-400">Home</a>
             <a href="/program" className="hover:text-purple-400">Program</a>
             <a href="/career" className="hover:text-purple-400">Career & Guidance</a>
-            <a href="#" className="hover:text-purple-400">Student Resources</a>
-            <a href="#" className="hover:text-purple-400">Media & Community</a>
-            <a href="#" className="hover:text-purple-400">About Us</a>
+            <a href="/studentResource" className="hover:text-purple-400">Student Resources</a>
+            <a href="/mediaCommunity" className="hover:text-purple-400">Media & Community</a>
+            <a href="/aboutUs" className="hover:text-purple-400">About Us</a>
           </div>
 
-          <button className="hidden md:block bg-white text-purple-900 px-6 py-2 rounded-full hover:bg-purple-100 transition-colors">
+          <button className="hidden md:block bg-white text-[#230344] px-6 py-2 rounded-full hover:bg-purple-100 transition-colors">
             Contact
           </button>
 
@@ -50,8 +50,8 @@ export default function SummerProgram() {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="absolute top-16 left-0 w-full bg-black/90 p-6 flex flex-col items-center gap-4 text-white md:hidden">
-          <a href="#" className="hover:text-purple-400">
+          <div className="absolute top-16 left-0 w-full bg-[#230344] p-6 flex flex-col items-center gap-4 text-white md:hidden">
+          <a href="/" className="hover:text-purple-400">
             Home
           </a>
           <a href="/program" className="hover:text-purple-400">
@@ -63,13 +63,13 @@ export default function SummerProgram() {
           <a href="/studentResource" className="hover:text-purple-400">
             Student Resources
           </a>
-          <a href="#" className="hover:text-purple-400">
+          <a href="/mediaCommunity" className="hover:text-purple-400">
             Media & Community
           </a>
-          <a href="#" className="hover:text-purple-400">
+          <a href="/aboutUs" className="hover:text-purple-400">
             About Us
           </a>
-          <button className="bg-white text-purple-900 px-6 py-2 rounded-full hover:bg-purple-100 transition-colors">
+          <button className="bg-white text-[#230344] px-6 py-2 rounded-full hover:bg-purple-100 transition-colors">
             Contact
           </button>
         </div>
@@ -95,7 +95,7 @@ export default function SummerProgram() {
       <section className="py-20 bg-white">
   <div className="container mx-auto px-4">
     <div className="text-center mb-16">
-      <h2 className="text-3xl md:text-4xl font-bold text-purple-900 mb-2">
+      <h2 className="text-3xl md:text-4xl font-bold text-[#230344] mb-2">
         OUR COMPREHENSIVE PROGRAMS
       </h2>
       <p className="text-blue-500 text-sm md:text-base">
@@ -119,24 +119,24 @@ export default function SummerProgram() {
         </p>
         <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
           <li className="flex items-center gap-2 md:gap-3">
-            <div className="w-2 h-2 bg-purple-900 rounded-full"></div>
+            <div className="w-2 h-2 bg-[#230344] rounded-full"></div>
             <span>Leadership Training</span>
           </li>
           <li className="flex items-center gap-2 md:gap-3">
-            <div className="w-2 h-2 bg-purple-900 rounded-full"></div>
+            <div className="w-2 h-2 bg-[#230344] rounded-full"></div>
             <span>Communication & Soft Skills Development</span>
           </li>
           <li className="flex items-center gap-2 md:gap-3">
-            <div className="w-2 h-2 bg-purple-900 rounded-full"></div>
+            <div className="w-2 h-2 bg-[#230344] rounded-full"></div>
             <span>International Exposure Workshops</span>
           </li>
           <li className="flex items-center gap-2 md:gap-3">
-            <div className="w-2 h-2 bg-purple-900 rounded-full"></div>
+            <div className="w-2 h-2 bg-[#230344] rounded-full"></div>
             <span>Research & Research Program</span>
           </li>
         </ul>
         <div className="flex justify-center">
-          <button className="bg-purple-900 text-white px-5 py-2 rounded-full hover:bg-purple-800 transition">
+          <button className="bg-[#230344] text-white px-5 py-2 rounded-full hover:bg-purple-800 transition">
             Join Now
           </button>
         </div>
@@ -153,24 +153,24 @@ export default function SummerProgram() {
         </p>
         <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
           <li className="flex items-center gap-2 md:gap-3">
-            <div className="w-2 h-2 bg-purple-900 rounded-full"></div>
+            <div className="w-2 h-2 bg-[#230344] rounded-full"></div>
             <span>Advanced Teaching Techniques</span>
           </li>
           <li className="flex items-center gap-2 md:gap-3">
-            <div className="w-2 h-2 bg-purple-900 rounded-full"></div>
+            <div className="w-2 h-2 bg-[#230344] rounded-full"></div>
             <span>Active Learning & E-Learning Tools</span>
           </li>
           <li className="flex items-center gap-2 md:gap-3">
-            <div className="w-2 h-2 bg-purple-900 rounded-full"></div>
+            <div className="w-2 h-2 bg-[#230344] rounded-full"></div>
             <span>Research & Publications Training</span>
           </li>
           <li className="flex items-center gap-2 md:gap-3">
-            <div className="w-2 h-2 bg-purple-900 rounded-full"></div>
+            <div className="w-2 h-2 bg-[#230344] rounded-full"></div>
             <span>Cross-Cultural Teaching Methods</span>
           </li>
         </ul>
         <div className="flex justify-center">
-          <button className="bg-purple-900 text-white px-5 py-2 rounded-full hover:bg-purple-800 transition">
+          <button className="bg-[#230344] text-white px-5 py-2 rounded-full hover:bg-purple-800 transition">
             Join Now
           </button>
         </div>
@@ -192,7 +192,7 @@ export default function SummerProgram() {
         />
       </div>
       <div>
-        <h2 className="text-3xl md:text-4xl font-bold text-purple-900 mb-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#230344] mb-6">
           SHORT-TERM INTENSIVE LEARNING PROGRAMS
         </h2>
         <p className="text-gray-600 mb-8 text-sm md:text-base">
@@ -224,7 +224,7 @@ export default function SummerProgram() {
         </div>
 
         <div className="flex justify-center">
-          <Button className="mt-8 bg-purple-900 text-white hover:bg-purple-800">
+          <Button className="mt-8 bg-[#230344] text-white hover:bg-purple-800">
             Join Now
           </Button>
         </div>
@@ -238,7 +238,7 @@ export default function SummerProgram() {
       <section className="py-20 bg-white">
   <div className="container mx-auto px-4">
     <div className="text-center mb-16">
-      <h2 className="text-3xl md:text-4xl font-bold text-purple-900 mb-2">
+      <h2 className="text-3xl md:text-4xl font-bold text-[#230344] mb-2">
         MASTER THE SKILLS OF TOMORROW
       </h2>
       <p className="text-blue-500">
@@ -257,7 +257,7 @@ export default function SummerProgram() {
         <div key={index} className="border-gray border-2 bg-white p-6 md:p-8 rounded-3xl">
           <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
             <svg
-              className="w-6 h-6 text-purple-900"
+              className="w-6 h-6 text-[#230344]"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -342,10 +342,10 @@ export default function SummerProgram() {
     </section>
 
       {/* Success Stories Section */}
-      <section className="pt-20 bg-gray-50">
+      <section className="pt-20 bg-gray-50 ">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-purple-900 mb-2">
+            <h2 className="text-4xl font-bold text-[#230344] mb-2">
               OUR STUDENT & FACULTY SUCCESS STORIES
             </h2>
             <p className="text-blue-500">
@@ -358,28 +358,26 @@ export default function SummerProgram() {
       </section>
 
       {/* Help Section */}
-      <div className="mx-screen px-4 bg-gray-50 mt-32 md:mt-0">
-        <div className="max-w-3xl mx-auto bg-gray-200 border-t-4 border-blue-600 p-8 rounded-3xl text-center">
-          <h3 className="text-2xl font-bold text-purple-900 mb-4">
-            Need Guidance? We're Here to Help!
-          </h3>
-          <p className="text-gray-600 mb-6">
-            Let us help you choose the right program
-          </p>
-          <div className="flex gap-4 justify-center">
-            <Button
-              variant="outline"
-              className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
-            >
-              Learn More
-            </Button>
-            <Button className="bg-purple-900 text-white hover:bg-purple-800">
-              Contact Us
-            </Button>
+      <div className="mx-screen px-4 flex items-center justify-center mt-32 md:mt-0">
+        <div className=" hidden md:block w-[40%]">
+          <div className="bg-gray-50 p-6 rounded-lg mt-8 border-t-4 border-blue-500 shadow-md">
+            <h3 className="text-lg font-semibold mb-4 text-center md:text-left">
+            Need Career Advice? Reach Out to Us!
+            </h3>
+            <div className="flex flex-col md:flex-row gap-4">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 p-3 border rounded-md"
+              />
+              <Button className="w-full md:w-auto bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md">
+                Email
+              </Button>
+            </div>
           </div>
         </div>
       </div>
-      <section className="pt-12 bg-gray-50">
+      <section className="md:pt-12 bg-gray-50">
         <footer className="bg-[#1c1f2a] text-white ">
           <div className="max-w-7xl mx-auto px-6 py-12">
             <div className="mb-6"></div>

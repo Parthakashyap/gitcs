@@ -69,7 +69,7 @@ export default function HeroSection() {
               />
             </div>
             <div className="hidden md:flex gap-8 text-white text-sm">
-              <a href="#" className="hover:text-purple-400">
+              <a href="/" className="hover:text-purple-400">
                 Home
               </a>
               <a href="/program" className="hover:text-purple-400">
@@ -81,10 +81,10 @@ export default function HeroSection() {
               <a href="/studentResource" className="hover:text-purple-400">
                 Student Resources
               </a>
-              <a href="#" className="hover:text-purple-400">
+              <a href="/mediaCommunity" className="hover:text-purple-400">
                 Media & Community
               </a>
-              <a href="#" className="hover:text-purple-400">
+              <a href="/aboutUs" className="hover:text-purple-400">
                 About Us
               </a>
             </div>
@@ -104,8 +104,8 @@ export default function HeroSection() {
           </nav>
 
           {menuOpen && (
-            <div className="absolute top-16 left-0 w-full bg-black/90 p-6 flex flex-col items-center gap-4 text-white md:hidden">
-              <a href="#" className="hover:text-purple-400">
+            <div className="absolute top-16 left-0 w-full bg-[#230344]/90 p-6 flex flex-col items-center gap-4 text-white md:hidden">
+              <a href="/" className="hover:text-purple-400">
                 Home
               </a>
               <a href="/program" className="hover:text-purple-400">
@@ -117,10 +117,10 @@ export default function HeroSection() {
               <a href="/studentResource" className="hover:text-purple-400">
                 Student Resources
               </a>
-              <a href="#" className="hover:text-purple-400">
+              <a href="/mediaCommunity" className="hover:text-purple-400">
                 Media & Community
               </a>
-              <a href="#" className="hover:text-purple-400">
+              <a href="/aboutUs" className="hover:text-purple-400">
                 About Us
               </a>
               <button className="bg-white text-purple-900 px-6 py-2 rounded-full hover:bg-purple-100 transition-colors">

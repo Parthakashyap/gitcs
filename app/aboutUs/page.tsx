@@ -3,8 +3,15 @@
 import { ChevronDown, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
+import { ImagesSliderDemo } from "@/components/ui/images-slider-demo";
+import Image from "next/image";
+import uni1 from "@/public/images/Uni1.png";
+import uni2 from "@/public/images/Uni2.png";
+import uni3 from "@/public/images/Uni3.png";
+import uni4 from "@/public/images/Uni4.png";
+import { GlobeDemo } from "@/components/ui/globeDemo";
 
-export default function StudentResourcesPage() {
+export default function AboutUsPage() {
   const handleScrollDown = () => {
     window.scrollTo({
       top: window.innerHeight,
@@ -12,86 +19,57 @@ export default function StudentResourcesPage() {
     });
   };
 
-  const [expandedProgram, setExpandedProgram] = useState<string | null>(null);
-
-  const toggleProgram = (program: string) => {
-    setExpandedProgram(expandedProgram === program ? null : program);
-  };
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const topUniversity = [
+  const teamMembers = [
     {
-      title: "Havard University",
-      date: "19 Jan, 2025",
-      duration: "15 min",
+      name: "Adam Williams",
+      role: "Founder & CEO",
       image:
-        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=500&auto=format&fit=crop",
-      degree: "Bachelor Degree",
-      subtitle: "Bachelor of Science in Computer Science",
-      location: "New York, USA",
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=300&auto=format&fit=crop",
     },
     {
-      title: "Live Career Counseling",
-      date: "15 Jan, 2025",
-      duration: "15 min",
+      name: "Rachel McDermott",
+      role: "Co-Founder & Director",
       image:
-        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=500&auto=format&fit=crop",
-      degree: "Bachelor Degree",
-      subtitle: "Bachelor of Science in Computer Science",
-      location: "New York, USA",
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=300&auto=format&fit=crop",
     },
     {
-      title: "Success for Your Future",
-      date: "10 Jan, 2025",
-      duration: "25 min",
+      name: "Eve Williams",
+      role: "Co-Founder & CMO",
       image:
-        "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=500&auto=format&fit=crop",
-      degree: "Bachelor Degree",
-      subtitle: "Bachelor of Science in Computer Science",
-      location: "New York, USA",
-    },
-    {
-      title: "Havard University",
-      date: "19 Jan, 2025",
-      duration: "15 min",
-      image:
-        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=500&auto=format&fit=crop",
-      degree: "Bachelor Degree",
-      subtitle: "Bachelor of Science in Computer Science",
-      location: "New York, USA",
-    },
-    {
-      title: "Live Career Counseling",
-      date: "15 Jan, 2025",
-      duration: "15 min",
-      image:
-        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=500&auto=format&fit=crop",
-      degree: "Bachelor Degree",
-      subtitle: "Bachelor of Science in Computer Science",
-      location: "New York, USA",
-    },
-    {
-      title: "Success for Your Future",
-      date: "10 Jan, 2025",
-      duration: "25 min",
-      image:
-        "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=500&auto=format&fit=crop",
-      degree: "Bachelor Degree",
-      subtitle: "Bachelor of Science in Computer Science",
-      location: "New York, USA",
+        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop",
     },
   ];
+
+  const universityPartners = [
+    {
+      name: "Oxford University",
+      logo: uni1,
+    },
+    {
+      name: "Yale University",
+      logo: uni2,
+    },
+    {
+      name: "University of Auckland",
+      logo: uni3,
+    },
+    {
+      name: "University of Sydney",
+      logo: uni4,
+    },
+  ];
+
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     document.body.style.height = "auto";
   }, []);
-
+  
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-
       <section className="relative h-screen bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070')] bg-cover bg-center">
-        <div className="absolute inset-0 bg-[#230344]/50">
+        <div className="absolute inset-0 bg-[#230344]/60">
           <nav className="absolute top-0 left-0 right-0 p-6 flex justify-between items-center px-6 md:px-[10%]">
             <div className="flex items-center gap-2">
               <img
@@ -115,10 +93,10 @@ export default function StudentResourcesPage() {
               <a href="/studentResource" className="hover:text-purple-400">
                 Student Resources
               </a>
-              <a href=" /mediaCommunity" className="hover:text-purple-400">
+              <a href="/mediaCommunity" className="hover:text-purple-400">
                 Media & Community
               </a>
-              <a href=" /aboutUs" className="hover:text-purple-400">
+              <a href="/aboutUs" className="hover:text-purple-400">
                 About Us
               </a>
             </div>
@@ -138,7 +116,7 @@ export default function StudentResourcesPage() {
 
           {/* Mobile Menu */}
           {menuOpen && (
-            <div className="absolute top-16 left-0 w-full bg-[#230344]/90 p-6 flex flex-col items-center gap-4 text-white md:hidden">
+            <div className="absolute top-16 left-0 w-full bg-black/90 p-6 flex flex-col items-center gap-4 text-white md:hidden">
               <a href="/" className="hover:text-purple-400">
                 Home
               </a>
@@ -154,7 +132,7 @@ export default function StudentResourcesPage() {
               <a href="/mediaCommunity" className="hover:text-purple-400">
                 Media & Community
               </a>
-              <a href="/aboutUs" className="hover:text-purple-400">
+              <a href="aboutUs" className="hover:text-purple-400">
                 About Us
               </a>
               <button className="bg-white text-[#230344] px-6 py-2 rounded-full hover:bg-purple-100 transition-colors">
@@ -164,9 +142,10 @@ export default function StudentResourcesPage() {
           )}
 
           <div className="container mx-auto px-6 md:px-4 h-full flex flex-col justify-center items-center text-center">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-              Shape Your Future with Expert <br />
-              Career Guidance
+            <h1 className="md:text-7xl text-5xl font-bold text-white mb-6">
+              Empowering Global Learners
+              <br />
+              for a Brighter Future
             </h1>
             <button
               onClick={() =>
@@ -179,76 +158,271 @@ export default function StudentResourcesPage() {
           </div>
         </div>
       </section>
-
-      <section className="py-8">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#230344] mb-2">
-              Explore Top Universities in the USA
+      {/* Who We Are Section */}
+      <section className="py-20 bg-white">
+  <div className="container mx-auto px-4">
+    <div className="max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+        <div className="text-center md:text-left">
+          <div className="mb-8">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-[#230344]">
+              WHO WE ARE
             </h2>
-            <p className="text-blue-500">
-              We offer a wide range of programs to help students and
-              professionals
-              <br className="hidden md:block" />
-              enhance their skills and career prospects.
+            <p className="text-[#1F94F3] mb-2">
+              Endless possibilities begin here
             </p>
           </div>
 
-          {/* Responsive Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {topUniversity.map((event, index) => (
-              <div
+          <p className="text-black text-base md:text-lg leading-relaxed">
+            We are a team of dedicated education consultants passionate
+            about helping students achieve their dream of studying abroad.
+            With years of experience, we provide expert guidance,
+            application assistance, and end-to-end support.
+          </p>
+
+          <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-6">
+            {[
+              "/images/Uni1.png",
+              "/images/Uni2.png",
+              "/images/Uni3.png",
+              "/images/Uni4.png",
+            ].map((src, index) => (
+              <img
                 key={index}
-                className="bg-white rounded-2xl overflow-hidden border border-[#230344]/50 max-w-sm flex flex-col mx-auto"
-              >
-                {/* Image */}
-                <div className="relative">
-                  <img
-                    src={event.image}
-                    alt={event.title}
-                    className="w-full h-48 object-cover"
-                  />
-                </div>
-
-                {/* Content */}
-                <div className="p-5 flex flex-col flex-grow">
-                  <h3 className="text-lg font-semibold text-gray-900">
-                    {event.title}
-                  </h3>
-                  <p className="text-md font-bold text-gray-900">
-                    {event.subtitle}
-                  </p>
-                  <div className="flex items-center gap-2 text-sm text-gray-600 mt-2">
-                    <span>🎓 {event.degree}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600 mt-2">
-                    <span>⏳ {event.duration}</span>
-                  </div>
-
-                  {/* Bottom Section - Location & Button */}
-                  <div className="flex justify-between items-center mt-auto">
-                    <div className="flex items-center gap-2 text-sm text-gray-600">
-                      <span>📍 {event.location}</span>
-                    </div>
-                    <button className="text-[#230344] border border-[#230344] rounded-full px-4 py-2 text-sm font-semibold hover:bg-purple-100">
-                      Enroll now
-                    </button>
-                  </div>
-                </div>
-              </div>
+                src={src}
+                alt={`University Logo ${index + 1}`}
+                className="h-12 md:h-24 w-auto object-contain max-w-full"
+              />
             ))}
+          </div>
+
+          <div className="mt-8">
+            <Button className="bg-[#230344] text-white px-6 md:px-8 py-4 md:py-6 rounded-full text-lg md:text-xl hover:bg-purple-900 transition-colors w-full md:w-auto">
+              Learn More About Us
+            </Button>
           </div>
         </div>
 
-        {/* Button */}
-        <div className="text-center mt-12">
-          <button className="border border-[#230344] text-[#230344] hover:bg-[#230344] hover:text-white rounded-full px-6 py-2">
-            View all
-          </button>
+        <div className="relative flex justify-center">
+          <div className="aspect-[4/3] w-full max-w-md md:max-w-full rounded-2xl overflow-hidden">
+            <ImagesSliderDemo />
+          </div>
+          <div className="absolute -bottom-4 right-1/2 translate-x-1/2 md:translate-x-0 md:-right-8 w-24 md:w-32 h-24 md:h-32 bg-[#230344] rounded-full flex items-center justify-center shadow-lg">
+            <div className="text-white text-center">
+              <div className="text-2xl md:text-3xl font-bold">15+</div>
+              <div className="text-xs md:text-sm">
+                Years of
+                <br />
+                Experience
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-      {/* Help Section */}
+      {/* Our Commitment Section */}
+      <section className="py-20 bg-gray-50">
+  <div className="container mx-auto px-4">
+    <div className="max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+        <div className="flex justify-center">
+          <img
+            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop"
+            alt="Students in classroom"
+            className="rounded-3xl shadow-xl max-w-full h-auto"
+          />
+        </div>
+
+        <div className="text-center md:text-left">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#230344] mb-6 md:mb-8">
+            OUR COMMITMENT TO
+            <br className="hidden md:block" />
+            EDUCATION & EXCELLENCE
+          </h2>
+
+          <div className="space-y-6 md:space-y-8">
+            <div>
+              <h3 className="text-xl font-bold mb-2">Mission</h3>
+              <p className="text-gray-600">
+                To provide high-quality education and career guidance to
+                students and educators worldwide, bridging the gap between
+                knowledge and opportunity.
+              </p>
+            </div>
+
+            <div className="w-full h-[0.2rem] bg-[#230344]/20 rounded-full" />
+
+            <div>
+              <h3 className="text-xl font-bold mb-2">Vision</h3>
+              <p className="text-gray-600">
+                To create a world with an empowered academic community that
+                fosters innovation, skill development, and lifelong learning.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      {/* Partners Section */}
+      <section className="py-20 bg-white">
+  <div className="container mx-auto px-4">
+    <div className="text-center mb-12 md:mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-[#230344] mb-2">
+        SCHOOL & UNIVERSITY PARTNERS
+      </h2>
+      <p className="text-[#1F94F3] mb-2">
+        Collaborating with Leading Educational Institutions
+      </p>
+    </div>
+
+    {/* Logos Section */}
+    <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-8">
+      {universityPartners.map((partner, index) => (
+        <Image
+          key={index}
+          src={partner.logo}
+          alt={partner.name}
+          className="h-24 md:h-40 w-auto object-contain"
+          width={150}
+          height={96}
+        />
+      ))}
+    </div>
+
+    {/* Button Section */}
+    <div className="text-center">
+      <Button
+        variant="outline"
+        className="border-[#230344] text-[#230344] hover:bg-purple-900 hover:text-white rounded-full px-6 py-3 md:px-8 md:py-4 text-base md:text-lg"
+      >
+        View Our Partners
+      </Button>
+    </div>
+  </div>
+</section>
+
+      {/* Team Section */}
+      <section className="py-20">
+  <div className="container mx-auto px-4">
+    {/* Title Section */}
+    <div className="text-center mb-12 md:mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-[#230344] mb-2">
+        MEET THE MINDS BEHIND OUR MISSION
+      </h2>
+      <p className="text-blue-500 text-sm md:text-base">
+        Our team brings vast experience in education, career guidance, and
+        industry insights,
+        <br className="hidden md:block" />
+        dedicated to shaping the future of education.
+      </p>
+    </div>
+
+    {/* Team Members Grid */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto">
+      {teamMembers.map((member, index) => (
+        <div
+          key={index}
+          className="bg-white rounded-xl overflow-hidden border border-[#230344]/30 text-center"
+        >
+          <div className="aspect-square overflow-hidden">
+            <img
+              src={member.image}
+              alt={member.name}
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="p-4 md:p-6">
+            <h3 className="text-lg md:text-xl font-bold mb-2">{member.name}</h3>
+            <div className="w-full h-px bg-purple-900/20 rounded-full mb-2" />
+            <p className="text-gray-600 text-sm md:text-base">{member.role}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+      {/* Contact Form Section */}
+      <div className=" bg-white">
+        <div className="max-w-9xl mx-auto px-6 pl-10 md:py-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+            {/* Contact Form Section */}
+            <div className="space-y-8 w-full md:w-[90%] md:pl-24">
+              <div className="space-y-4">
+                <p className="text-sm text-gray-600 uppercase">
+                  Send us an email
+                </p>
+                <h2 className="text-3xl md:text-4xl font-semibold">
+                  Got a question? Ask our team!
+                </h2>
+                <div className="w-24 h-[.15rem] bg-[#1F94F3]"></div>
+                <p className="hidden md:block text-gray-600">
+                  Fill out the contact form, and we will get back to you with
+                  the right answer.
+                </p>
+              </div>
+
+              <form className="space-y-2 md:space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    placeholder="First Name*"
+                    className="w-full p-3 border rounded-md bg-gray-50"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Last Name*"
+                    className="w-full p-3 border rounded-md bg-gray-50"
+                  />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input
+                    type="email"
+                    placeholder="Email*"
+                    className="w-full p-3 border rounded-md bg-gray-50"
+                  />
+                  <input
+                    type="tel"
+                    placeholder="Phone*"
+                    className="w-full p-3 border rounded-md bg-gray-50"
+                  />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <select className="w-full p-3 border rounded-md bg-gray-50">
+                    <option value="">State of residence</option>
+                  </select>
+                  <input
+                    type="text"
+                    placeholder="Subject"
+                    className="w-full p-3 border rounded-md bg-gray-50"
+                  />
+                </div>
+                <textarea
+                  placeholder="Your Message"
+                  rows={4}
+                  className="w-full p-3 border rounded-md bg-gray-50"
+                />
+                <div className="flex justify-center">
+                  <Button className="w-full md:w-auto bg-[#230344] hover:bg-purple-900 text-white px-6 py-3 rounded-3xl">
+                    Send Message
+                  </Button>
+                </div>
+              </form>
+            </div>
+
+            {/* Image Section */}
+            <div className="hidden -mt-40 md:flex justify-center">
+              <GlobeDemo />
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="mx-screen px-4 flex items-center justify-center mt-32 md:mt-0">
         <div className=" hidden md:block w-[40%]">
           <div className="bg-gray-50 p-6 rounded-lg mt-8 border-t-4 border-blue-500 shadow-md">
@@ -268,7 +442,7 @@ export default function StudentResourcesPage() {
           </div>
         </div>
       </div>
-      <section className="md:pt-12 bg-gray-50 ">
+      <section className="md:pt-12 ">
         <footer className="bg-[#1c1f2a] text-white ">
           <div className="max-w-7xl mx-auto px-6 py-12">
             <div className="mb-6"></div>

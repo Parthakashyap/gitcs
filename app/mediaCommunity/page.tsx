@@ -1,18 +1,16 @@
 "use client";
 
-import { ChevronDown, Menu } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useEffect, useState } from 'react';
-
+import { ChevronDown, Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
 export default function MediaCommunityPage() {
   const handleScrollDown = () => {
     window.scrollTo({
       top: window.innerHeight,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
-  
 
   const [expandedProgram, setExpandedProgram] = useState<string | null>(null);
 
@@ -21,20 +19,19 @@ export default function MediaCommunityPage() {
   };
   const [menuOpen, setMenuOpen] = useState(false);
 
-
   const galleryImages = [
-    'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=500&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=500&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=500&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=500&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=500&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=500&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=500&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=500&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=500&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=500&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=500&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=500&auto=format&fit=crop'
+    "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=500&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=500&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=500&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=500&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=500&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=500&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=500&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=500&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=500&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=500&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=500&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=500&auto=format&fit=crop",
   ];
 
   const upcomingEvents = [
@@ -42,24 +39,26 @@ export default function MediaCommunityPage() {
       title: "New Admission Open",
       date: "19 Jan, 2025",
       duration: "15 min",
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=500&auto=format&fit=crop"
+      image:
+        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=500&auto=format&fit=crop",
     },
     {
       title: "Live Career Counseling",
       date: "15 Jan, 2025",
       duration: "15 min",
-      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=500&auto=format&fit=crop"
+      image:
+        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=500&auto=format&fit=crop",
     },
     {
       title: "Success for Your Future",
       date: "10 Jan, 2025",
       duration: "25 min",
-      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=500&auto=format&fit=crop"
-    }
+      image:
+        "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=500&auto=format&fit=crop",
+    },
   ];
-  
-  
-   useEffect(() => {
+
+  useEffect(() => {
     document.body.style.height = "auto";
   }, []);
 
@@ -67,200 +66,249 @@ export default function MediaCommunityPage() {
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative h-screen bg-[url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2070')] bg-cover bg-center">
-      <div className="absolute inset-0 bg-purple-900/50">
-        <nav className="absolute top-0 left-0 right-0 p-6 flex justify-between items-center px-6 md:px-[10%]">
-          <div className="flex items-center gap-2">
-            <img src="/images/Group.png" alt="logo" className="h-12 md:h-16 w-auto" />
-          </div>
-
-          {/* Desktop Menu */}
-          <div className="hidden md:flex gap-8 text-white text-sm">
-            <a href="#" className="hover:text-purple-400">Home</a>
-            <a href="/program" className="hover:text-purple-400">Program</a>
-            <a href="/career" className="hover:text-purple-400">Career & Guidance</a>
-            <a href="#" className="hover:text-purple-400">Student Resources</a>
-            <a href="#" className="hover:text-purple-400">Media & Community</a>
-            <a href="#" className="hover:text-purple-400">About Us</a>
-          </div>
-
-          <button className="hidden md:block bg-white text-purple-900 px-6 py-2 rounded-full hover:bg-purple-100 transition-colors">
-            Contact
-          </button>
-
-          {/* Mobile Menu Toggle */}
-          <button className="md:hidden text-white" onClick={() => setMenuOpen(!menuOpen)}>
-            <Menu className="w-6 h-6" />
-          </button>
-        </nav>
-
-        {/* Mobile Menu */}
-        {menuOpen && (
-          <div className="absolute top-16 left-0 w-full bg-black/90 p-6 flex flex-col items-center gap-4 text-white md:hidden">
-          <a href="#" className="hover:text-purple-400">
-            Home
-          </a>
-          <a href="/program" className="hover:text-purple-400">
-            Program
-          </a>
-          <a href="/career" className="hover:text-purple-400">
-            Career & Guidance
-          </a>
-          <a href="/studentResource" className="hover:text-purple-400">
-            Student Resources
-          </a>
-          <a href="#" className="hover:text-purple-400">
-            Media & Community
-          </a>
-          <a href="#" className="hover:text-purple-400">
-            About Us
-          </a>
-          <button className="bg-white text-purple-900 px-6 py-2 rounded-full hover:bg-purple-100 transition-colors">
-            Contact
-          </button>
-        </div>
-        )}
-
-        <div className="container mx-auto px-6 md:px-4 h-full flex flex-col justify-center items-center text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-          Stay Connected with Our<br />Vibrant Community
-
-          </h1>
-          <button
-            onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
-            className="mt-12 p-2 rounded-full border border-white/20 hover:bg-white/10 transition-colors"
-          >
-            <ChevronDown className="w-6 h-6 text-white" />
-          </button>
-        </div>
-      </div>
-    </section>
-
-
-
-
-
-      {/* Gallery Section */}
-<section className="py-20 bg-white">
-  <div className="container mx-auto px-4">
-    <div className="text-center mb-16">
-      <h2 className="text-4xl font-bold text-purple-900 mb-2">A GLIMPSE INTO OUR JOURNEY</h2>
-      <p className="text-blue-500">
-        Browse through moments captured from our various programs, events,
-        <br className="hidden md:block" />
-        and student experiences. Witness the vibrancy of our global community.
-      </p>
-    </div>
-
-    {/* Grid for PC, Slider for Mobile */}
-    <div className="max-w-6xl mx-auto">
-      <div className="hidden sm:grid grid-cols-4 gap-4">
-        {galleryImages.map((image, index) => (
-          <div key={index} className="aspect-square overflow-hidden rounded-xl">
-            <img
-              src={image}
-              alt={`Gallery image ${index + 1}`}
-              className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-            />
-          </div>
-        ))}
-      </div>
-
-      {/* Mobile Slider */}
-      <div className="sm:hidden flex overflow-x-auto gap-4 snap-x snap-mandatory scrollbar-hide">
-        {galleryImages.map((image, index) => (
-          <div key={index} className="flex-shrink-0 w-3/4 snap-center">
-            <div className="aspect-square overflow-hidden rounded-xl">
+        <div className="absolute inset-0 bg-[#230344]/50">
+          <nav className="absolute top-0 left-0 right-0 p-6 flex justify-between items-center px-6 md:px-[10%]">
+            <div className="flex items-center gap-2">
               <img
-                src={image}
-                alt={`Gallery image ${index + 1}`}
-                className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                src="/images/Group.png"
+                alt="logo"
+                className="h-12 md:h-16 w-auto"
               />
             </div>
+
+            {/* Desktop Menu */}
+            <div className="hidden md:flex gap-8 text-white text-sm">
+              <a href="/" className="hover:text-purple-400">
+                Home
+              </a>
+              <a href="/program" className="hover:text-purple-400">
+                Program
+              </a>
+              <a href="/career" className="hover:text-purple-400">
+                Career & Guidance
+              </a>
+              <a href="/studentResource" className="hover:text-purple-400">
+                Student Resources
+              </a>
+              <a href="/mediaCommunity" className="hover:text-purple-400">
+                Media & Community
+              </a>
+              <a href="/aboutUs" className="hover:text-purple-400">
+                About Us
+              </a>
+            </div>
+
+            <button className="hidden md:block bg-white text-purple-900 px-6 py-2 rounded-full hover:bg-purple-100 transition-colors">
+              Contact
+            </button>
+
+            {/* Mobile Menu Toggle */}
+            <button
+              className="md:hidden text-white"
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              <Menu className="w-6 h-6" />
+            </button>
+          </nav>
+
+          {/* Mobile Menu */}
+          {menuOpen && (
+            <div className="absolute top-16 left-0 w-full bg-[#230344]/90 p-6 flex flex-col items-center gap-4 text-white md:hidden">
+              <a href="#" className="hover:text-purple-400">
+                Home
+              </a>
+              <a href="/program" className="hover:text-purple-400">
+                Program
+              </a>
+              <a href="/career" className="hover:text-purple-400">
+                Career & Guidance
+              </a>
+              <a href="/studentResource" className="hover:text-purple-400">
+                Student Resources
+              </a>
+              <a href="/mediaCommunity" className="hover:text-purple-400">
+                Media & Community
+              </a>
+              <a href="/aboutUs" className="hover:text-purple-400">
+                About Us
+              </a>
+              <button className="bg-white text-[#230344] px-6 py-2 rounded-full hover:bg-purple-100 transition-colors">
+                Contact
+              </button>
+            </div>
+          )}
+
+          <div className="container mx-auto px-6 md:px-4 h-full flex flex-col justify-center items-center text-center">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+              Stay Connected with Our
+              <br />
+              Vibrant Community
+            </h1>
+            <button
+              onClick={() =>
+                window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
+              }
+              className="mt-12 p-2 rounded-full border border-white/20 hover:bg-white/10 transition-colors"
+            >
+              <ChevronDown className="w-6 h-6 text-white" />
+            </button>
           </div>
-        ))}
-      </div>
-    </div>
+        </div>
+      </section>
 
-    {/* Button */}
-    <div className="text-center mt-8">
-      <Button variant="outline" className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white rounded-full h-min">
-        View all
-      </Button>
-    </div>
-  </div>
-</section>
+      {/* Gallery Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-[#230344] mb-2">
+              A GLIMPSE INTO OUR JOURNEY
+            </h2>
+            <p className="text-blue-500">
+              Browse through moments captured from our various programs, events,
+              <br className="hidden md:block" />
+              and student experiences. Witness the vibrancy of our global
+              community.
+            </p>
+          </div>
 
+          {/* Grid for PC, Slider for Mobile */}
+          <div className="max-w-6xl mx-auto">
+            <div className="hidden sm:grid grid-cols-4 gap-4">
+              {galleryImages.map((image, index) => (
+                <div
+                  key={index}
+                  className="aspect-square overflow-hidden rounded-xl"
+                >
+                  <img
+                    src={image}
+                    alt={`Gallery image ${index + 1}`}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Mobile Slider */}
+            <div className="sm:hidden flex overflow-x-auto gap-4 snap-x snap-mandatory scrollbar-hide">
+              {galleryImages.map((image, index) => (
+                <div key={index} className="flex-shrink-0 w-3/4 snap-center">
+                  <div className="aspect-square overflow-hidden rounded-xl">
+                    <img
+                      src={image}
+                      alt={`Gallery image ${index + 1}`}
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Button */}
+          <div className="text-center mt-8">
+            <Button
+              variant="outline"
+              className="border-[#230344] text-[#230344] hover:bg-[#230344] hover:text-white rounded-full h-min"
+            >
+              View all
+            </Button>
+          </div>
+        </div>
+      </section>
 
       {/* Upcoming Events Section */}
       <section className="py-8">
-  <div className="container mx-auto px-4">
-    <div className="text-center mb-16">
-      <h2 className="text-4xl font-bold text-purple-900 mb-2">UPCOMING EVENTS</h2>
-      <p className="text-blue-500">
-        Browse through moments captured from our various programs, events,
-        <br className="hidden md:block" />
-        and student experiences. Witness the vibrancy of our global community.
-      </p>
-    </div>
-
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      {upcomingEvents.map((event, index) => (
-        <div key={index} className="bg-white rounded-xl overflow-hidden border border-[#23034480]/50">
-          <div className="aspect-video overflow-hidden">
-            <img
-              src={event.image}
-              alt={event.title}
-              className="w-full h-full object-cover"
-            />
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-[#230344] mb-2">
+              UPCOMING EVENTS
+            </h2>
+            <p className="text-blue-500">
+              Browse through moments captured from our various programs, events,
+              <br className="hidden md:block" />
+              and student experiences. Witness the vibrancy of our global
+              community.
+            </p>
           </div>
-          <div className="p-6">
-            <h3 className="text-xl font-bold mb-2">{event.title}</h3>
-            <div className="w-full h-[0.1rem] mb-2 bg-[#23034480]/40 rounded-full" />
-            <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600">
-              <div className="flex items-center gap-2">
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                {event.date}
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {upcomingEvents.map((event, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-xl overflow-hidden border border-[#23034480]/50"
+              >
+                <div className="aspect-video overflow-hidden">
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2">{event.title}</h3>
+                  <div className="w-full h-[0.1rem] mb-2 bg-[#23034480]/40 rounded-full" />
+                  <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600">
+                    <div className="flex items-center gap-2">
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                        />
+                      </svg>
+                      {event.date}
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                      {event.duration}
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                {event.duration}
-              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Help Section */}
+      <div className="mx-screen px-4 flex items-center justify-center mt-32 md:mt-0">
+        <div className=" hidden md:block w-[40%]">
+          <div className="bg-gray-50 p-6 rounded-lg mt-8 border-t-4 border-blue-500 shadow-md">
+            <h3 className="text-lg font-semibold mb-4 text-center md:text-left">
+            Need Career Advice? Reach Out to Us!
+            </h3>
+            <div className="flex flex-col md:flex-row gap-4">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 p-3 border rounded-md"
+              />
+              <Button className="w-full md:w-auto bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md">
+                Email
+              </Button>
             </div>
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
-
-
-                 {/* Help Section */}
-                 <div className="mx-screen px-4 bg-gray-50 pt-24 md:mt-0">
-        <div className="max-w-3xl mx-auto bg-gray-200 border-t-4 border-blue-600 p-8 rounded-3xl text-center">
-          <h3 className="text-2xl font-bold text-purple-900 mb-4">
-            Need Guidance? We're Here to Help!
-          </h3>
-          <p className="text-gray-600 mb-6">
-            Let us help you choose the right program
-          </p>
-          <div className="flex gap-4 justify-center">
-            <Button
-              variant="outline"
-              className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
-            >
-              Learn More
-            </Button>
-            <Button className="bg-purple-900 text-white hover:bg-purple-800">
-              Contact Us
-            </Button>
-          </div>
-        </div>
       </div>
-      <section className="pt-12 bg-gray-50">
+      <section className="md:pt-12 bg-gray-50">
         <footer className="bg-[#1c1f2a] text-white ">
           <div className="max-w-7xl mx-auto px-6 py-12">
             <div className="mb-6"></div>
