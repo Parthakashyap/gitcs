@@ -2,7 +2,7 @@
 
 import { ChevronDown, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Career() {
   const handleScrollDown = () => {
@@ -17,6 +17,10 @@ export default function Career() {
     setExpandedProgram(expandedProgram === program ? null : program);
   };
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.height = "auto";
+  }, []);
 
   return (
     <main className="min-h-screen bg-white">
@@ -271,8 +275,8 @@ export default function Career() {
           </div>
         </div>
       </div>
-      <section className="py-12 ">
-        <footer className="bg-[#1c1f2a] text-white h-screen">
+      <section className="pt-12 ">
+        <footer className="bg-[#1c1f2a] text-white ">
           <div className="max-w-7xl mx-auto px-6 py-12">
             <div className="mb-6"></div>
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-12">

@@ -19,6 +19,62 @@ export default function StudentResourcesPage() {
   };
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const topUniversity = [
+    {
+        title: "Havard University",
+        date: "19 Jan, 2025",
+        duration: "15 min",
+        image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=500&auto=format&fit=crop",
+        degree: "Bachelor Degree",
+        subtitle: "Bachelor of Science in Computer Science",
+        location: "New York, USA",
+      },
+      {
+        title: "Live Career Counseling",
+        date: "15 Jan, 2025",
+        duration: "15 min",
+        image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=500&auto=format&fit=crop",
+        degree: "Bachelor Degree",
+        subtitle: "Bachelor of Science in Computer Science",
+        location: "New York, USA",
+      },
+      {
+        title: "Success for Your Future",
+        date: "10 Jan, 2025",
+        duration: "25 min",
+        image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=500&auto=format&fit=crop",
+        degree: "Bachelor Degree",
+        subtitle: "Bachelor of Science in Computer Science",
+        location: "New York, USA",
+      },{
+        title: "Havard University",
+        date: "19 Jan, 2025",
+        duration: "15 min",
+        image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=500&auto=format&fit=crop",
+        degree: "Bachelor Degree",
+        subtitle: "Bachelor of Science in Computer Science",
+        location: "New York, USA",
+      },
+      {
+        title: "Live Career Counseling",
+        date: "15 Jan, 2025",
+        duration: "15 min",
+        image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=500&auto=format&fit=crop",
+        degree: "Bachelor Degree",
+        subtitle: "Bachelor of Science in Computer Science",
+        location: "New York, USA",
+      },
+      {
+        title: "Success for Your Future",
+        date: "10 Jan, 2025",
+        duration: "25 min",
+        image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=500&auto=format&fit=crop",
+        degree: "Bachelor Degree",
+        subtitle: "Bachelor of Science in Computer Science",
+        location: "New York, USA",
+      }
+  ];
+
   useEffect(() => {
     document.body.style.height = "auto";
   }, []);
@@ -84,7 +140,7 @@ export default function StudentResourcesPage() {
 
         <div className="container mx-auto px-6 md:px-4 h-full flex flex-col justify-center items-center text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-          Your Gateway to Academic &<br />Career Success
+          Shape Your Future with Expert <br/>Career Guidance
 
           </h1>
           <button
@@ -99,154 +155,75 @@ export default function StudentResourcesPage() {
 
 
 
-
-      {/* Resources Overview Section */}
-      <section className="py-20 bg-white">
+    <section className="py-8">
   <div className="container mx-auto px-4">
     <div className="text-center mb-16">
-      <h2 className="text-3xl sm:text-4xl font-bold text-purple-900 mb-2">
-        STUDENT RESOURCES OVERVIEW SECTION
+      <h2 className="text-4xl font-bold text-purple-900 mb-2">
+        Explore Top Universities in the USA
       </h2>
-      <p className="text-blue-500 text-sm sm:text-base">
-        We provide a variety of tools, forms, and communities to help students excel in academics and
-        <br className="hidden sm:block" />
-        career planning
+      <p className="text-blue-500">
+        We offer a wide range of programs to help students and professionals
+        <br className="hidden md:block" />
+        enhance their skills and career prospects.
       </p>
     </div>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-6xl mx-auto">
-      {/* University Application Forms */}
-      <div className="bg-white p-6 sm:p-8 border-2 rounded-3xl">
-        <div className="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
-          <svg className="w-6 h-6 sm:w-8 sm:h-8 text-purple-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-          </svg>
-        </div>
-        <h3 className="text-lg sm:text-xl font-bold mb-4">University Application Forms</h3>
-        <p className="text-gray-600 mb-6 text-sm sm:text-base">
-          Access application forms for top universities worldwide, along with step-by-step guidance.
-        </p>
-        <Button className="bg-purple-900 text-white hover:bg-purple-800">
-          Download Forms
-        </Button>
-      </div>
+    {/* Responsive Grid */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {topUniversity.map((event, index) => (
+        <div
+          key={index}
+          className="bg-white rounded-2xl overflow-hidden border border-[#230344]/50 max-w-sm flex flex-col mx-auto"
+        >
+          {/* Image */}
+          <div className="relative">
+            <img
+              src={event.image}
+              alt={event.title}
+              className="w-full h-48 object-cover"
+            />
+          </div>
 
-      {/* Upcoming Exams */}
-      <div className="bg-white p-6 sm:p-8 border-2 rounded-3xl">
-        <div className="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
-          <svg className="w-6 h-6 sm:w-8 sm:h-8 text-purple-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
-        </div>
-        <h3 className="text-lg sm:text-xl font-bold mb-4">Upcoming Exams</h3>
-        <p className="text-gray-600 mb-6 text-sm sm:text-base">
-          Get schedules, registration details, and preparation tips for standardized tests.
-        </p>
-        <Button className="bg-purple-900 text-white hover:bg-purple-800">
-          View Exam Schedule
-        </Button>
-      </div>
+          {/* Content */}
+          <div className="p-5 flex flex-col flex-grow">
+            <h3 className="text-lg font-semibold text-gray-900">{event.title}</h3>
+            <p className="text-md font-bold text-gray-900">{event.subtitle}</p>
+            <div className="flex items-center gap-2 text-sm text-gray-600 mt-2">
+              <span>🎓 {event.degree}</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm text-gray-600 mt-2">
+              <span>⏳ {event.duration}</span>
+            </div>
 
-      {/* IdealUp Program */}
-      <div className="bg-white p-6 sm:p-8 border-2 rounded-3xl">
-        <div className="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
-          <svg className="w-6 h-6 sm:w-8 sm:h-8 text-purple-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
+            {/* Bottom Section - Location & Button */}
+            <div className="flex justify-between items-center mt-auto">
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <span>📍 {event.location}</span>
+              </div>
+              <button className="text-[#230344] border border-[#230344] rounded-full px-4 py-2 text-sm font-semibold hover:bg-purple-100">
+                Enroll now
+              </button>
+            </div>
+          </div>
         </div>
-        <h3 className="text-lg sm:text-xl font-bold mb-4">IdealUp (For 11 & 12 Grade, For UG Students)</h3>
-        <p className="text-gray-600 mb-6 text-sm sm:text-base">
-          Providing academic support, career mentorship, and skill-building workshops.
-        </p>
-        <Button className="bg-purple-900 text-white hover:bg-purple-800">
-          Learn More
-        </Button>
-      </div>
-
-      {/* Student Clubs */}
-      <div className="bg-white p-6 sm:p-8 border-2 rounded-3xl">
-        <div className="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
-          <svg className="w-6 h-6 sm:w-8 sm:h-8 text-purple-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-          </svg>
-        </div>
-        <h3 className="text-lg sm:text-xl font-bold mb-4">Student Clubs</h3>
-        <p className="text-gray-600 mb-6 text-sm sm:text-base">
-          Join student-run clubs for academic excellence, extracurricular activities, and networking.
-        </p>
-        <Button className="bg-purple-900 text-white hover:bg-purple-800">
-          Join a Club
-        </Button>
-      </div>
+      ))}
     </div>
+  </div>
+
+  {/* Button */}
+  <div className="text-center mt-12">
+    <button className="border border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white rounded-full px-6 py-2">
+      View all
+    </button>
   </div>
 </section>
 
 
-      {/* Pathway Section */}
-      <section className="py-20 bg-[#2E0B49] text-white relative overflow-hidden">
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-2xl md:text-3xl font-bold mb-12">
-          YOUR JOURNEY TOWARDS SUCCESS
-        </h2>
 
-        {/* Timeline Container */}
-        <div className="relative max-w-md mx-auto">
-          {/* Vertical Line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-white/50 -translate-x-1/2"></div>
 
-          {/* Steps */}
-          <div className="relative flex flex-col items-center space-y-16">
-            {/* Step 1 (Right) */}
-            <div className="relative flex items-center w-full">
-              <div className="w-1/2"></div>
-              <div className="w-4 h-4 bg-white rounded-full border border-white absolute left-1/2 -translate-x-1/2"></div>
-              <div className="w-1/2 flex justify-start pl-6">
-                <div className="bg-white/10 text-white px-6 py-2 rounded-lg shadow-lg backdrop-blur-md text-sm font-semibold">
-                  1. Choose a Program
-                </div>
-              </div>
-            </div>
-
-            {/* Step 2 (Left) */}
-            <div className="relative flex items-center w-full">
-              <div className="w-1/2 flex justify-end pr-6">
-                <div className="bg-white/10 text-white px-6 py-2 rounded-lg shadow-lg backdrop-blur-md text-sm font-semibold">
-                  2. Apply & Enroll
-                </div>
-              </div>
-              <div className="w-4 h-4 bg-white rounded-full border border-white absolute left-1/2 -translate-x-1/2"></div>
-              <div className="w-1/2"></div>
-            </div>
-
-            {/* Step 3 (Right) */}
-            <div className="relative flex items-center w-full">
-              <div className="w-1/2"></div>
-              <div className="w-4 h-4 bg-white rounded-full border border-white absolute left-1/2 -translate-x-1/2"></div>
-              <div className="w-1/2 flex justify-start pl-6">
-                <div className="bg-white/10 text-white px-6 py-2 rounded-lg shadow-lg backdrop-blur-md text-sm font-semibold">
-                  3. Gain Skills & Certification
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Button */}
-        <div className="mt-16">
-          <button className="bg-white text-[#2E0B49] px-6 py-2 rounded-md font-semibold shadow-md border border-white hover:bg-gray-200 transition">
-            Get Started Now
-          </button>
-        </div>
-      </div>
-
-      {/* Circular Decorations */}
-      <div className="absolute top-10 left-0 w-24 h-24 border border-white/20 rounded-full"></div>
-      <div className="absolute bottom-10 right-0 w-32 h-32 border border-white/20 rounded-full"></div>
-    </section>
 
             {/* Help Section */}
-            <div className="mx-screen px-4 bg-gray-50 pt-24 md:mt-0">
+            <div className="mx-screen px-4 bg-gray-50 pt-12 md:mt-0">
         <div className="max-w-3xl mx-auto bg-gray-200 border-t-4 border-blue-600 p-8 rounded-3xl text-center">
           <h3 className="text-2xl font-bold text-purple-900 mb-4">
             Need Guidance? We're Here to Help!
@@ -267,7 +244,7 @@ export default function StudentResourcesPage() {
           </div>
         </div>
       </div>
-      <section className="pt-12 bg-gray-50">
+      <section className="pt-12 bg-gray-50 ">
         <footer className="bg-[#1c1f2a] text-white ">
           <div className="max-w-7xl mx-auto px-6 py-12">
             <div className="mb-6"></div>
@@ -465,6 +442,7 @@ export default function StudentResourcesPage() {
           </div>
         </footer>
       </section>
+
     </main>
-  );
-}
+      );
+    }
