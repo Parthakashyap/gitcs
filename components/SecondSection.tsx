@@ -101,7 +101,7 @@ export default function SecondSection() {
                   onMouseMove={handleMouseMove}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <div className="bg-gradient-to-br from-[#230344] to-[#2a2a2a] text-white p-[1.6rem] md:p-8 rounded-2xl md:h-[300px] w-full relative overflow-hidden flex flex-col justify-between">
+                  <div className="bg-[#230344] text-white p-[1.6rem] md:p-8 rounded-2xl md:h-[300px] w-full relative overflow-hidden flex flex-col justify-between">
                     
                     {/* Gradient Dot */}
                     <div className={`absolute ${item.gradientPosition} w-24 h-32 bg-[#FBFFAD] rounded-full shadow-4xl blur-2xl opacity-40`}></div>
@@ -134,9 +134,40 @@ export default function SecondSection() {
                     >
                       {/* Light Background */}
                       <div className="absolute w-full h-full bg-[#f5f5f5] rounded-bl-2xl rounded-tl-2xl transition-all duration-300 ease-in-out group-hover:opacity-0"></div>
+                      {index === 1 ? (
+  // Render these elements only for the middle card
+  <>
+    <div className="absolute top-2 -left-8 group-hover:opacity-0">
+      <div className="w-8 h-8 bg-white rounded-l-full rounded-r-none ">
+        <div className="w-8 h-8 bg-[#230344] rounded-t-full rounded-l-none"></div>
+      </div>
+    </div>
+    <div className="absolute top-[7.971rem] right-3 group-hover:opacity-0">
+      <div className="w-8 h-8 bg-white rounded-l-full rounded-r-none">
+        <div className="w-8 h-8 bg-[#230344] rounded-t-full rounded-l-none"></div>
+      </div>
+    </div>
+  </>
+) : (
+  // Render a different element for the first and third card
+  <div >
+    <div className="absolute bottom-[0.7rem] -left-8 group-hover:opacity-0">
+      <div className="w-8 h-8 bg-white rounded-l-full rounded-r-none ">
+        <div className="w-8 h-8 bg-[#230344]  rounded-b-full rounded-l-none"></div>
+      </div>
+    </div>
+    <div className="absolute -top-[1.97578rem] right-3 group-hover:opacity-0">
+      <div className="w-8 h-[2.1rem] bg-white rounded-l-full rounded-r-none">
+        <div className="w-8 h-8  bg-[#230344]  rounded-b-full rounded-l-none"></div>
+      </div>
+    </div>
+  </div>
+)}
+
+
 
                       {/* Image Container */}
-                      <div className="relative w-24 h-24 flex items-center justify-center bg-[#2a2a2a] rounded-full">
+                      <div className="relative w-24 h-24 flex items-center justify-center bg-[#230344] rounded-full">
                         <img src={icons[index].src} alt={item.title} className="w-16 h-16" />
                       </div>
                     </div>
