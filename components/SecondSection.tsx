@@ -56,11 +56,11 @@ export default function SecondSection() {
       <div className="absolute inset-0 bg-[#f5f5f5]">
         <div className="container mx-auto px-4 py-20">
           <div className="max-w-6xl mx-auto">
-            <div className=" mb-16">
+            <div className="mb-16">
               <h2 className="md:text-5xl text-3xl font-bold mb-4 text-[#230344]">
                 WHY STUDY ABROAD WITH US
               </h2>
-              <p className="text-[#1F94F3]  mb-2">
+              <p className="text-[#1F94F3] mb-2">
                 Professional-Streamlined-Simple
               </p>
             </div>
@@ -73,6 +73,8 @@ export default function SecondSection() {
                     "Our experienced advisors assist you every step of the way, from application to arrival.",
                   position: "bottom",
                   bg: "from-purple-500/10 to-blue-500/10",
+                  gradientPosition: "bottom-4 left-4",
+                  textMove: "translate-y-[-20px] group-hover:translate-y-[20px]", // Moves down on hover
                 },
                 {
                   title: "Wide Range of Study Destinations",
@@ -80,6 +82,8 @@ export default function SecondSection() {
                     "Choose from top universities across multiple countries worldwide.",
                   position: "top",
                   bg: "from-green-500/10 to-teal-500/10",
+                  gradientPosition: "top-4 left-4",
+                  textMove: "translate-y-[20px] group-hover:translate-y-[-20px]", // Moves up on hover
                 },
                 {
                   title: "Career-Focused Programs",
@@ -87,6 +91,8 @@ export default function SecondSection() {
                     "Find programs designed to enhance your career prospects and global opportunities.",
                   position: "bottom",
                   bg: "from-amber-500/10 to-orange-500/10",
+                  gradientPosition: "bottom-4 left-4",
+                  textMove: "translate-y-[-20px] group-hover:translate-y-[20px]", // Moves down on hover
                 },
               ].map((item, index) => (
                 <div
@@ -95,27 +101,28 @@ export default function SecondSection() {
                   onMouseMove={handleMouseMove}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <div className="bg-gradient-to-br from-[#230344] to-[#2a2a2a] text-white p-[1.6rem] md:p-8 rounded-2xl md:h-[300px] w-full  relative overflow-hidden flex flex-col justify-between">
+                  <div className="bg-gradient-to-br from-[#230344] to-[#2a2a2a] text-white p-[1.6rem] md:p-8 rounded-2xl md:h-[300px] w-full relative overflow-hidden flex flex-col justify-between">
                     
-
-          <div className="absolute bottom-4 left-4 w-24 h-32 bg-[#FBFFAD] rounded-full shadow-4xl blur-2xl opacity-40"></div>
-
-
+                    {/* Gradient Dot */}
+                    <div className={`absolute ${item.gradientPosition} w-24 h-32 bg-[#FBFFAD] rounded-full shadow-4xl blur-2xl opacity-40`}></div>
 
                     <div
                       className={`absolute inset-0 bg-gradient-to-br ${item.bg} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                     ></div>
 
-                    <div className="relative z-10">
-                      <h3 className="text-2xl font-light mb-3 w-44">{item.title}</h3>
-                      <p className="text-white/70 text-sm w-52">
+                    {/* Text Animation */}
+                    <div className={`relative z-10 transition-all duration-500 ${item.textMove}`}>
+                      <h3 className="text-2xl font-light mb-3 w-44">
+                        {item.title}
+                      </h3>
+                      <p className="text-white/70 text-sm md:w-full w-52">
                         {item.description}
                       </p>
                     </div>
 
-                    {/* Image Placement */}
+                    {/* Image Placement - Slowed Down Animation */}
                     <div
-                      className={`absolute transition-all duration-500 ease-in-out group ${
+                      className={`absolute transition-all duration-[1000ms] ease-in-out group ${
                         item.position === "top"
                           ? "-top-3 -right-3"
                           : "-bottom-3 -right-3"
@@ -126,7 +133,7 @@ export default function SecondSection() {
                       }`}
                     >
                       {/* Light Background */}
-                      <div className="absolute w-full h-full bg-[#f5f5f5] rounded-2xl transition-all duration-300 ease-in-out group-hover:opacity-0"></div>
+                      <div className="absolute w-full h-full bg-[#f5f5f5] rounded-bl-2xl rounded-tl-2xl transition-all duration-300 ease-in-out group-hover:opacity-0"></div>
 
                       {/* Image Container */}
                       <div className="relative w-24 h-24 flex items-center justify-center bg-[#2a2a2a] rounded-full">
