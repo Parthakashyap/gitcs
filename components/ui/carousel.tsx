@@ -76,7 +76,7 @@ const Slide = ({ slide, index, current }: SlideProps) => {
   }`}
 >
   {/* Quote Icon - Positioned Near the Top */}
-  <div className="absolute left-8 top-12">
+  <div className="absolute md:left-8 top-16 md:top-12">
     <svg
       width="36"
       height="28"
@@ -105,12 +105,12 @@ const Slide = ({ slide, index, current }: SlideProps) => {
   </div>
 
   {/* Testimonial Text - Positioned at the Top */}
-  <blockquote className="mt-10 text-sm md:w-[80%] md:text-base lg:text-sm italic flex-grow">
+  <blockquote className="md:mt-10 mt-20 text-sm md:w-[80%] md:text-base lg:text-sm italic flex-grow">
     {testimonial}
   </blockquote>
 
   {/* Fixed Bottom Section */}
-  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+  <div className="absolute md:bottom-4 -bottom-7 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
     {/* Profile Image */}
     <div className="md:w-14 md:h-14 w-10 h-10 rounded-full overflow-hidden border-2 border-white mb-2">
       <Image
