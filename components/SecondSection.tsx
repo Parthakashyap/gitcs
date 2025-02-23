@@ -96,6 +96,12 @@ export default function SecondSection() {
                   onMouseLeave={handleMouseLeave}
                 >
                   <div className="bg-gradient-to-br from-[#230344] to-[#2a2a2a] text-white p-[1.6rem] md:p-8 rounded-2xl md:h-[300px] w-full  relative overflow-hidden flex flex-col justify-between">
+                    
+
+          <div className="absolute bottom-4 left-4 w-24 h-32 bg-[#FBFFAD] rounded-full shadow-4xl blur-2xl opacity-40"></div>
+
+
+
                     <div
                       className={`absolute inset-0 bg-gradient-to-br ${item.bg} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                     ></div>
@@ -109,13 +115,13 @@ export default function SecondSection() {
 
                     {/* Image Placement */}
                     <div
-                      className={`absolute transition-all duration-300 ease-in-out group ${
+                      className={`absolute transition-all duration-500 ease-in-out group ${
                         item.position === "top"
                           ? "-top-3 -right-3"
                           : "-bottom-3 -right-3"
                       } w-32 h-32 flex items-center justify-center rounded-2xl ${
                         index !== 3
-                          ? "group-hover:top-2 group-hover:-right-2 transform group-hover:-translate-x-1 group-hover:-translate-y-1"
+                          ? "group-hover:top-2 group-hover:-right-2 transform group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:opacity-90"
                           : ""
                       }`}
                     >
