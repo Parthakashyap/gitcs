@@ -26,7 +26,7 @@ export default function ContactSection() {
         <div className="max-w-9xl mx-auto px-6 pl-10 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
             {/* Contact Form Section */}
-            <div className="space-y-8 w-[90%] pl-24">
+            <div className="space-y-8 w-full md:w-[90%] md:pl-24">
               <div className="space-y-4">
                 <p className="text-sm text-gray-600 uppercase">
                   Send us an email
