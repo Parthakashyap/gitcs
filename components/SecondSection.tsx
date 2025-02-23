@@ -74,7 +74,8 @@ export default function SecondSection() {
                   position: "bottom",
                   bg: "from-purple-500/10 to-blue-500/10",
                   gradientPosition: "bottom-4 left-4",
-                  textMove: "translate-y-[-20px] group-hover:translate-y-[20px]", // Moves down on hover
+                  textMove:
+                    "translate-y-[-20px] group-hover:translate-y-[20px]", // Moves down on hover
                 },
                 {
                   title: "Wide Range of Study Destinations",
@@ -83,7 +84,8 @@ export default function SecondSection() {
                   position: "top",
                   bg: "from-green-500/10 to-teal-500/10",
                   gradientPosition: "top-4 left-4",
-                  textMove: "translate-y-[20px] group-hover:translate-y-[-20px]", // Moves up on hover
+                  textMove:
+                    "translate-y-[20px] group-hover:translate-y-[-20px]", // Moves up on hover
                 },
                 {
                   title: "Career-Focused Programs",
@@ -92,7 +94,8 @@ export default function SecondSection() {
                   position: "bottom",
                   bg: "from-amber-500/10 to-orange-500/10",
                   gradientPosition: "bottom-4 left-4",
-                  textMove: "translate-y-[-20px] group-hover:translate-y-[20px]", // Moves down on hover
+                  textMove:
+                    "translate-y-[-20px] group-hover:translate-y-[20px]", // Moves down on hover
                 },
               ].map((item, index) => (
                 <div
@@ -102,16 +105,19 @@ export default function SecondSection() {
                   onMouseLeave={handleMouseLeave}
                 >
                   <div className="bg-[#230344] text-white p-[1.6rem] md:p-8 rounded-2xl md:h-[300px] w-full relative overflow-hidden flex flex-col justify-between">
-                    
                     {/* Gradient Dot */}
-                    <div className={`absolute ${item.gradientPosition} w-24 h-32 bg-[#FBFFAD] rounded-full shadow-4xl blur-2xl opacity-40`}></div>
+                    <div
+                      className={`absolute ${item.gradientPosition} w-24 h-32 bg-[#FBFFAD] rounded-full shadow-4xl blur-2xl opacity-40`}
+                    ></div>
 
                     <div
                       className={`absolute inset-0 bg-gradient-to-br ${item.bg} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                     ></div>
 
                     {/* Text Animation */}
-                    <div className={`relative z-10 transition-all duration-500 ${item.textMove}`}>
+                    <div
+                      className={`relative z-10 transition-all duration-500 ${item.textMove}`}
+                    >
                       <h3 className="text-2xl font-light mb-3 w-44">
                         {item.title}
                       </h3>
@@ -122,7 +128,7 @@ export default function SecondSection() {
 
                     {/* Image Placement - Slowed Down Animation */}
                     <div
-                      className={`absolute transition-all duration-[1000ms] ease-in-out group ${
+                      className={`absolute transition-all duration-[7000ms] ease-in-out group ${
                         item.position === "top"
                           ? "-top-3 -right-3"
                           : "-bottom-3 -right-3"
@@ -135,40 +141,42 @@ export default function SecondSection() {
                       {/* Light Background */}
                       <div className="absolute w-full h-full bg-[#f5f5f5] rounded-bl-2xl rounded-tl-2xl transition-all duration-300 ease-in-out group-hover:opacity-0"></div>
                       {index === 1 ? (
-  // Render these elements only for the middle card
-  <>
-    <div className="absolute top-2 -left-8 group-hover:opacity-0">
-      <div className="w-8 h-8 bg-white rounded-l-full rounded-r-none ">
-        <div className="w-8 h-8 bg-[#230344] rounded-t-full rounded-l-none"></div>
-      </div>
-    </div>
-    <div className="absolute top-[7.971rem] right-3 group-hover:opacity-0">
-      <div className="w-8 h-8 bg-white rounded-l-full rounded-r-none">
-        <div className="w-8 h-8 bg-[#230344] rounded-t-full rounded-l-none"></div>
-      </div>
-    </div>
-  </>
-) : (
-  // Render a different element for the first and third card
-  <div >
-    <div className="absolute bottom-[0.7rem] -left-8 group-hover:opacity-0">
-      <div className="w-8 h-8 bg-white rounded-l-full rounded-r-none ">
-        <div className="w-8 h-8 bg-[#230344]  rounded-b-full rounded-l-none"></div>
-      </div>
-    </div>
-    <div className="absolute -top-[1.97578rem] right-3 group-hover:opacity-0">
-      <div className="w-8 h-[2.1rem] bg-white rounded-l-full rounded-r-none">
-        <div className="w-8 h-8  bg-[#230344]  rounded-b-full rounded-l-none"></div>
-      </div>
-    </div>
-  </div>
-)}
-
-
+                        // Render these elements only for the middle card
+                        <>
+                          <div className="absolute top-2 -left-8 group-hover:opacity-0">
+                            <div className="w-8 h-8 bg-[#f5f5f5] rounded-l-full rounded-r-none ">
+                              <div className="w-8 h-8 bg-[#230344] rounded-r-full rounded-b-none"></div>
+                            </div>
+                          </div>
+                          <div className="absolute top-[7.96874976rem] right-3 group-hover:opacity-0">
+                            <div className="w-8 h-8 bg-[#f5f5f5] rounded-l-full rounded-r-none">
+                              <div className="w-8 h-8 bg-[#230344] rounded-r-full rounded-b-none"></div>
+                            </div>
+                          </div>
+                        </>
+                      ) : (
+                        // Render a different element for the first and third card
+                        <div>
+                          <div className="absolute bottom-[0.7rem] -left-8 group-hover:opacity-0">
+                            <div className="w-8 h-8 bg-[#f5f5f5] rounded-l-full rounded-r-none ">
+                              <div className="w-8 h-8 bg-[#230344]  rounded-b-full rounded-l-none"></div>
+                            </div>
+                          </div>
+                          <div className="absolute -top-[1.97578rem] right-3 group-hover:opacity-0">
+                            <div className="w-8 h-[2.1rem] bg-[#f5f5f5] rounded-l-full rounded-r-none">
+                              <div className="w-8 h-8  bg-[#230344]  rounded-b-full rounded-l-none"></div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
 
                       {/* Image Container */}
                       <div className="relative w-24 h-24 flex items-center justify-center bg-[#230344] rounded-full">
-                        <img src={icons[index].src} alt={item.title} className="w-16 h-16" />
+                        <img
+                          src={icons[index].src}
+                          alt={item.title}
+                          className="w-16 h-16"
+                        />
                       </div>
                     </div>
                   </div>
