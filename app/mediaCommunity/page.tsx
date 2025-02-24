@@ -295,7 +295,7 @@ export default function MediaCommunityPage() {
       </section>
 
       {/* Help Section */}
-      <div className="mx-screen px-4 flex items-center justify-center mt-32 md:mt-0">
+      <div className="mx-screen px-4 flex items-center justify-center mt-32 md:mt-0 absolute w-full">
         <div className=" hidden md:block w-[40%]">
           <div className="bg-gray-50 p-6 rounded-lg mt-8 border-t-4 border-blue-500 shadow-md">
             <h3 className="text-lg font-semibold mb-4 text-center md:text-left">
@@ -314,7 +314,7 @@ export default function MediaCommunityPage() {
           </div>
         </div>
       </div>
-      <section className="md:pt-12 bg-gray-50">
+      <section className="md:pt-32  ">
         <footer className="bg-[#1c1f2a] text-white ">
           <div className="max-w-7xl mx-auto px-6 py-12">
             <div className="mb-6"></div>
