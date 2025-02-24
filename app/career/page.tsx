@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import woMan from "@/public/images/wo-man.png";
+import career1 from "@/public/images/Frame206.png";
+import career2 from "@/public/images/Frame207.png";
+import career3 from "@/public/images/Frame208.png";
 
 export default function Career() {
   const handleScrollDown = () => {
@@ -202,24 +205,24 @@ export default function Career() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {[
               {
-                img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1000",
+                img: career1,
                 alt: "Live Sessions",
                 text: "Live sessions with university officers",
               },
               {
-                img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000",
+                img: career2,
                 alt: "Career Fair",
                 text: "Career fair networking with industry experts",
               },
               {
-                img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1000",
+                img: career3,
                 alt: "Scholarship Info",
                 text: "Scholarship and funding information",
               },
             ].map((item, index) => (
               <div key={index} className="col-span-1">
                 <div className="relative rounded-2xl overflow-hidden mb-4">
-                  <img
+                  <Image
                     src={item.img}
                     alt={item.alt}
                     className="w-full aspect-square object-cover"
@@ -268,7 +271,7 @@ export default function Career() {
 
           <div className="flex flex-col md:flex-row justify-center md:gap-32 gap-8 mt-8 items-center">
         {/** Step 1 */}
-        <div className="relative flex flex-col items-center justify-center border-2 border-[#1B005D] rounded-full w-60 h-60 p-6 text-center">
+        <div className="relative flex flex-col items-center justify-center border-[3px] border-[#1B005D] rounded-full w-60 h-60 p-6 text-center">
           <div className="absolute -top-4 left-[65%] transform -translate-x-1/2 w-10 h-10 flex items-center justify-center bg-[#1B005D] text-white text-lg font-bold rounded-full">
             1
           </div>
@@ -278,7 +281,7 @@ export default function Career() {
         </div>
 
         {/** Step 2 */}
-        <div className="relative flex flex-col items-center justify-center border-2 border-[#1B005D] rounded-full w-60 h-60 p-6 text-center">
+        <div className="relative flex flex-col items-center justify-center border-[3px] border-[#1B005D] rounded-full w-60 h-60 p-6 text-center">
           <div className="absolute -top-4 left-[65%] transform -translate-x-1/2 w-10 h-10 flex items-center justify-center bg-[#1B005D] text-white text-lg font-bold rounded-full">
             2
           </div>
@@ -288,7 +291,7 @@ export default function Career() {
         </div>
 
         {/** Step 3 */}
-        <div className="relative flex flex-col items-center justify-center border-2 border-[#1B005D] rounded-full w-60 h-60 p-6 text-center">
+        <div className="relative flex flex-col items-center justify-center border-[3px] border-[#1B005D] rounded-full w-60 h-60 p-6 text-center">
           <div className="absolute -top-4 left-[65%] transform -translate-x-1/2 w-10 h-10 flex items-center justify-center bg-[#1B005D] text-white text-lg font-bold rounded-full">
             3
           </div>

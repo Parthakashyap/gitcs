@@ -76,12 +76,12 @@ export default function SummerProgram() {
         )}
 
         <div className="container mx-auto px-6 md:px-4 h-full flex flex-col justify-center items-center text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-32">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white ">
             Discover Programs That
             <br />
             Shape Your Future!
           </h1>
-          <div className=" flex items-center justify-center pt-32 w-24 h-24 absolute bottom-6">
+          <div className=" flex items-center justify-center pt-32 w-24 h-24 absolute bottom-20">
       {/* Rotating Text */}
       <div className="absolute w-full h-full animate-spin-slow">
         <svg className="w-full h-full" viewBox="0 0 100 100">
@@ -137,24 +137,27 @@ export default function SummerProgram() {
           Our student development programs are designed to build skills,
           confidence, and global competence.
         </p>
-        <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
-          <li className="flex items-center gap-2 md:gap-3">
-            <div className="w-2 h-2 bg-[#230344] rounded-full"></div>
-            <span>Leadership Training</span>
-          </li>
-          <li className="flex items-center gap-2 md:gap-3">
-            <div className="w-2 h-2 bg-[#230344] rounded-full"></div>
-            <span>Communication & Soft Skills Development</span>
-          </li>
-          <li className="flex items-center gap-2 md:gap-3">
-            <div className="w-2 h-2 bg-[#230344] rounded-full"></div>
-            <span>International Exposure Workshops</span>
-          </li>
-          <li className="flex items-center gap-2 md:gap-3">
-            <div className="w-2 h-2 bg-[#230344] rounded-full"></div>
-            <span>Research & Research Program</span>
-          </li>
-        </ul>
+        <ul className="space-y-4 md:space-y-6 mb-6 md:mb-8">
+  {[
+    "Leadership Training",
+    "Communication & Soft Skills Development",
+    "International Exposure Workshops",
+    "Research & Research Program",
+  ].map((item, index, arr) => (
+    <li key={index} className="flex items-start gap-3 md:gap-4">
+      {/* Dot & Line Container */}
+      <div className="relative flex flex-col items-center">
+        <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#230344]"></div>
+        {index !== arr.length - 1 && (
+          <div className="w-0.5 bg-[#230344] h-4 md:h-6 lg:h-8 absolute top-full"></div>
+        )}
+      </div>
+      {/* Text */}
+      <span className="text-sm md:text-base">{item}</span>
+    </li>
+  ))}
+</ul>
+        
         <div className="flex justify-center">
           <button className="bg-[#230344] text-white px-5 py-2 rounded-full hover:bg-purple-800 transition">
             Join Now
@@ -171,24 +174,28 @@ export default function SummerProgram() {
           Our faculty development programs help educators stay updated
           with modern teaching techniques and methodologies.
         </p>
-        <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
-          <li className="flex items-center gap-2 md:gap-3">
-            <div className="w-2 h-2 bg-[#230344] rounded-full"></div>
-            <span>Advanced Teaching Techniques</span>
-          </li>
-          <li className="flex items-center gap-2 md:gap-3">
-            <div className="w-2 h-2 bg-[#230344] rounded-full"></div>
-            <span>Active Learning & E-Learning Tools</span>
-          </li>
-          <li className="flex items-center gap-2 md:gap-3">
-            <div className="w-2 h-2 bg-[#230344] rounded-full"></div>
-            <span>Research & Publications Training</span>
-          </li>
-          <li className="flex items-center gap-2 md:gap-3">
-            <div className="w-2 h-2 bg-[#230344] rounded-full"></div>
-            <span>Cross-Cultural Teaching Methods</span>
-          </li>
-        </ul>
+
+        <ul className="space-y-4 md:space-y-6 mb-6 md:mb-8">
+  {[
+    'Advanced Teaching Techniques',
+    'Active Learning & E-Learning Tools',
+   'Research & Publications Training',
+    'Cross-Cultural Teaching Methods',
+  ].map((item, index, arr) => (
+    <li key={index} className="flex items-start gap-3 md:gap-4">
+      {/* Dot & Line Container */}
+      <div className="relative flex flex-col items-center">
+        <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#230344]"></div>
+        {index !== arr.length - 1 && (
+          <div className="w-0.5 bg-[#230344] h-4 md:h-6 lg:h-8 absolute top-full"></div>
+        )}
+      </div>
+      {/* Text */}
+      <span className="text-sm md:text-base">{item}</span>
+    </li>
+  ))}
+</ul>
+        
         <div className="flex justify-center">
           <button className="bg-[#230344] text-white px-5 py-2 rounded-full hover:bg-purple-800 transition">
             Join Now
@@ -318,6 +325,7 @@ export default function SummerProgram() {
               <div className="w-1/2"></div>
               <div className="w-4 h-4 bg-white rounded-full border border-white absolute left-1/2 -translate-x-1/2"></div>
               <div className="w-1/2 flex justify-start pl-6">
+                <div className="w-32 h-32 bg-gradient-to-r from-white/50 to-white/10 rounded-full absolute  blur-[1px]"/>
                 <div className="bg-white/10 text-white px-6 py-2 rounded-lg shadow-lg backdrop-blur-md text-sm font-semibold">
                   1. Choose a Program
                 </div>
@@ -327,6 +335,7 @@ export default function SummerProgram() {
             {/* Step 2 (Left) */}
             <div className="relative flex items-center w-full">
               <div className="w-1/2 flex justify-end pr-6">
+              <div className="w-28 h-28 bg-gradient-to-l from-white/50 to-white/10 rounded-full absolute  blur-[1px]"/>
                 <div className="bg-white/10 text-white px-6 py-2 rounded-lg shadow-lg backdrop-blur-md text-sm font-semibold">
                   2. Apply & Enroll
                 </div>
@@ -340,6 +349,7 @@ export default function SummerProgram() {
               <div className="w-1/2"></div>
               <div className="w-4 h-4 bg-white rounded-full border border-white absolute left-1/2 -translate-x-1/2"></div>
               <div className="w-1/2 flex justify-start pl-6">
+              <div className="w-32 h-32 bg-gradient-to-t from-white/50 to-white/10 rounded-full absolute right-2 blur-[1px]"/>
                 <div className="bg-white/10 text-white px-6 py-2 rounded-lg shadow-lg backdrop-blur-md text-sm font-semibold">
                   3. Gain Skills & Certification
                 </div>

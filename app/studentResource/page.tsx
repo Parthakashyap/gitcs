@@ -289,6 +289,8 @@ export default function StudentResourcesPage() {
                 <div className="w-1/2"></div>
                 <div className="w-4 h-4 bg-white rounded-full border border-white absolute left-1/2 -translate-x-1/2"></div>
                 <div className="w-1/2 flex justify-start pl-6">
+                <div className="w-32 h-32 bg-gradient-to-t from-white/50 to-white/10 rounded-full absolute blur-[1px]"/>
+
                   <div className="bg-white/10 text-white px-6 py-2 rounded-lg shadow-lg backdrop-blur-md text-sm font-semibold">
                     1. Choose a Program
                   </div>
@@ -298,6 +300,8 @@ export default function StudentResourcesPage() {
               {/* Step 2 (Left) */}
               <div className="relative flex items-center w-full">
                 <div className="w-1/2 flex justify-end pr-6">
+                <div className="w-32 h-32 bg-gradient-to-t from-white/50 to-white/10 rounded-full absolute left-2 blur-[1px]"/>
+
                   <div className="bg-white/10 text-white px-6 py-2 rounded-lg shadow-lg backdrop-blur-md text-sm font-semibold">
                     2. Apply & Enroll
                   </div>
@@ -311,6 +315,8 @@ export default function StudentResourcesPage() {
                 <div className="w-1/2"></div>
                 <div className="w-4 h-4 bg-white rounded-full border border-white absolute left-1/2 -translate-x-1/2"></div>
                 <div className="w-1/2 flex justify-start pl-6">
+                <div className="w-32 h-32 bg-gradient-to-t from-white/50 to-white/10 rounded-full absolute right-2 blur-[1px]"/>
+
                   <div className="bg-white/10 text-white px-6 py-2 rounded-lg shadow-lg backdrop-blur-md text-sm font-semibold">
                     3. Gain Skills & Certification
                   </div>
@@ -320,6 +326,8 @@ export default function StudentResourcesPage() {
 {/* Step 4 (Left) */}
 <div className="relative flex items-center w-full">
                 <div className="w-1/2 flex justify-end pr-6">
+                <div className="w-32 h-32 bg-gradient-to-t from-white/50 to-white/10 rounded-full absolute  blur-[1px]"/>
+
                   <div className="bg-white/10 text-white px-6 py-2 rounded-lg shadow-lg backdrop-blur-md text-sm font-semibold">
                     2. Apply & Enroll
                   </div>

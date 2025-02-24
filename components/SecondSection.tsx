@@ -145,12 +145,12 @@ export default function SecondSection() {
                         <>
                           <div className="absolute top-2 -left-8 group-hover:opacity-0">
                             <div className="w-8 h-8 bg-[#f5f5f5] rounded-l-full rounded-r-none ">
-                              <div className="w-8 h-8 bg-[#230344] rounded-r-full rounded-b-none"></div>
+                              <div className="w-8 h-8 bg-[#230344] rounded-l-full rounded-t-none rotate-180"></div>
                             </div>
                           </div>
                           <div className="absolute top-[7.96874976rem] right-3 group-hover:opacity-0">
                             <div className="w-8 h-8 bg-[#f5f5f5] rounded-l-full rounded-r-none">
-                              <div className="w-8 h-8 bg-[#230344] rounded-r-full rounded-b-none"></div>
+                              <div className="w-8 h-8 bg-[#230344] -rotate-90 rounded-r-full rounded-b-none"></div>
                             </div>
                           </div>
                         </>
