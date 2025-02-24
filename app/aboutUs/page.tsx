@@ -147,14 +147,32 @@ export default function AboutUsPage() {
               <br />
               for a Brighter Future
             </h1>
-            <button
-              onClick={() =>
-                window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
-              }
-              className="mt-12 p-2 rounded-full border border-white/20 hover:bg-white/10 transition-colors"
-            >
-              <ChevronDown className="w-6 h-6 text-white" />
-            </button>
+            <div className="relative flex items-center justify-center w-24 h-24">
+      {/* Rotating Text */}
+      <div className="absolute w-full h-full animate-spin-slow">
+        <svg className="w-full h-full" viewBox="0 0 100 100">
+          <defs>
+            <path
+              id="circlePath"
+              d="M 50,50 m -40,0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0"
+            />
+          </defs>
+          <text fill="white" fontSize="12" letterSpacing="14">
+            <textPath xlinkHref="#circlePath" startOffset="0%">
+              Explore  More
+            </textPath>
+          </text>
+        </svg>
+      </div>
+
+      {/* Button */}
+      <button
+        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
+        className="absolute flex items-center justify-center w-12 h-12 rounded-full border border-white/20 hover:bg-white/10 transition-colors"
+      >
+        <ChevronDown className="w-6 h-6 text-white" />
+      </button>
+    </div>
           </div>
         </div>
       </section>

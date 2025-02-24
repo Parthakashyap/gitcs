@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, Menu } from "lucide-react";
+import { ChevronDown, Menu, MoveDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
@@ -164,18 +164,24 @@ export default function StudentResourcesPage() {
           )}
 
           <div className="container mx-auto px-6 md:px-4 h-full flex flex-col justify-center items-center text-center">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-32">
               Shape Your Future with Expert <br />
               Career Guidance
             </h1>
-            <button
-              onClick={() =>
-                window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
-              }
-              className="mt-12 p-2 rounded-full border border-white/20 hover:bg-white/10 transition-colors"
-            >
-              <ChevronDown className="w-6 h-6 text-white" />
-            </button>
+            <div>
+              <p className="text-white/90 text-xl ">Start Your Journey</p>
+              <button
+                onClick={() =>
+                  window.scrollTo({
+                    top: window.innerHeight,
+                    behavior: "smooth",
+                  })
+                }
+                className=" p-2 rounded-full  transition-colors"
+              >
+                <MoveDown className="w-8 h-8 text-white" />
+              </button>
+            </div>
           </div>
         </div>
       </section>
