@@ -76,12 +76,12 @@ export default function SummerProgram() {
         )}
 
         <div className="container mx-auto px-6 md:px-4 h-full flex flex-col justify-center items-center text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-32">
             Discover Programs That
             <br />
             Shape Your Future!
           </h1>
-          <div className="relative flex items-center justify-center w-24 h-24">
+          <div className="relative flex items-center justify-center pt-32 w-24 h-24">
       {/* Rotating Text */}
       <div className="absolute w-full h-full animate-spin-slow">
         <svg className="w-full h-full" viewBox="0 0 100 100">
