@@ -64,7 +64,7 @@ export default function AboutUsPage() {
   useEffect(() => {
     document.body.style.height = "auto";
   }, []);
-  
+
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -147,224 +147,234 @@ export default function AboutUsPage() {
               <br />
               for a Brighter Future
             </h1>
-            <div className="relative flex items-center justify-center w-24 h-24 pt-32">
-      {/* Rotating Text */}
-      <div className="absolute w-full h-full animate-spin-slow">
-        <svg className="w-full h-full" viewBox="0 0 100 100">
-          <defs>
-            <path
-              id="circlePath"
-              d="M 50,50 m -40,0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0"
-            />
-          </defs>
-          <text fill="white" fontSize="12" letterSpacing="14">
-            <textPath xlinkHref="#circlePath" startOffset="0%">
-              Explore  More
-            </textPath>
-          </text>
-        </svg>
-      </div>
+            <div className=" flex items-center justify-center w-24 h-24 absolute bottom-6">
+              {/* Rotating Text */}
+              <div className="absolute w-full h-full animate-spin-slow">
+                <svg className="w-full h-full" viewBox="0 0 100 100">
+                  <defs>
+                    <path
+                      id="circlePath"
+                      d="M 50,50 m -40,0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0"
+                    />
+                  </defs>
+                  <text fill="white" fontSize="12" letterSpacing="14">
+                    <textPath xlinkHref="#circlePath" startOffset="0%">
+                      Explore More
+                    </textPath>
+                  </text>
+                </svg>
+              </div>
 
-      {/* Button */}
-      <button
-        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
-        className="absolute flex items-center justify-center w-12 h-12 rounded-full border border-white/20 hover:bg-white/10 transition-colors"
-      >
-        <ChevronDown className="w-6 h-6 text-white" />
-      </button>
-    </div>
+              {/* Button */}
+              <button
+                onClick={() =>
+                  window.scrollTo({
+                    top: window.innerHeight,
+                    behavior: "smooth",
+                  })
+                }
+                className="absolute flex items-center justify-center w-12 h-12 rounded-full border border-white/20 hover:bg-white/10 transition-colors"
+              >
+                <ChevronDown className="w-6 h-6 text-white" />
+              </button>
+            </div>
           </div>
         </div>
       </section>
       {/* Who We Are Section */}
       <section className="py-20 bg-white">
-  <div className="container mx-auto px-4">
-    <div className="max-w-6xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
-        <div className="text-center md:text-left">
-          <div className="mb-8">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-[#230344]">
-              WHO WE ARE
-            </h2>
-            <p className="text-[#1F94F3] mb-2">
-              Endless possibilities begin here
-            </p>
-          </div>
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+              <div className="text-center md:text-left">
+                <div className="mb-8">
+                  <h2 className="text-3xl md:text-5xl font-bold mb-4 text-[#230344]">
+                    WHO WE ARE
+                  </h2>
+                  <p className="text-[#1F94F3] mb-2">
+                    Endless possibilities begin here
+                  </p>
+                </div>
 
-          <p className="text-black text-base md:text-lg leading-relaxed">
-            We are a team of dedicated education consultants passionate
-            about helping students achieve their dream of studying abroad.
-            With years of experience, we provide expert guidance,
-            application assistance, and end-to-end support.
-          </p>
+                <p className="text-black text-base md:text-lg leading-relaxed">
+                  We are a team of dedicated education consultants passionate
+                  about helping students achieve their dream of studying abroad.
+                  With years of experience, we provide expert guidance,
+                  application assistance, and end-to-end support.
+                </p>
 
-          <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-6">
-            {[
-              "/images/Uni1.png",
-              "/images/Uni2.png",
-              "/images/Uni3.png",
-              "/images/Uni4.png",
-            ].map((src, index) => (
-              <img
-                key={index}
-                src={src}
-                alt={`University Logo ${index + 1}`}
-                className="h-12 md:h-24 w-auto object-contain max-w-full"
-              />
-            ))}
-          </div>
+                <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-6">
+                  {[
+                    "/images/Uni1.png",
+                    "/images/Uni2.png",
+                    "/images/Uni3.png",
+                    "/images/Uni4.png",
+                  ].map((src, index) => (
+                    <img
+                      key={index}
+                      src={src}
+                      alt={`University Logo ${index + 1}`}
+                      className="h-12 md:h-24 w-auto object-contain max-w-full"
+                    />
+                  ))}
+                </div>
 
-          <div className="mt-8">
-            <Button className="bg-[#230344] text-white px-6 md:px-8 py-4 md:py-6 rounded-full text-lg md:text-xl hover:bg-purple-900 transition-colors w-full md:w-auto">
-              Learn More About Us
-            </Button>
-          </div>
-        </div>
+                <div className="mt-8">
+                  <Button className="bg-[#230344] text-white px-6 md:px-8 py-4 md:py-6 rounded-full text-lg md:text-xl hover:bg-purple-900 transition-colors w-full md:w-auto">
+                    Learn More About Us
+                  </Button>
+                </div>
+              </div>
 
-        <div className="relative flex justify-center">
-          <div className="aspect-[4/3] w-full max-w-md md:max-w-full rounded-2xl overflow-hidden">
-            <ImagesSliderDemo />
-          </div>
-          <div className="absolute -bottom-4 right-1/2 translate-x-1/2 md:translate-x-0 md:-right-8 w-24 md:w-32 h-24 md:h-32 bg-[#230344] rounded-full flex items-center justify-center shadow-lg">
-            <div className="text-white text-center">
-              <div className="text-2xl md:text-3xl font-bold">15+</div>
-              <div className="text-xs md:text-sm">
-                Years of
-                <br />
-                Experience
+              <div className="relative flex justify-center">
+                <div className="aspect-[4/3] w-full max-w-md md:max-w-full rounded-2xl overflow-hidden">
+                  <ImagesSliderDemo />
+                </div>
+                <div className="absolute -bottom-4 right-1/2 translate-x-1/2 md:translate-x-0 md:-right-8 w-24 md:w-32 h-24 md:h-32 bg-[#230344] rounded-full flex items-center justify-center shadow-lg">
+                  <div className="text-white text-center">
+                    <div className="text-2xl md:text-3xl font-bold">15+</div>
+                    <div className="text-xs md:text-sm">
+                      Years of
+                      <br />
+                      Experience
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Our Commitment Section */}
       <section className="py-20 bg-gray-50">
-  <div className="container mx-auto px-4">
-    <div className="max-w-6xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
-        <div className="flex justify-center">
-          <img
-            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop"
-            alt="Students in classroom"
-            className="rounded-3xl shadow-xl max-w-full h-auto"
-          />
-        </div>
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+              <div className="flex justify-center">
+                <img
+                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop"
+                  alt="Students in classroom"
+                  className="rounded-3xl shadow-xl max-w-full h-auto"
+                />
+              </div>
 
-        <div className="text-center md:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#230344] mb-6 md:mb-8">
-            OUR COMMITMENT TO
-            <br className="hidden md:block" />
-            EDUCATION & EXCELLENCE
-          </h2>
+              <div className="text-center md:text-left">
+                <h2 className="text-3xl md:text-4xl font-bold text-[#230344] mb-6 md:mb-8">
+                  OUR COMMITMENT TO
+                  <br className="hidden md:block" />
+                  EDUCATION & EXCELLENCE
+                </h2>
 
-          <div className="space-y-6 md:space-y-8">
-            <div>
-              <h3 className="text-xl font-bold mb-2">Mission</h3>
-              <p className="text-gray-600">
-                To provide high-quality education and career guidance to
-                students and educators worldwide, bridging the gap between
-                knowledge and opportunity.
-              </p>
-            </div>
+                <div className="space-y-6 md:space-y-8">
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">Mission</h3>
+                    <p className="text-gray-600">
+                      To provide high-quality education and career guidance to
+                      students and educators worldwide, bridging the gap between
+                      knowledge and opportunity.
+                    </p>
+                  </div>
 
-            <div className="w-full h-[0.2rem] bg-[#230344]/20 rounded-full" />
+                  <div className="w-full h-[0.2rem] bg-[#230344]/20 rounded-full" />
 
-            <div>
-              <h3 className="text-xl font-bold mb-2">Vision</h3>
-              <p className="text-gray-600">
-                To create a world with an empowered academic community that
-                fosters innovation, skill development, and lifelong learning.
-              </p>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">Vision</h3>
+                    <p className="text-gray-600">
+                      To create a world with an empowered academic community
+                      that fosters innovation, skill development, and lifelong
+                      learning.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Partners Section */}
       <section className="py-20 bg-white">
-  <div className="container mx-auto px-4">
-    <div className="text-center mb-12 md:mb-16">
-      <h2 className="text-3xl md:text-4xl font-bold text-[#230344] mb-2">
-        SCHOOL & UNIVERSITY PARTNERS
-      </h2>
-      <p className="text-[#1F94F3] mb-2">
-        Collaborating with Leading Educational Institutions
-      </p>
-    </div>
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#230344] mb-2">
+              SCHOOL & UNIVERSITY PARTNERS
+            </h2>
+            <p className="text-[#1F94F3] mb-2">
+              Collaborating with Leading Educational Institutions
+            </p>
+          </div>
 
-    {/* Logos Section */}
-    <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-8">
-      {universityPartners.map((partner, index) => (
-        <Image
-          key={index}
-          src={partner.logo}
-          alt={partner.name}
-          className="h-24 md:h-40 w-auto object-contain"
-          width={150}
-          height={96}
-        />
-      ))}
-    </div>
+          {/* Logos Section */}
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-8">
+            {universityPartners.map((partner, index) => (
+              <Image
+                key={index}
+                src={partner.logo}
+                alt={partner.name}
+                className="h-24 md:h-40 w-auto object-contain"
+                width={150}
+                height={96}
+              />
+            ))}
+          </div>
 
-    {/* Button Section */}
-    <div className="text-center">
-      <Button
-        variant="outline"
-        className="border-[#230344] text-[#230344] hover:bg-purple-900 hover:text-white rounded-full px-6 py-3 md:px-8 md:py-4 text-base md:text-lg"
-      >
-        View Our Partners
-      </Button>
-    </div>
-  </div>
-</section>
+          {/* Button Section */}
+          <div className="text-center">
+            <Button
+              variant="outline"
+              className="border-[#230344] text-[#230344] hover:bg-purple-900 hover:text-white rounded-full px-6 py-3 md:px-8 md:py-4 text-base md:text-lg"
+            >
+              View Our Partners
+            </Button>
+          </div>
+        </div>
+      </section>
 
       {/* Team Section */}
       <section className="py-20">
-  <div className="container mx-auto px-4">
-    {/* Title Section */}
-    <div className="text-center mb-12 md:mb-16">
-      <h2 className="text-3xl md:text-4xl font-bold text-[#230344] mb-2">
-        MEET THE MINDS BEHIND OUR MISSION
-      </h2>
-      <p className="text-blue-500 text-sm md:text-base">
-        Our team brings vast experience in education, career guidance, and
-        industry insights,
-        <br className="hidden md:block" />
-        dedicated to shaping the future of education.
-      </p>
-    </div>
-
-    {/* Team Members Grid */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto">
-      {teamMembers.map((member, index) => (
-        <div
-          key={index}
-          className="bg-white rounded-xl overflow-hidden border border-[#230344]/30 text-center"
-        >
-          <div className="aspect-square overflow-hidden">
-            <img
-              src={member.image}
-              alt={member.name}
-              className="w-full h-full object-cover"
-            />
+        <div className="container mx-auto px-4">
+          {/* Title Section */}
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#230344] mb-2">
+              MEET THE MINDS BEHIND OUR MISSION
+            </h2>
+            <p className="text-blue-500 text-sm md:text-base">
+              Our team brings vast experience in education, career guidance, and
+              industry insights,
+              <br className="hidden md:block" />
+              dedicated to shaping the future of education.
+            </p>
           </div>
-          <div className="p-4 md:p-6">
-            <h3 className="text-lg md:text-xl font-bold mb-2">{member.name}</h3>
-            <div className="w-full h-px bg-purple-900/20 rounded-full mb-2" />
-            <p className="text-gray-600 text-sm md:text-base">{member.role}</p>
+
+          {/* Team Members Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto">
+            {teamMembers.map((member, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-xl overflow-hidden border border-[#230344]/30 text-center"
+              >
+                <div className="aspect-square overflow-hidden">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-4 md:p-6">
+                  <h3 className="text-lg md:text-xl font-bold mb-2">
+                    {member.name}
+                  </h3>
+                  <div className="w-full h-px bg-purple-900/20 rounded-full mb-2" />
+                  <p className="text-gray-600 text-sm md:text-base">
+                    {member.role}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Contact Form Section */}
       <div className=" bg-white">
@@ -445,7 +455,7 @@ export default function AboutUsPage() {
         <div className=" hidden md:block w-[40%]">
           <div className="bg-gray-50 p-6 rounded-lg mt-8 border-t-4 border-blue-500 shadow-md">
             <h3 className="text-lg font-semibold mb-4 text-center md:text-left">
-            Need Career Advice? Reach Out to Us!
+              Need Career Advice? Reach Out to Us!
             </h3>
             <div className="flex flex-col md:flex-row gap-4">
               <input

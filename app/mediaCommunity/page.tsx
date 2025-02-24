@@ -144,7 +144,7 @@ export default function MediaCommunityPage() {
               <br />
               Vibrant Community
             </h1>
-            <div>
+            <div className="absolute bottom-6">
               <p className="text-white/90 text-xl ">Start Your Journey</p>
               <button
                 onClick={() =>

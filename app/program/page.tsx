@@ -81,7 +81,7 @@ export default function SummerProgram() {
             <br />
             Shape Your Future!
           </h1>
-          <div className="relative flex items-center justify-center pt-32 w-24 h-24">
+          <div className=" flex items-center justify-center pt-32 w-24 h-24 absolute bottom-6">
       {/* Rotating Text */}
       <div className="absolute w-full h-full animate-spin-slow">
         <svg className="w-full h-full" viewBox="0 0 100 100">

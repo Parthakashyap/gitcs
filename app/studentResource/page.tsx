@@ -105,7 +105,7 @@ export default function StudentResourcesPage() {
               Your Gateway to Academic &<br />
               Career Success
             </h1>
-            <div className="relative flex items-center justify-center w-24 h-24 pt-32">
+            <div className=" flex items-center justify-center w-24 h-24 absolute bottom-6">
       {/* Rotating Text */}
       <div className="absolute w-full h-full animate-spin-slow">
         <svg className="w-full h-full" viewBox="0 0 100 100">

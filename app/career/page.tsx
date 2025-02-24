@@ -3,6 +3,8 @@
 import { ChevronDown, Menu, MoveDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import woMan from "@/public/images/wo-man.png";
 
 export default function Career() {
   const handleScrollDown = () => {
@@ -105,8 +107,10 @@ export default function Career() {
               <br />
               Career Guidance
             </h1>
-            <div>
-              <p className="text-white/90 text-xl ">Start Your Journey</p>
+            <div className="absolute bottom-6">
+              <p className="text-white/90 text-xl ">
+                Start Your Journey
+              </p>
               <button
                 onClick={() =>
                   window.scrollTo({
@@ -150,21 +154,26 @@ export default function Career() {
                 development opportunities.
               </p>
               <ul className="space-y-4 md:space-y-6 mb-6 md:mb-8">
-                {[
-                  "One-on-one virtual counseling sessions",
-                  "Career roadmap planning",
-                  "Industry-specific guidance",
-                  "College and university recommendations",
-                ].map((item, index) => (
-                  <li
-                    key={index}
-                    className="flex items-center gap-3 md:gap-4 justify-center md:justify-start"
-                  >
-                    <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#230344]"></div>
-                    <span className="text-sm md:text-base">{item}</span>
-                  </li>
-                ))}
-              </ul>
+  {[
+    "One-on-one virtual counseling sessions",
+    "Career roadmap planning",
+    "Industry-specific guidance",
+    "College and university recommendations",
+  ].map((item, index, arr) => (
+    <li key={index} className="flex items-start gap-3 md:gap-4">
+      {/* Dot & Line Container */}
+      <div className="relative flex flex-col items-center">
+        <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#230344]"></div>
+        {index !== arr.length - 1 && (
+          <div className="w-0.5 bg-[#230344] h-4 md:h-6 lg:h-8 absolute top-full"></div>
+        )}
+      </div>
+      {/* Text */}
+      <span className="text-sm md:text-base">{item}</span>
+    </li>
+  ))}
+</ul>
+
               <div className="flex justify-center md:justify-start">
                 <Button className="bg-[#230344] text-white hover:bg-purple-800 px-6 py-2 md:px-8 md:py-3">
                   Join Now
@@ -173,11 +182,11 @@ export default function Career() {
             </div>
 
             <div>
-              <img
-                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070"
-                alt="Career Guidance"
-                className="rounded-3xl shadow-xl w-full max-w-lg mx-auto"
-              />
+            <Image
+    src={woMan}
+    alt="Career Guidance"
+    className="rounded-3xl shadow-xl w-full max-w-lg mx-auto"
+  />
             </div>
           </div>
         </div>
@@ -257,37 +266,37 @@ export default function Career() {
             </p>
           </div>
 
-          {/* Steps Section */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 max-w-6xl mx-auto">
-            {[
-              {
-                step: "1",
-                text: "Scientifically designed aptitude and personality assessments",
-              },
-              {
-                step: "2",
-                text: "Detailed career suggestions and report analysis",
-              },
-              {
-                step: "3",
-                text: "Personalized study and career recommendations",
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="relative flex flex-col items-center text-center"
-              >
-                <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#230344] text-white text-lg font-bold absolute -top-6">
-                  {item.step}
-                </div>
-                <div className="w-48 md:w-60 h-48 md:h-60 border-2 border-[#230344] rounded-full flex items-center justify-center px-6">
-                  <h3 className="text-sm md:text-lg font-semibold">
-                    {item.text}
-                  </h3>
-                </div>
-              </div>
-            ))}
+          <div className="flex flex-col md:flex-row justify-center md:gap-32 gap-8 mt-8 items-center">
+        {/** Step 1 */}
+        <div className="relative flex flex-col items-center justify-center border-2 border-[#1B005D] rounded-full w-60 h-60 p-6 text-center">
+          <div className="absolute -top-4 left-[65%] transform -translate-x-1/2 w-10 h-10 flex items-center justify-center bg-[#1B005D] text-white text-lg font-bold rounded-full">
+            1
           </div>
+          <p className="mt-6 text-[#1B005D] text-sm font-bold md:text-base">
+            Scientifically designed aptitude and personality assessments
+          </p>
+        </div>
+
+        {/** Step 2 */}
+        <div className="relative flex flex-col items-center justify-center border-2 border-[#1B005D] rounded-full w-60 h-60 p-6 text-center">
+          <div className="absolute -top-4 left-[65%] transform -translate-x-1/2 w-10 h-10 flex items-center justify-center bg-[#1B005D] text-white text-lg font-bold rounded-full">
+            2
+          </div>
+          <p className="mt-6 text-[#1B005D] text-sm font-bold md:text-base">
+            Detailed career suggestions and report analysis
+          </p>
+        </div>
+
+        {/** Step 3 */}
+        <div className="relative flex flex-col items-center justify-center border-2 border-[#1B005D] rounded-full w-60 h-60 p-6 text-center">
+          <div className="absolute -top-4 left-[65%] transform -translate-x-1/2 w-10 h-10 flex items-center justify-center bg-[#1B005D] text-white text-lg font-bold rounded-full">
+            3
+          </div>
+          <p className="mt-6 text-[#1B005D] text-sm font-bold md:text-base">
+            Personalized study and career recommendations
+          </p>
+        </div>
+      </div>
         </div>
       </section>
 

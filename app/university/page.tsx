@@ -168,7 +168,7 @@ export default function StudentResourcesPage() {
               Shape Your Future with Expert <br />
               Career Guidance
             </h1>
-            <div>
+            <div className="absolute bottom-6">
               <p className="text-white/90 text-xl ">Start Your Journey</p>
               <button
                 onClick={() =>
