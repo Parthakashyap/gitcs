@@ -4,29 +4,57 @@ import { Button } from "@/components/ui/button";
 import { GlobeDemo } from "./ui/globeDemo";
 
 export default function ContactSection() {
-  const [scrolled, setScrolled] = useState(false);
+  const [scrollState, setScrollState] = useState({
+    visible: false,
+    exiting: false
+  });
+  
+  // Additional state for animation triggers
+  const [contentVisible, setContentVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      const threshold = window.innerHeight * 5;
-      setScrolled(offset > threshold);
+      const entranceThreshold = window.innerHeight * 4; // Threshold to enter (after fifth section)
+      const exitThreshold = window.innerHeight * 5; // Original threshold to exit
+      
+      // Determine if section should be visible or exiting
+      if (offset > entranceThreshold && offset < exitThreshold) {
+        setScrollState({ visible: true, exiting: false });
+        // Trigger content animation after a short delay when section becomes visible
+        setTimeout(() => setContentVisible(true), 300);
+      } else if (offset >= exitThreshold) {
+        setScrollState({ visible: true, exiting: true });
+        setContentVisible(false);
+      } else {
+        setScrollState({ visible: false, exiting: false });
+        setContentVisible(false);
+      }
     };
+
     window.addEventListener("scroll", handleScroll);
+    // Initial check
+    handleScroll();
+    
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <section
       className={`fixed w-full h-screen transition-transform duration-700 ease-in-out z-[10] ${
-        scrolled ? "-translate-y-full" : "translate-y-0"
+        !scrollState.visible ? "translate-y-full" : // Initially below viewport
+        scrollState.exiting ? "-translate-y-full" : // Exit animation (same as original)
+        "translate-y-0" // Visible position
       }`}
     >
       <div className="absolute inset-0 bg-white">
         <div className="max-w-9xl mx-auto px-6 pl-10 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center relative">
             {/* Contact Form Section */}
-            <div className="space-y-8 w-full md:w-[90%] md:pl-24">
+            <div 
+              className={`space-y-8 w-full md:w-[90%] md:pl-24 transition-all duration-1000 
+                ${contentVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'}`}
+            >
               <div className="space-y-4">
                 <p className="text-sm text-gray-600 uppercase">
                   Send us an email
@@ -90,29 +118,13 @@ export default function ContactSection() {
             </div>
 
             {/* Image Section */}
-            <div className="hidden -mt-40 md:flex justify-center">
+            <div 
+              className={`hidden -mt-40 md:flex justify-center transition-all duration-1000
+                ${contentVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'}`}
+            >
               <GlobeDemo/>
             </div>
           </div>
-
-          {/* Counseling Pathway Section */}
-          {/* <div className=" hidden md:block max-w-lg mx-auto md:absolute md:left-1/2 md:bottom-0 md:transform md:-translate-x-1/2 w-full">
-            <div className="bg-gray-50 p-6 rounded-lg mt-8 border-t-4 border-blue-500 shadow-md">
-              <h3 className="text-lg font-semibold mb-4 text-center md:text-left">
-                Get your counseling pathway
-              </h3>
-              <div className="flex flex-col md:flex-row gap-4">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 p-3 border rounded-md"
-                />
-                <Button className="w-full md:w-auto bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-md">
-                  Email
-                </Button>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </section>

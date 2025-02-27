@@ -3,16 +3,31 @@
 import { useEffect, useState } from "react";
 
 export default function ThirdSection() {
-  const [scrolled, setScrolled] = useState(false);
+  const [scrollState, setScrollState] = useState({
+    visible: false,
+    exiting: false
+  });
 
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      const threshold = window.innerHeight * 2;
-      setScrolled(offset > threshold);
+      const entranceThreshold = window.innerHeight; // Threshold to enter
+      const exitThreshold = window.innerHeight * 2; // Original threshold to exit
+      
+      // Determine if section should be visible or exiting
+      if (offset > entranceThreshold && offset < exitThreshold) {
+        setScrollState({ visible: true, exiting: false });
+      } else if (offset >= exitThreshold) {
+        setScrollState({ visible: true, exiting: true });
+      } else {
+        setScrollState({ visible: false, exiting: false });
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
+    // Initial check
+    handleScroll();
+    
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -28,7 +43,9 @@ export default function ThirdSection() {
   return (
     <section
       className={`fixed w-full h-screen transition-transform duration-700 ease-in-out z-[40] ${
-        scrolled ? "-translate-y-full" : "translate-y-0"
+        !scrollState.visible ? "translate-y-full" : // Initially below viewport
+        scrollState.exiting ? "-translate-y-full" : // Exit animation (same as original)
+        "translate-y-0" // Visible position
       }`}
     >
       <div className="absolute inset-0 bg-white">

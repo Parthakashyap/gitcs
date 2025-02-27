@@ -5,23 +5,40 @@ import { Button } from "@/components/ui/button";
 import { ImagesSliderDemo } from "./ui/images-slider-demo";
 
 export default function FourthSection() {
-  const [scrolled, setScrolled] = useState(false);
+  const [scrollState, setScrollState] = useState({
+    visible: false,
+    exiting: false
+  });
 
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      const threshold = window.innerHeight * 3;
-      setScrolled(offset > threshold);
+      const entranceThreshold = window.innerHeight * 2; // Threshold to enter (after third section)
+      const exitThreshold = window.innerHeight * 3; // Original threshold to exit
+      
+      // Determine if section should be visible or exiting
+      if (offset > entranceThreshold && offset < exitThreshold) {
+        setScrollState({ visible: true, exiting: false });
+      } else if (offset >= exitThreshold) {
+        setScrollState({ visible: true, exiting: true });
+      } else {
+        setScrollState({ visible: false, exiting: false });
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
+    // Initial check
+    handleScroll();
+    
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <section
       className={`fixed w-full h-screen transition-transform duration-700 ease-in-out z-[30] ${
-        scrolled ? "-translate-y-full" : "translate-y-0"
+        !scrollState.visible ? "translate-y-full" : // Initially below viewport
+        scrollState.exiting ? "-translate-y-full" : // Exit animation (same as original)
+        "translate-y-0" // Visible position
       }`}
     >
       <div className="absolute inset-0 bg-white">

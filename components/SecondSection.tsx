@@ -76,13 +76,14 @@ export default function SecondSection() {
   const icons = [CapIcon, GlobeIcon, BagIcon];
 
   return (
-    <section
-      className={`fixed w-full h-screen transition-transform duration-700 ease-in-out z-[50] ${
-        scrolled ? "-translate-y-full" : "translate-y-0"
-      } ${!visible ? "opacity-0 pointer-events-none" : "opacity-100"} ${
-        previousSectionScrolled ? "translate-y-1" : "translate-y-full"
-      }`}
-    >
+<section
+  className={`fixed w-full h-screen transition-transform duration-700 ease-in-out z-[50] 
+  ${scrolled ? "translate-y-[-100%]" : "translate-y-0"} 
+  ${!visible ? "pointer-events-none" : "pointer-events-auto"} 
+  ${previousSectionScrolled ? "translate-y-1" : "translate-y-full"}`}
+>
+
+
       <div className="absolute inset-0 bg-[#f5f5f5]">
         <div className="container mx-auto px-4 py-2 md:py-20">
           <div className="max-w-6xl mx-auto">
