@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 export default function HeroSection() {
   const [scrolled, setScrolled] = useState(false);
@@ -47,20 +46,15 @@ export default function HeroSection() {
   };
 
   return (
-    <section
-      className={cn(
-        "fixed w-full h-screen transition-transform duration-700 ease-in-out z-[60]",
-        scrolled ? "-translate-y-full" : "translate-y-0"
-      )}
-    >
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-900 to-black">
+    <section className="">
+      <div className="bg-gradient-to-br from-purple-900 to-black ">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/bg.png')" }}
         ></div>
 
         <div className="container mx-auto px-4 h-full flex flex-col justify-center relative z-10">
-          <nav className="absolute top-0 left-0 right-0 p-6 flex justify-between items-center">
+          <nav className=" top-0 left-0 right-0 p-6 flex justify-between items-center">
             <div className="flex items-center gap-2">
               <img
                 src="/images/Group.png"
@@ -129,7 +123,7 @@ export default function HeroSection() {
             </div>
           )}
 
-          <div className="text-center text-white mt-20">
+          <div className="text-center text-white mt-40">
             <h1 className="text-4xl md:text-7xl font-bold mb-8 leading-tight">
               Attend CT's Biggest
               <br />
@@ -137,7 +131,7 @@ export default function HeroSection() {
             </h1>
           </div>
 
-          <div className="absolute bottom-20 left-0 right-0">
+          <div className=" mt-24">
             <div className="container mx-auto px-4">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-40 text-white text-center">
                 <div className="flex flex-col items-center">
@@ -178,7 +172,7 @@ export default function HeroSection() {
 
           <button
             onClick={handleScrollDown}
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 p-2 rounded-full border border-white/20 hover:bg-white/10 transition-colors"
+            className="absolute -bottom-12 left-1/2 -translate-x-1/2 p-2 rounded-full border border-white/20 hover:bg-white/10 transition-colors"
           >
             <ChevronDown className="w-6 h-6 text-white" />
           </button>

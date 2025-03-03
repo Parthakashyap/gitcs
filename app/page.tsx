@@ -11,7 +11,7 @@ const Footer = dynamic(() => import('@/components/Footer'), { ssr: false });
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen">
+    <main className="">
       <HeroSection />
       <SecondSection />
       <ThirdSection />

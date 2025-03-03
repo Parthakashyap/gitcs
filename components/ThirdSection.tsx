@@ -41,14 +41,8 @@ export default function ThirdSection() {
   ];
 
   return (
-    <section
-      className={`fixed w-full h-screen transition-transform duration-700 ease-in-out z-[40] ${
-        !scrollState.visible ? "translate-y-full" : // Initially below viewport
-        scrollState.exiting ? "-translate-y-full" : // Exit animation (same as original)
-        "translate-y-0" // Visible position
-      }`}
-    >
-      <div className="absolute inset-0 bg-white">
+    <section className="mt-20">
+      <div className=" bg-white">
         <div className="container mx-auto px-4 h-full flex flex-col justify-center">
           <div className="text-center mb-12 text-white">
             <h2 className="md:text-5xl text-3xl font-bold mb-4 text-[#230344]">

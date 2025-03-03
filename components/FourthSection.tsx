@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ImagesSliderDemo } from "./ui/images-slider-demo";
+import 'animate.css';
 
 export default function FourthSection() {
   const [scrollState, setScrollState] = useState({
@@ -34,14 +35,8 @@ export default function FourthSection() {
   }, []);
 
   return (
-    <section
-      className={`fixed w-full h-screen transition-transform duration-700 ease-in-out z-[30] ${
-        !scrollState.visible ? "translate-y-full" : // Initially below viewport
-        scrollState.exiting ? "-translate-y-full" : // Exit animation (same as original)
-        "translate-y-0" // Visible position
-      }`}
-    >
-      <div className="absolute inset-0 bg-white">
+    <section className="mt-32">
+      <div className=" bg-white">
         <div className="container mx-auto px-4 sm:px-8 h-full">
           <div className="max-w-7xl mx-auto h-full flex items-center">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 w-full">
@@ -56,7 +51,7 @@ export default function FourthSection() {
                   </p>
                 </div>
 
-                <p className="text-black text-base md:text-lg leading-relaxed">
+                <p className="text-black text-base md:text-lg leading-relaxed ">
                   We are a team of dedicated education consultants passionate
                   about helping students achieve their dream of studying abroad.
                   With years of experience, we provide expert guidance,
@@ -85,7 +80,7 @@ export default function FourthSection() {
               </div>
 
               {/* Right Section */}
-              <div className="relative flex justify-center">
+              <div className="relative flex justify-center ">
                 <div className="aspect-[4/3] w-full max-w-md md:max-w-full rounded-2xl overflow-hidden">
                   <ImagesSliderDemo />
                 </div>

@@ -14,28 +14,27 @@ export default function SecondSection() {
     const handleScroll = () => {
       const offset = window.scrollY;
       const sectionHeight = window.innerHeight;
-      
+
       // Check if we've scrolled to where the previous section should slide up
       const previousSectionThreshold = sectionHeight * 0.00000000000001; // Adjust this value as needed
-      
+
       // Track previous section scroll state
       if (offset > previousSectionThreshold) {
         setPreviousSectionScrolled(true);
       } else {
         setPreviousSectionScrolled(false);
       }
-      
+
       // Current section animation logic
       const threshold = window.innerHeight * 1;
-      
+
       if (offset > threshold && visible) {
         setScrolled(true);
-        
+
         setTimeout(() => {
           setVisible(false);
         }, 700);
-      } 
-      else if (offset < threshold && !visible) {
+      } else if (offset < threshold && !visible) {
         setVisible(true);
         setTimeout(() => {
           setScrolled(false);
@@ -76,15 +75,8 @@ export default function SecondSection() {
   const icons = [CapIcon, GlobeIcon, BagIcon];
 
   return (
-<section
-  className={`fixed w-full h-screen transition-transform duration-700 ease-in-out z-[50] 
-  ${scrolled ? "translate-y-[-100%]" : "translate-y-0"} 
-  ${!visible ? "pointer-events-none" : "pointer-events-auto"} 
-  ${previousSectionScrolled ? "translate-y-1" : "translate-y-full"}`}
->
-
-
-      <div className="absolute inset-0 bg-[#f5f5f5]">
+    <section className="mt-[7.8rem] md:mt-[6.7rem]">
+      <div className="bg-[#f5f5f5] ">
         <div className="container mx-auto px-4 py-2 md:py-20">
           <div className="max-w-6xl mx-auto">
             <div className="mb-16">

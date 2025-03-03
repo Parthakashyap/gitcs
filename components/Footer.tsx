@@ -4,8 +4,8 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <section className="fixed w-full h-screen z-[0]">
-      <footer className="bg-[#1c1f2a] text-white fixed bottom-0 left-0 w-full h-screen">
+    <section className=" ">
+      <footer className="bg-[#1c1f2a] text-white">
         <div className="relative hidden md:block w-full py-20 px-6 md:px-12 overflow-hidden bg-gray-900">
           {/* 3D Abstract Background */}
           <div className="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-900 to-black"></div>

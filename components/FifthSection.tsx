@@ -33,12 +33,8 @@ export default function FifthSection() {
   }, []);
 
   return (
-    <section className={`fixed w-full h-screen transition-transform duration-700 ease-in-out z-[20] ${
-      !scrollState.visible ? "translate-y-full" : // Initially below viewport
-      scrollState.exiting ? "-translate-y-full" : // Exit animation (same as original)
-      "translate-y-0" // Visible position
-    }`}>
-      <div className="absolute inset-0 bg-white">
+    <section className='mt-32 overflow-hidden'>
+      <div className=" bg-white">
         <div className="container mx-auto px-4 h-full">
           <div className="max-w-7xl mx-auto h-full flex flex-col justify-center">
             <div className="text-center mb-2">
@@ -46,7 +42,7 @@ export default function FifthSection() {
               <p className="text-[#1F94F3] mb-2">Endless possibilities begin here</p>
             </div>
 
-            <div className="relative">
+            <div className="relative mt-8">
               <div className='mt-8 md:mt-0 md:-mb-32'>
                 <CarouselDemo />
               </div>

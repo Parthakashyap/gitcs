@@ -40,14 +40,8 @@ export default function ContactSection() {
   }, []);
 
   return (
-    <section
-      className={`fixed w-full h-screen transition-transform duration-700 ease-in-out z-[10] ${
-        !scrollState.visible ? "translate-y-full" : // Initially below viewport
-        scrollState.exiting ? "-translate-y-full" : // Exit animation (same as original)
-        "translate-y-0" // Visible position
-      }`}
-    >
-      <div className="absolute inset-0 bg-white">
+    <section className="mt-4">
+      <div className=" bg-white">
         <div className="max-w-9xl mx-auto px-6 pl-10 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center relative">
             {/* Contact Form Section */}
