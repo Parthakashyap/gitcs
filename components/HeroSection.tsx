@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
+import 'animate.css';
 
 export default function HeroSection() {
   const [scrolled, setScrolled] = useState(false);
@@ -131,7 +132,7 @@ export default function HeroSection() {
             </h1>
           </div>
 
-          <div className=" mt-24">
+          <div className=" mt-24 animate__animated animate__backInUp">
             <div className="container mx-auto px-4">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-40 text-white text-center">
                 <div className="flex flex-col items-center">

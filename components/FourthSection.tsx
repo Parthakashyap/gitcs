@@ -1,57 +1,55 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ImagesSliderDemo } from "./ui/images-slider-demo";
-import 'animate.css';
+import { motion } from "framer-motion";
 
 export default function FourthSection() {
-  const [scrollState, setScrollState] = useState({
-    visible: false,
-    exiting: false
-  });
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const offset = window.scrollY;
-      const entranceThreshold = window.innerHeight * 2; // Threshold to enter (after third section)
-      const exitThreshold = window.innerHeight * 3; // Original threshold to exit
-      
-      // Determine if section should be visible or exiting
-      if (offset > entranceThreshold && offset < exitThreshold) {
-        setScrollState({ visible: true, exiting: false });
-      } else if (offset >= exitThreshold) {
-        setScrollState({ visible: true, exiting: true });
-      } else {
-        setScrollState({ visible: false, exiting: false });
-      }
-    };
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.2 } // Trigger when 20% of the section is visible
+    );
 
-    window.addEventListener("scroll", handleScroll);
-    // Initial check
-    handleScroll();
-    
-    return () => window.removeEventListener("scroll", handleScroll);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
   }, []);
 
   return (
-    <section className="mt-32">
-      <div className=" bg-white">
+    <section ref={sectionRef} className="mt-32">
+      <div className="bg-white">
         <div className="container mx-auto px-4 sm:px-8 h-full">
           <div className="max-w-7xl mx-auto h-full flex items-center">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 w-full">
-              {/* Left Section */}
-              <div className="space-y-6 md:space-y-8 text-center md:text-left">
+              
+              {/* Left Section - Optimized Slide-in */}
+              <motion.div
+                initial={{ x: -100, opacity: 0 }}
+                animate={isVisible ? { x: 0, opacity: 1 } : {}}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="space-y-6 md:space-y-8 text-center md:text-left"
+              >
                 <div>
                   <h2 className="md:text-5xl text-3xl font-bold mb-4 text-[#230344]">
                     WHO WE ARE
                   </h2>
-                  <p className="text-[#1F94F3]  mb-2">
+                  <p className="text-[#1F94F3] mb-2">
                     Endless possibilities begin here
                   </p>
                 </div>
 
-                <p className="text-black text-base md:text-lg leading-relaxed ">
+                <p className="text-black text-base md:text-lg leading-relaxed">
                   We are a team of dedicated education consultants passionate
                   about helping students achieve their dream of studying abroad.
                   With years of experience, we provide expert guidance,
@@ -59,12 +57,7 @@ export default function FourthSection() {
                 </p>
 
                 <div className="flex flex-wrap justify-center md:justify-start gap-4">
-                  {[
-                    "/images/Uni1.png",
-                    "/images/Uni2.png",
-                    "/images/Uni3.png",
-                    "/images/Uni4.png",
-                  ].map((src, index) => (
+                  {["/images/Uni1.png", "/images/Uni2.png", "/images/Uni3.png", "/images/Uni4.png"].map((src, index) => (
                     <img
                       key={index}
                       src={src}
@@ -77,10 +70,15 @@ export default function FourthSection() {
                 <Button className="bg-[#230344] text-white px-6 md:px-8 py-4 md:py-6 rounded-full text-lg md:text-xl hover:bg-purple-900 transition-colors">
                   Learn More About Us
                 </Button>
-              </div>
+              </motion.div>
 
-              {/* Right Section */}
-              <div className="relative flex justify-center ">
+              {/* Right Section - Optimized Slide-in */}
+              <motion.div
+                initial={{ x: 100, opacity: 0 }}
+                animate={isVisible ? { x: 0, opacity: 1 } : {}}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }} // Delayed for better effect
+                className="relative flex justify-center"
+              >
                 <div className="aspect-[4/3] w-full max-w-md md:max-w-full rounded-2xl overflow-hidden">
                   <ImagesSliderDemo />
                 </div>
@@ -92,7 +90,8 @@ export default function FourthSection() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
+            
             </div>
           </div>
         </div>

@@ -4,47 +4,9 @@ import { useEffect, useState } from "react";
 import CapIcon from "@/public/images/cap.svg";
 import GlobeIcon from "@/public/images/globe.svg";
 import BagIcon from "@/public/images/bag.svg";
+import {motion} from "framer-motion";
 
 export default function SecondSection() {
-  const [scrolled, setScrolled] = useState(false);
-  const [previousSectionScrolled, setPreviousSectionScrolled] = useState(false);
-  const [visible, setVisible] = useState(true);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const offset = window.scrollY;
-      const sectionHeight = window.innerHeight;
-
-      // Check if we've scrolled to where the previous section should slide up
-      const previousSectionThreshold = sectionHeight * 0.00000000000001; // Adjust this value as needed
-
-      // Track previous section scroll state
-      if (offset > previousSectionThreshold) {
-        setPreviousSectionScrolled(true);
-      } else {
-        setPreviousSectionScrolled(false);
-      }
-
-      // Current section animation logic
-      const threshold = window.innerHeight * 1;
-
-      if (offset > threshold && visible) {
-        setScrolled(true);
-
-        setTimeout(() => {
-          setVisible(false);
-        }, 700);
-      } else if (offset < threshold && !visible) {
-        setVisible(true);
-        setTimeout(() => {
-          setScrolled(false);
-        }, 50);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [visible]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const card = e.currentTarget;
@@ -87,7 +49,12 @@ export default function SecondSection() {
                 Professional-Streamlined-Simple
               </p>
             </div>
-
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 -mt-16 md:-mt-0 relative">
               {[
                 {
@@ -206,6 +173,7 @@ export default function SecondSection() {
                 </div>
               ))}
             </div>
+            </motion.div>
           </div>
         </div>
       </div>
