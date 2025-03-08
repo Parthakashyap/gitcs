@@ -216,7 +216,7 @@ const NetworkingGrid = () => {
 
       {/* Load more button - positioned outside the grid container */}
       <div className="text-center mt-8 pb-8">
-        <button className="px-8 py-2 bg-[#230344] rounded-full border border-white text-white text-sm hover:bg-white hover:text-[#230344] transition-colors">
+        <button className="px-8 py-2 bg-[#230344] rounded-xl border border-white text-white text-sm hover:bg-white hover:text-[#230344] transition-colors">
           Load more
         </button>
       </div>

@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { GlobeDemo } from "./ui/globeDemo";
+import WorldMap from "./worldMap";
 
 export default function ContactSection() {
   const [scrollState, setScrollState] = useState({
@@ -40,7 +41,7 @@ export default function ContactSection() {
   }, []);
 
   return (
-    <section className="mt-4">
+    <section className="mt-6 mb-6">
       <div className=" bg-white">
         <div className="max-w-9xl mx-auto px-6 pl-10 ">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center relative">
@@ -112,7 +113,7 @@ export default function ContactSection() {
 
             {/* Image Section */}
             
-              <GlobeDemo/>
+              <WorldMap/>
             
           </div>
         </div>

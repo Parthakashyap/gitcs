@@ -6,6 +6,8 @@ import FourthSection from '@/components/FourthSection';
 import FifthSection from '@/components/FifthSection';
 import HearFromUs from '@/components/hereFromUs';
 import NetworkingGrid from '@/components/networking';
+import WorldMap from '@/components/worldMap';
+import TopDestination from '@/components/topDestination';
 
 // Dynamically import client components
 const SixthSection = dynamic(() => import('@/components/SixthSection'), { ssr: false });
@@ -18,6 +20,7 @@ export default function Home() {
       <SecondSection />
       <FourthSection />
       <HearFromUs/>
+      <TopDestination/>
       <FifthSection />
       <NetworkingGrid/>
       <SixthSection />
