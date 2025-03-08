@@ -123,12 +123,12 @@ const NetworkingSection: React.FC = () => {
             </div>
             
             {/* Play button (visible only when not hovered) */}
-            <div 
+            {/* <div 
               className="absolute right-4 bottom-4 w-10 h-10 rounded-full bg-white bg-opacity-80 flex items-center justify-center transition-opacity duration-300 ease-in-out"
               style={{ opacity: hoveredCard === profile.id ? 0 : 1 }}
             >
               <div className="w-0 h-0 border-t-6 border-t-transparent border-l-10 border-l-gray-800 border-b-6 border-b-transparent ml-1"></div>
-            </div>
+            </div> */}
           </div>
         ))}
       </div>

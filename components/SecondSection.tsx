@@ -1,7 +1,42 @@
-import React from 'react';
+'use client'
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import boy1 from '@/public/images/boy1.png';
+import girl1 from '@/public/images/girl1.png';
 
 const SecondSection = () => {
+  // Define carousel images for the middle logo section
+  const carouselItems = [
+    { 
+      src: "/images/talked-logo.png", 
+      alt: "talkEd Logo",
+      text: "Education Through Conversation"
+    },
+    // Add more logo images here as needed
+    { 
+      src: "/images/talked-logo-2.png", 
+      alt: "talkEd Logo Alternative",
+      text: "Learning Without Limits" 
+    },
+    { 
+      src: "/images/talked-logo-3.png", 
+      alt: "talkEd Logo Variant",
+      text: "Global Education Solutions" 
+    }
+  ];
+
+  // State to track current slide
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Auto slide effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % carouselItems.length);
+    }, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="relative w-full py-16 overflow-hidden mt-32 bg-white">
       {/* Decorative curved lines */}
@@ -35,53 +70,74 @@ const SecondSection = () => {
             </p>
           </div>
 
-          {/* Middle column - Logo card */}
+          {/* Middle column - Logo carousel */}
           <div className="lg:w-1/3 flex justify-center">
-            <div className="bg-white rounded-3xl shadow-lg p-8 flex flex-col justify-center items-center h-full w-full">
-              <div className="flex flex-col items-center">
-                <div className="mb-2">
-                  <Image 
-                    src="/images/talked-logo.png" 
-                    alt="talkEd Logo" 
-                    width={300} 
-                    height={150}
-                    className="w-full"
-                  />
+            <div className="bg-white rounded-3xl shadow-lg p-8 flex flex-col justify-center items-center h-full w-full relative">
+              {/* Carousel items */}
+              {carouselItems.map((item, index) => (
+                <div 
+                  key={index} 
+                  className={`flex flex-col items-center w-full transition-opacity duration-1000 ease-in-out absolute top-0 left-0 ${
+                    index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                  }`}
+                >
+                  <div className="mb-2">
+                    <Image 
+                      src={item.src} 
+                      alt={item.alt} 
+                      width={300} 
+                      height={150}
+                      className="w-full"
+                    />
+                  </div>
+                  <p className="text-gray-500 text-sm">{item.text}</p>
                 </div>
-                <p className="text-gray-500 text-sm">Education Through Conversation</p>
+              ))}
+              
+              {/* Carousel indicators */}
+              <div className="absolute bottom-2 flex justify-center gap-2 z-20">
+                {carouselItems.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`w-2 h-2 rounded-full transition-colors ${
+                      index === currentSlide ? 'bg-[#30004a]' : 'bg-gray-300'
+                    }`}
+                    onClick={() => setCurrentSlide(index)}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
               </div>
             </div>
           </div>
 
           {/* Right column - Two image cards */}
           <div className="lg:w-80 flex flex-row gap-4">
-  {/* Expert Guidance Card */}
-  <div className="relative rounded-3xl overflow-hidden h-96 shadow-lg w-1/2">
-    <Image 
-      src="/images/graduate-student.jpg" 
-      alt="Expert Guidance" 
-      fill
-      className="object-cover"
-    />
-    <div className="absolute bottom-12 left-0 bg-red-600 px-4 py-3 w-32">
-      <h4 className="text-white text-xl font-medium">Expert Guidance</h4>
-    </div>
-  </div>
+            {/* Expert Guidance Card */}
+            <div className="relative rounded-3xl overflow-hidden h-96 shadow-lg w-1/2">
+              <Image 
+                src={boy1} 
+                alt="Expert Guidance" 
+                fill
+                className="object-cover"
+              />
+              <div className="absolute bottom-12 left-0 bg-red-600 px-4 py-3 w-32">
+                <h4 className="text-white text-xl font-medium">Expert Guidance</h4>
+              </div>
+            </div>
 
-  {/* Career Programs Card */}
-  <div className="relative rounded-3xl overflow-hidden h-96 shadow-lg w-1/2">
-    <Image 
-      src="/images/female-student.jpg" 
-      alt="Career Programs" 
-      fill
-      className="object-cover"
-    />
-    <div className="absolute bottom-12 left-0 bg-pink-600 px-4 py-3 w-32">
-      <h4 className="text-white text-xl font-medium">Career Programs</h4>
-    </div>
-  </div>
-</div>
-
+            {/* Career Programs Card */}
+            <div className="relative rounded-3xl overflow-hidden h-96 shadow-lg w-1/2">
+              <Image 
+                src={girl1} 
+                alt="Career Programs" 
+                fill
+                className="object-cover"
+              />
+              <div className="absolute bottom-12 left-0 bg-pink-600 px-4 py-3 w-32">
+                <h4 className="text-white text-xl font-medium">Career Programs</h4>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
