@@ -42,12 +42,11 @@ export default function ContactSection() {
   return (
     <section className="mt-4">
       <div className=" bg-white">
-        <div className="max-w-9xl mx-auto px-6 pl-10 py-12">
+        <div className="max-w-9xl mx-auto px-6 pl-10 ">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center relative">
             {/* Contact Form Section */}
             <div 
-              className={`space-y-8 w-full md:w-[90%] md:pl-24 transition-all duration-1000 
-                ${contentVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'}`}
+              className={`space-y-8 w-full md:w-[90%] md:pl-24 `}
             >
               <div className="space-y-4">
                 <p className="text-sm text-gray-600 uppercase">
@@ -112,12 +111,9 @@ export default function ContactSection() {
             </div>
 
             {/* Image Section */}
-            <div 
-              className={`hidden -mt-40 md:flex justify-center transition-all duration-1000
-                ${contentVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'}`}
-            >
+            
               <GlobeDemo/>
-            </div>
+            
           </div>
         </div>
       </div>

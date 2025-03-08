@@ -33,7 +33,7 @@ export default function FifthSection() {
   }, []);
 
   return (
-    <section className='mt-32 overflow-hidden'>
+    <section className='mt-32 overflow-hidden mb-8'>
       <div className=" bg-white">
         <div className="container mx-auto px-4 h-full">
           <div className="max-w-7xl mx-auto h-full flex flex-col justify-center">

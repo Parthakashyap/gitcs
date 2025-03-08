@@ -1,182 +1,91 @@
-"use client";
+import React from 'react';
+import Image from 'next/image';
 
-import { useEffect, useState } from "react";
-import CapIcon from "@/public/images/cap.svg";
-import GlobeIcon from "@/public/images/globe.svg";
-import BagIcon from "@/public/images/bag.svg";
-import {motion} from "framer-motion";
-
-export default function SecondSection() {
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const card = e.currentTarget;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    const rotateX = ((y - centerY) / 10) * -1;
-    const rotateY = (x - centerX) / 10;
-
-    card.style.transform = `
-      perspective(1000px) 
-      rotateX(${rotateX}deg) 
-      rotateY(${rotateY}deg)
-      translateZ(20px)
-      scale(1.02)
-    `;
-  };
-
-  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.currentTarget.style.transform =
-      "perspective(1000px) rotateX(0) rotateY(0) translateZ(0) scale(1)";
-  };
-
-  const icons = [CapIcon, GlobeIcon, BagIcon];
-
+const SecondSection = () => {
   return (
-    <section className="mt-[7.8rem] md:mt-[6.7rem]">
-      <div className="bg-[#f5f5f5] ">
-        <div className="container mx-auto px-4 py-2 md:py-20">
-          <div className="max-w-6xl mx-auto">
-            <div className="mb-16">
-              <h2 className="md:text-5xl text-3xl font-bold mb-4 text-[#230344]">
-                WHY STUDY ABROAD WITH US
-              </h2>
-              <p className="text-[#1F94F3] mb-2">
-                Professional-Streamlined-Simple
-              </p>
-            </div>
-            <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-            >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 -mt-16 md:-mt-0 relative">
-              {[
-                {
-                  title: "Expert Guidance & Support",
-                  description:
-                    "Our experienced advisors assist you every step of the way, from application to arrival.",
-                  position: "bottom",
-                  bg: "from-purple-500/10 to-blue-500/10",
-                  gradientPosition: "bottom-4 left-4",
-                  textMove:
-                    "translate-y-[-20px] group-hover:translate-y-[20px]", // Moves down on hover
-                },
-                {
-                  title: "Wide Range of Study Destinations",
-                  description:
-                    "Choose from top universities across multiple countries worldwide.",
-                  position: "top",
-                  bg: "from-green-500/10 to-teal-500/10",
-                  gradientPosition: "top-4 left-4",
-                  textMove:
-                    "translate-y-[20px] group-hover:translate-y-[-20px]", // Moves up on hover
-                },
-                {
-                  title: "Career-Focused Programs",
-                  description:
-                    "Find programs designed to enhance your career prospects and global opportunities.",
-                  position: "bottom",
-                  bg: "from-amber-500/10 to-orange-500/10",
-                  gradientPosition: "bottom-4 left-4",
-                  textMove:
-                    "translate-y-[-20px] group-hover:translate-y-[20px]", // Moves down on hover
-                },
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="card-3d group h-full w-full"
-                  onMouseMove={handleMouseMove}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  <div className="bg-[#230344] text-white p-[1.6rem] md:p-8 rounded-2xl md:h-[300px] w-full relative overflow-hidden flex flex-col justify-between">
-                    {/* Gradient Dot */}
-                    <div
-                      className={`absolute ${item.gradientPosition} w-24 h-32 bg-[#FBFFAD] rounded-full shadow-4xl blur-2xl opacity-40`}
-                    ></div>
+    <div className="relative w-full py-16 overflow-hidden mt-32 bg-white">
+      {/* Decorative curved lines */}
+      <div className="absolute top-0 left-0">
+        <svg width="180" height="200" viewBox="0 0 180 200">
+          <path d="M0,200 Q180,120 0,0" fill="none" stroke="#30004a" strokeWidth="2" />
+        </svg>
+      </div>
+      
+      <div className="absolute bottom-0 right-0">
+        <svg width="180" height="200" viewBox="0 0 180 200">
+          <path d="M180,0 Q0,80 180,200" fill="none" stroke="#30004a" strokeWidth="2" />
+        </svg>
+      </div>
 
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-br ${item.bg} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
-                    ></div>
+      {/* Main content container */}
+      <div className="max-w-6xl mx-auto px-4">
+        {/* Header text centered */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-[#30004a] tracking-wide">WHY STUDY ABROAD WITH US</h2>
+          <p className="text-[#2a9df4] mt-1">Professional-Streamlined-Simple</p>
+        </div>
 
-                    {/* Text Animation */}
-                    <div
-                      className={`relative z-10 transition-all duration-500 ${item.textMove}`}
-                    >
-                      <h3 className="text-2xl font-light mb-3 w-44">
-                        {item.title}
-                      </h3>
-                      <p className="text-white/70 text-sm md:w-full w-52">
-                        {item.description}
-                      </p>
-                    </div>
-
-                    {/* Image Placement - Slowed Down Animation */}
-                    <div
-                      className={`absolute transition-all duration-[7000ms] ease-in-out group ${
-                        item.position === "top"
-                          ? "-top-3 -right-3"
-                          : "-bottom-3 -right-3"
-                      } w-32 h-32 flex items-center justify-center rounded-2xl ${
-                        index !== 3
-                          ? "group-hover:top-2 group-hover:-right-2 transform group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:opacity-90"
-                          : ""
-                      }`}
-                    >
-                      {/* Light Background */}
-                      <div className="absolute w-full h-full bg-[#f5f5f5] rounded-bl-2xl rounded-tl-2xl transition-all duration-300 ease-in-out group-hover:opacity-0"></div>
-                      {index === 1 ? (
-                        // Render these elements only for the middle card
-                        <>
-                          <div className="absolute top-2 -left-8 group-hover:opacity-0">
-                            <div className="w-8 h-8 bg-[#f5f5f5] rounded-l-full rounded-r-none ">
-                              <div className="w-8 h-8 bg-[#230344] rounded-l-full rounded-t-none rotate-180"></div>
-                            </div>
-                          </div>
-                          <div className="absolute top-[7.96874976rem] right-3 group-hover:opacity-0">
-                            <div className="w-8 h-8 bg-[#f5f5f5] rounded-l-full rounded-r-none">
-                              <div className="w-8 h-8 bg-[#230344] -rotate-90 rounded-r-full rounded-b-none"></div>
-                            </div>
-                          </div>
-                        </>
-                      ) : (
-                        // Render a different element for the first and third card
-                        <div>
-                          <div className="absolute bottom-[0.7rem] -left-8 group-hover:opacity-0">
-                            <div className="w-8 h-8 bg-[#f5f5f5] rounded-l-full rounded-r-none ">
-                              <div className="w-8 h-8 bg-[#230344]  rounded-b-full rounded-l-none"></div>
-                            </div>
-                          </div>
-                          <div className="absolute -top-[1.97578rem] right-3 group-hover:opacity-0">
-                            <div className="w-8 h-[2.1rem] bg-[#f5f5f5] rounded-l-full rounded-r-none">
-                              <div className="w-8 h-8  bg-[#230344]  rounded-b-full rounded-l-none"></div>
-                            </div>
-                          </div>
-                        </div>
-                      )}
-
-                      {/* Image Container */}
-                      <div className="relative w-24 h-24 flex items-center justify-center bg-[#230344] rounded-full">
-                        <img
-                          src={icons[index].src}
-                          alt={item.title}
-                          className="w-16 h-16"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            </motion.div>
+        {/* Three column layout */}
+        <div className="flex flex-col lg:flex-row gap-6">
+          {/* Left column - Text content */}
+          <div className="lg:w-1/3">
+            <h3 className="text-2xl font-bold text-[#30004a] mb-4">WHY STUDY ABROAD WITH US</h3>
+            <p className="text-gray-800 text-sm leading-relaxed">
+              Lorem ipsum dolor sit amet consectetur. In sit neque tellus felis vestibulum.. Tortor mauris est nullam sit. Nam malesuada purus in in eu dolor.. Eget mauris ut sed integer nisl dictum venenatis.. Ac condimentum sed cursus vulputate. Nulla massa ornare donec semper ac cras quam.. Aliquet tristique facilisis tincidunt vulputate molestie auctor donec sit.. Lorem suscipit pharetra etiam elit lacus commodo tristique hendrerit.. Lectus diam venenatis sit felis pulvinar adipiscing in nec vitae.. Donec at convallis ullamcorper a vulputate eros orci vel sit.. Auctor facilisis fames et et netus in hac vel fusce vitae nibh.
+            </p>
           </div>
+
+          {/* Middle column - Logo card */}
+          <div className="lg:w-1/3 flex justify-center">
+            <div className="bg-white rounded-3xl shadow-lg p-8 flex flex-col justify-center items-center h-full w-full">
+              <div className="flex flex-col items-center">
+                <div className="mb-2">
+                  <Image 
+                    src="/images/talked-logo.png" 
+                    alt="talkEd Logo" 
+                    width={300} 
+                    height={150}
+                    className="w-full"
+                  />
+                </div>
+                <p className="text-gray-500 text-sm">Education Through Conversation</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right column - Two image cards */}
+          <div className="lg:w-80 flex flex-row gap-4">
+  {/* Expert Guidance Card */}
+  <div className="relative rounded-3xl overflow-hidden h-96 shadow-lg w-1/2">
+    <Image 
+      src="/images/graduate-student.jpg" 
+      alt="Expert Guidance" 
+      fill
+      className="object-cover"
+    />
+    <div className="absolute bottom-12 left-0 bg-red-600 px-4 py-3 w-32">
+      <h4 className="text-white text-xl font-medium">Expert Guidance</h4>
+    </div>
+  </div>
+
+  {/* Career Programs Card */}
+  <div className="relative rounded-3xl overflow-hidden h-96 shadow-lg w-1/2">
+    <Image 
+      src="/images/female-student.jpg" 
+      alt="Career Programs" 
+      fill
+      className="object-cover"
+    />
+    <div className="absolute bottom-12 left-0 bg-pink-600 px-4 py-3 w-32">
+      <h4 className="text-white text-xl font-medium">Career Programs</h4>
+    </div>
+  </div>
+</div>
+
         </div>
       </div>
-    </section>
+    </div>
   );
-}
+};
+
+export default SecondSection;
