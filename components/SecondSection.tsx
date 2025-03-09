@@ -3,25 +3,22 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import boy1 from '@/public/images/boy1.png';
 import girl1 from '@/public/images/girl1.png';
+import talkEd from '@/public/images/talkEd.png';
 
 const SecondSection = () => {
   // Define carousel images for the middle logo section
   const carouselItems = [
     { 
-      src: "/images/talked-logo.png", 
+      src: talkEd,
       alt: "talkEd Logo",
-      text: "Education Through Conversation"
     },
-    // Add more logo images here as needed
     { 
-      src: "/images/talked-logo-2.png", 
+      src: boy1, 
       alt: "talkEd Logo Alternative",
-      text: "Learning Without Limits" 
     },
     { 
-      src: "/images/talked-logo-3.png", 
+      src: girl1, 
       alt: "talkEd Logo Variant",
-      text: "Global Education Solutions" 
     }
   ];
 
@@ -35,7 +32,7 @@ const SecondSection = () => {
     }, 3000); // Change slide every 3 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  }, [carouselItems.length]);
 
   return (
     <div className="relative w-full py-16 overflow-hidden mt-32 bg-white">
@@ -70,32 +67,34 @@ const SecondSection = () => {
             </p>
           </div>
 
-          {/* Middle column - Logo carousel */}
+          {/* Middle column - Logo carousel with fixed dimensions */}
           <div className="lg:w-1/3 flex justify-center">
-            <div className="bg-white rounded-3xl shadow-lg p-8 flex flex-col justify-center items-center h-full w-full relative">
-              {/* Carousel items */}
-              {carouselItems.map((item, index) => (
-                <div 
-                  key={index} 
-                  className={`flex flex-col items-center w-full transition-opacity duration-1000 ease-in-out absolute top-0 left-0 ${
-                    index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                  }`}
-                >
-                  <div className="mb-2">
-                    <Image 
-                      src={item.src} 
-                      alt={item.alt} 
-                      width={300} 
-                      height={150}
-                      className="w-full"
-                    />
+            <div className="bg-white rounded-3xl shadow-lg p-8 flex flex-col justify-center items-center relative w-full h-96 sm:h-80 md:h-96">
+              {/* Carousel container with fixed height */}
+              <div className="relative w-full h-64 overflow-hidden">
+                {/* Carousel items */}
+                {carouselItems.map((item, index) => (
+                  <div 
+                    key={index} 
+                    className={`absolute inset-0 flex items-center justify-center transition-opacity duration-1000 ease-in-out ${
+                      index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                    }`}
+                  >
+                    <div className="relative w-full h-full flex items-center justify-center">
+                      <Image 
+                        src={item.src} 
+                        alt={item.alt}
+                        className="object-contain max-h-full max-w-full"
+                        width={200}
+                        height={150}
+                      />
+                    </div>
                   </div>
-                  <p className="text-gray-500 text-sm">{item.text}</p>
-                </div>
-              ))}
+                ))}
+              </div>
               
               {/* Carousel indicators */}
-              <div className="absolute bottom-2 flex justify-center gap-2 z-20">
+              <div className="absolute bottom-4 flex justify-center gap-2 z-20 w-full">
                 {carouselItems.map((_, index) => (
                   <button
                     key={index}
@@ -111,9 +110,9 @@ const SecondSection = () => {
           </div>
 
           {/* Right column - Two image cards */}
-          <div className="lg:w-80 flex flex-row gap-4">
+          <div className="lg:w-1/3 flex flex-col sm:flex-row gap-4">
             {/* Expert Guidance Card */}
-            <div className="relative rounded-3xl overflow-hidden h-96 shadow-lg w-1/2">
+            <div className="relative rounded-3xl overflow-hidden h-64 sm:h-96 shadow-lg w-full sm:w-1/2">
               <Image 
                 src={boy1} 
                 alt="Expert Guidance" 
@@ -126,7 +125,7 @@ const SecondSection = () => {
             </div>
 
             {/* Career Programs Card */}
-            <div className="relative rounded-3xl overflow-hidden h-96 shadow-lg w-1/2">
+            <div className="relative rounded-3xl overflow-hidden h-64 sm:h-96 shadow-lg w-full sm:w-1/2 mt-4 sm:mt-0">
               <Image 
                 src={girl1} 
                 alt="Career Programs" 

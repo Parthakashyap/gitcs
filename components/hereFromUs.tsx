@@ -15,21 +15,21 @@ const NetworkingSection: React.FC = () => {
       id: 1,
       name: 'Adam Jose',
       description: 'How to boost your career',
-      videoSrc: '/path-to-video1.mp4',
+      videoSrc: '/videos/demo.mp4',
       posterImage: '/api/placeholder/400/500'
     },
     {
       id: 2,
       name: 'Eve Rose',
       description: 'How I got my dream fulfilled',
-      videoSrc: '/path-to-video2.mp4',
+      videoSrc: '/videos/demo.mp4',
       posterImage: '/api/placeholder/400/500'
     },
     {
       id: 3,
       name: 'Berlin Cruck',
       description: 'Discovering my own path',
-      videoSrc: '/path-to-video3.mp4',
+      videoSrc: '/videos/demo.mp4',
       posterImage: '/api/placeholder/400/500'
     }
   ];
@@ -104,7 +104,7 @@ const NetworkingSection: React.FC = () => {
               className="w-full h-full object-cover"
               src={profile.videoSrc}
               poster={profile.posterImage}
-              muted
+             
               playsInline
               loop
               preload="metadata"

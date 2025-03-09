@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ImagesSliderDemo } from "./ui/images-slider-demo";
 import { motion } from "framer-motion";
+import LogoScroller from "./logoScroller"; // Import the new component
 
 export default function FourthSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -56,16 +57,8 @@ export default function FourthSection() {
                   application assistance, and end-to-end support.
                 </p>
 
-                <div className="flex flex-wrap justify-center md:justify-start gap-4">
-                  {["/images/Uni1.png", "/images/Uni2.png", "/images/Uni3.png", "/images/Uni4.png"].map((src, index) => (
-                    <img
-                      key={index}
-                      src={src}
-                      alt={`University Logo ${index + 1}`}
-                      className="h-12 md:h-24 w-auto object-contain max-w-full"
-                    />
-                  ))}
-                </div>
+                {/* Replace the static logos with the continuous scroller */}
+                <LogoScroller />
 
                 <Button className="bg-[#230344] text-white px-6 md:px-8 py-4 md:py-6 rounded-full text-lg md:text-xl hover:bg-purple-900 transition-colors">
                   Learn More About Us
