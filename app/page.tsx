@@ -15,7 +15,7 @@ const Footer = dynamic(() => import('@/components/Footer'), { ssr: false });
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="overflow-hidden">
       <HeroSection />
       <SecondSection />
       <FourthSection />
