@@ -216,7 +216,7 @@ export default function HeroSection() {
                   style={{ width: "300px", top: "-40px" }}
                 >
                   <div
-                    className="bg-[#F0FFFF] shadow-2xl relative shadow-black flex items-center px-5 py-4"
+                    className="bg-white shadow-2xl relative shadow-black flex items-center px-5 py-4"
                     style={{
                       clipPath:
                         "polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%)",
@@ -298,9 +298,9 @@ export default function HeroSection() {
                     className={`
                       relative 
                       transition-all duration-700 ease-in-out
-                      border-r border-white/20 last:border-r-0
+                      border-t border-r border-white  last:border-r-0
                       overflow-hidden
-                      bg-purple-900/90 hover:bg-purple-800/90
+                      bg-transparent hover:bg-purple-800/90
                     `}
                     style={{
                       flex: hoveredCategory === category.id ? "2" : "1",
