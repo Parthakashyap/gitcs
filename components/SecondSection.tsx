@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import boy1 from '@/public/images/boy1.png';
 import girl1 from '@/public/images/girl1.png';
+import talkEd from '@/public/images/talkEd.png';
 import careerConnect from '@/public/images/Career Connect.png';
 import eduVerse from '@/public/images/EduVerse (1).png';
 import skillAcademy from '@/public/images/Skill Academy (1).png';
@@ -11,16 +12,20 @@ const SecondSection = () => {
   // Define carousel images for the middle logo section
   const carouselItems = [
     { 
-      src: careerConnect,
+      src: talkEd,
       alt: "talkEd Logo",
     },
     { 
+      src: careerConnect,
+      alt: "careerConnect Logo",
+    },
+    { 
       src: eduVerse, 
-      alt: "talkEd Logo Alternative",
+      alt: "eduVerse Logo ",
     },
     { 
       src: skillAcademy, 
-      alt: "talkEd Logo Variant",
+      alt: "skillAcademy Logo ",
     }
   ];
 
