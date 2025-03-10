@@ -6,6 +6,7 @@ import "animate.css";
 import logo from "@/public/images/Group 185.png";
 import logoW from "@/public/images/Group.png";
 import Image from "next/image";
+import academic from "@/public/images/academic.jpeg";
 
 export default function HeroSection() {
   const [scrolled, setScrolled] = useState(false);
@@ -58,7 +59,7 @@ export default function HeroSection() {
       subtitle: "Embrace challenge",
       description:
         "Lorem ipsum dolor sit amet consectetur. In lectus volutpat.",
-      imagePath: "/images/academic.jpg", // Replace with your actual image path
+      imagePath: "/images/academic.jpeg", // Replace with your actual image path
     },
     {
       id: "outcome",
@@ -66,7 +67,7 @@ export default function HeroSection() {
       subtitle: "Build Your Career",
       description:
         "Lorem ipsum dolor sit amet consectetur. In lectus volutpat.",
-      imagePath: "/images/career.jpg", // Replace with your actual image path
+      imagePath: "/images/outcome.jpeg", // Replace with your actual image path
     },
     {
       id: "learning",
@@ -74,7 +75,7 @@ export default function HeroSection() {
       subtitle: "Immerse Yourself",
       description:
         "Lorem ipsum dolor sit amet consectetur. In lectus volutpat.",
-      imagePath: "/images/learning.jpg", // Replace with your actual image path
+      imagePath: "/images/learning.jpeg", // Replace with your actual image path
     },
     {
       id: "campus",
@@ -82,7 +83,7 @@ export default function HeroSection() {
       subtitle: "Find Your Place",
       description:
         "Lorem ipsum dolor sit amet consectetur. In lectus volutpat.",
-      imagePath: "/images/campus.jpg", // Replace with your actual image path
+      imagePath: "/images/campus.jpeg", // Replace with your actual image path
     },
   ];
 
