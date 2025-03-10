@@ -31,6 +31,13 @@ const NetworkingSection: React.FC = () => {
       description: 'Discovering my own path',
       videoSrc: '/videos/demo.mp4',
       posterImage: '/api/placeholder/400/500'
+    },
+    {
+      id: 4,
+      name: 'Berlin Cruck',
+      description: 'Discovering my own path',
+      videoSrc: '/videos/demo.mp4',
+      posterImage: '/api/placeholder/400/500'
     }
   ];
 
