@@ -297,7 +297,7 @@ export default function HeroSection() {
             {/* Hero content section */}
             <div className="flex-grow flex flex-col justify-center md:mt-0 mt-[1.5rem]">
               <div className="text-center text-white mt-16 md:mt-40 pt-4 md:pt-20 px-4">
-                <h1 className="text-3xl md:text-4xl lg:text-7xl font-bold mb-8 leading-tight">
+                <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-8 md:mb-32 leading-tight">
                   Attend CT's Biggest
                   <br />
                   Australia Education Fair
