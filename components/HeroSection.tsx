@@ -6,7 +6,6 @@ import "animate.css";
 import logo from "@/public/images/Group 185.png";
 import logoW from "@/public/images/Group.png";
 import Image from "next/image";
-import academic from "@/public/images/academic.jpeg";
 
 export default function HeroSection() {
   const [scrolled, setScrolled] = useState(false);
@@ -104,16 +103,16 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="">
-        <div className="bg-gradient-to-br from-purple-900 to-black">
+      <section className="flex-grow flex flex-col h-screen">
+        <div className="bg-gradient-to-br from-purple-900 to-black h-full">
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: "url('/images/bg.png')" }}
           ></div>
 
-          <div className="h-full flex flex-col justify-center relative z-10">
+          <div className="h-full flex flex-col justify-between relative z-10">
             {/* Top navigation bar with three sections - now full width */}
             <nav className="relative z-20 w-full">
               {/* Upper navigation bar - hidden on mobile */}
@@ -249,37 +248,54 @@ export default function HeroSection() {
             </nav>
 
             {/* Mobile menu */}
-            {menuOpen && (
-              <div className="absolute top-14 left-0 w-full bg-white p-6 flex flex-col items-start gap-4 text-purple-900 md:hidden z-20 shadow-md">
-                <a href="#" className="hover:text-purple-400">
-                  Skillverse
-                </a>
-                <a href="#" className="hover:text-purple-400">
-                  School/University
-                </a>
-                <a href="#" className="hover:text-purple-400">
-                  Opportunity Orbit
-                </a>
-                <a href="#" className="hover:text-purple-400">
-                  Ideal UP
-                </a>
-                <a href="#" className="hover:text-purple-400">
-                  Event
-                </a>
-                <a href="#" className="hover:text-purple-400">
-                  About Us
-                </a>
-                <button
-                  onClick={() => setMenuOpen(false)}
-                  className="absolute top-2 right-2"
-                >
-                  <X className="w-6 h-6" />
-                </button>
-              </div>
-            )}
+            {/* Mobile menu */}
+{menuOpen && (
+  <div className="absolute top-14 left-0 w-full bg-white p-6 flex flex-col items-start gap-4 text-purple-900 md:hidden z-20 shadow-md">
+    {/* Top links from the upper desktop bar */}
+    <a href="#" className="w-full py-2 border-b border-gray-200">
+      Global Forum
+    </a>
+    <a href="#" className="w-full py-2 border-b border-gray-200">
+      Students Club
+    </a>
+    <a href="#" className="w-full py-2 border-b border-gray-200">
+      Online Career Fair
+    </a>
+    <a href="#" className="w-full py-2 border-b border-gray-200">
+      Coordinator
+    </a>
+    <a href="#" className="w-full py-2 border-b border-gray-200">
+      Eduverse
+    </a>
+    <a href="#" className="w-full py-2 border-b border-gray-200">
+      Education Loans
+    </a>
+
+    {/* Main nav links from the desktop navbar */}
+    <a href="#" className="w-full py-2 border-b border-gray-200 flex justify-between items-center">
+      Skillverse <ChevronDown className="w-4 h-4" />
+    </a>
+    <a href="#" className="w-full py-2 border-b border-gray-200 flex justify-between items-center">
+      School/University <ChevronDown className="w-4 h-4" />
+    </a>
+    <a href="#" className="w-full py-2 border-b border-gray-200 flex justify-between items-center">
+      Opportunity Orbit <ChevronDown className="w-4 h-4" />
+    </a>
+    <a href="#" className="w-full py-2 border-b border-gray-200 flex justify-between items-center">
+      Ideal UP <ChevronDown className="w-4 h-4" />
+    </a>
+    <a href="#" className="w-full py-2 border-b border-gray-200 flex justify-between items-center">
+      Event <ChevronDown className="w-4 h-4" />
+    </a>
+    <a href="#" className="w-full py-2 border-b border-gray-200 flex justify-between items-center">
+      About Us <ChevronDown className="w-4 h-4" />
+    </a>
+  </div>
+)}
+
 
             {/* Hero content section */}
-            <div className="flex-grow flex flex-col justify-center md:mt-0 mt-[17.5rem]">
+            <div className="flex-grow flex flex-col justify-center md:mt-0 mt-[1.5rem]">
               <div className="text-center text-white mt-16 md:mt-40 pt-4 md:pt-20 px-4">
                 <h1 className="text-3xl md:text-4xl lg:text-7xl font-bold mb-8 leading-tight">
                   Attend CT's Biggest
@@ -290,7 +306,7 @@ export default function HeroSection() {
             </div>
 
             {/* Bottom categories section - Only visible on desktop */}
-            <div className="hidden md:block absolute -bottom-32 left-0 right-0 text-white w-full overflow-hidden">
+            <div className="hidden md:block relative text-white w-full overflow-hidden mt-auto">
               <div className="flex flex-row w-full">
                 {categories.map((category) => (
                   <div
@@ -298,9 +314,9 @@ export default function HeroSection() {
                     className={`
                       relative 
                       transition-all duration-700 ease-in-out
-                      border-t border-r border-white  last:border-r-0
+                      border-t border-r border-white last:border-r-0
                       overflow-hidden
-                      bg-transparent hover:bg-purple-800/90
+                      bg-transparent hover:bg-black/90
                     `}
                     style={{
                       flex: hoveredCategory === category.id ? "2" : "1",
@@ -319,7 +335,7 @@ export default function HeroSection() {
                       className="absolute inset-0 bg-cover bg-center transition-opacity duration-700"
                       style={{
                         backgroundImage: `url(${category.imagePath})`,
-                        opacity: hoveredCategory === category.id ? 0.3 : 0,
+                        opacity: hoveredCategory === category.id ? 0.6 : 0,
                         transition: "opacity 0.7s ease",
                       }}
                     ></div>
@@ -360,7 +376,7 @@ export default function HeroSection() {
       </section>
 
       {/* Mobile Categories Section - Separate section below the hero image */}
-      <div className="md:hidden mt-[20rem] w-full">
+      <div className="md:hidden  w-full">
         {categories.map((category) => (
           <div
             key={category.id}
