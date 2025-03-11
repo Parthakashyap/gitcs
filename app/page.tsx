@@ -1,12 +1,10 @@
 import dynamic from 'next/dynamic';
 import HeroSection from '@/components/HeroSection';
 import SecondSection from '@/components/SecondSection';
-import ThirdSection from '@/components/ThirdSection';
 import FourthSection from '@/components/FourthSection';
 import FifthSection from '@/components/FifthSection';
 import HearFromUs from '@/components/hereFromUs';
 import NetworkingGrid from '@/components/networking';
-import WorldMap from '@/components/worldMap';
 import TopDestination from '@/components/topDestination';
 
 // Dynamically import client components
