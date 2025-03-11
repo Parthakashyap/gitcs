@@ -10,6 +10,7 @@ import uni2 from "@/public/images/Uni2.png";
 import uni3 from "@/public/images/Uni3.png";
 import uni4 from "@/public/images/Uni4.png";
 import { GlobeDemo } from "@/components/ui/globeDemo";
+import { Navbar } from "@/components/navbar";
 
 export default function AboutUsPage() {
   const handleScrollDown = () => {
@@ -70,76 +71,7 @@ export default function AboutUsPage() {
       {/* Hero Section */}
       <section className="relative h-screen bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070')] bg-cover bg-center">
         <div className="absolute inset-0 bg-[#230344]/60">
-          <nav className="absolute top-0 left-0 right-0 p-6 flex justify-between items-center px-6 md:px-[10%]">
-            <div className="flex items-center gap-2">
-              <img
-                src="/images/Group.png"
-                alt="logo"
-                className="h-12 md:h-16 w-auto"
-              />
-            </div>
-
-            {/* Desktop Menu */}
-            <div className="hidden md:flex gap-8 text-white text-sm">
-              <a href="/" className="hover:text-purple-400">
-                Home
-              </a>
-              <a href="/program" className="hover:text-purple-400">
-                Program
-              </a>
-              <a href="/career" className="hover:text-purple-400">
-                Career & Guidance
-              </a>
-              <a href="/studentResource" className="hover:text-purple-400">
-                Student Resources
-              </a>
-              <a href="/mediaCommunity" className="hover:text-purple-400">
-                Media & Community
-              </a>
-              <a href="/aboutUs" className="hover:text-purple-400">
-                About Us
-              </a>
-            </div>
-
-            <button className="hidden md:block bg-white text-[#230344] px-6 py-2 rounded-full hover:bg-purple-100 transition-colors">
-              Contact
-            </button>
-
-            {/* Mobile Menu Toggle */}
-            <button
-              className="md:hidden text-white"
-              onClick={() => setMenuOpen(!menuOpen)}
-            >
-              <Menu className="w-6 h-6" />
-            </button>
-          </nav>
-
-          {/* Mobile Menu */}
-          {menuOpen && (
-            <div className="absolute top-16 left-0 w-full bg-black/90 p-6 flex flex-col items-center gap-4 text-white md:hidden">
-              <a href="/" className="hover:text-purple-400">
-                Home
-              </a>
-              <a href="/program" className="hover:text-purple-400">
-                Program
-              </a>
-              <a href="/career" className="hover:text-purple-400">
-                Career & Guidance
-              </a>
-              <a href="/studentResource" className="hover:text-purple-400">
-                Student Resources
-              </a>
-              <a href="/mediaCommunity" className="hover:text-purple-400">
-                Media & Community
-              </a>
-              <a href="aboutUs" className="hover:text-purple-400">
-                About Us
-              </a>
-              <button className="bg-white text-[#230344] px-6 py-2 rounded-full hover:bg-purple-100 transition-colors">
-                Contact
-              </button>
-            </div>
-          )}
+          <Navbar/>
 
           <div className="container mx-auto px-6 md:px-4 h-full flex flex-col justify-center items-center text-center">
             <h1 className="md:text-7xl text-5xl font-bold text-white mb-32">
