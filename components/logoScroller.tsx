@@ -51,7 +51,7 @@ const LogoScroller = () => {
         {logos.map((src, index) => (
           <div
             key={index}
-            className="flex-shrink-0 px-4 w-36 md:w-48" // Fixed width for each logo container
+            className="flex-shrink-0 px-4 w-24 md:w-40" // Fixed width for each logo container
           >
             <img
               src={src}

@@ -1,6 +1,7 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import boy1 from '@/public/images/boy1.png';
 import girl1 from '@/public/images/girl1.png';
 import talkEd from '@/public/images/talkEd.png';
@@ -32,6 +33,25 @@ const SecondSection = () => {
   // State to track current slide
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // Refs for scroll animations
+  const sectionRef = useRef(null);
+  const titleRef = useRef(null);
+  const leftColumnRef = useRef(null);
+  const carouselRef = useRef(null);
+  const rightColumnRef = useRef(null);
+
+  // InView hooks for animation triggers
+  const isTitleInView = useInView(titleRef, { once: false, amount: 0.5 });
+  const isLeftColumnInView = useInView(leftColumnRef, { once: false, amount: 0.3 });
+  const isCarouselInView = useInView(carouselRef, { once: false, amount: 0.3 });
+  const isRightColumnInView = useInView(rightColumnRef, { once: false, amount: 0.3 });
+
+  // Scroll animations
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
   // Auto slide effect
   useEffect(() => {
     const interval = setInterval(() => {
@@ -42,15 +62,18 @@ const SecondSection = () => {
   }, [carouselItems.length]);
 
   return (
-    <div className="relative w-full py-16 overflow-hidden mt-32 bg-white">
+    <motion.div 
+      ref={sectionRef}
+      className="relative w-full py-16 overflow-hidden mt-14 bg-white"
+    >
       {/* Decorative curved lines */}
-      <div className="absolute top-0 left-0">
+      <div className="absolute top-0 left-0 md:block hidden">
         <svg width="180" height="200" viewBox="0 0 180 200">
           <path d="M0,200 Q180,120 0,0" fill="none" stroke="#30004a" strokeWidth="2" />
         </svg>
       </div>
       
-      <div className="absolute bottom-0 right-0">
+      <div className="absolute bottom-0 right-0 md:block hidden">
         <svg width="180" height="200" viewBox="0 0 180 200">
           <path d="M180,0 Q0,80 180,200" fill="none" stroke="#30004a" strokeWidth="2" />
         </svg>
@@ -58,24 +81,42 @@ const SecondSection = () => {
 
       {/* Main content container */}
       <div className="max-w-6xl mx-auto px-4">
-        {/* Header text centered */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-[#30004a] tracking-wide">WHY STUDY ABROAD WITH US</h2>
-          <p className="text-[#2a9df4] mt-1">Professional-Streamlined-Simple</p>
-        </div>
+        {/* Header text centered with pop-up animation */}
+        <motion.div 
+          ref={titleRef}
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 50 }}
+          animate={isTitleInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <h2 className="md:text-5xl text-3xl font-bold mb-4 text-[#230344]">WHY STUDY ABROAD WITH US</h2>
+          <p className="text-[#1F94F3] mb-2">Professional-Streamlined-Simple</p>
+        </motion.div>
 
         {/* Three column layout */}
         <div className="flex flex-col lg:flex-row gap-6">
-          {/* Left column - Text content */}
-          <div className="lg:w-1/3">
+          {/* Left column - Text content with slide-in animation */}
+          <motion.div 
+            ref={leftColumnRef}
+            className="lg:w-1/3"
+            initial={{ opacity: 0, x: -100 }}
+            animate={isLeftColumnInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
             <h3 className="text-2xl font-bold text-[#30004a] mb-4">WHY STUDY ABROAD WITH US</h3>
             <p className="text-gray-800 text-sm leading-relaxed">
               Lorem ipsum dolor sit amet consectetur. In sit neque tellus felis vestibulum.. Tortor mauris est nullam sit. Nam malesuada purus in in eu dolor.. Eget mauris ut sed integer nisl dictum venenatis.. Ac condimentum sed cursus vulputate. Nulla massa ornare donec semper ac cras quam.. Aliquet tristique facilisis tincidunt vulputate molestie auctor donec sit.. Lorem suscipit pharetra etiam elit lacus commodo tristique hendrerit.. Lectus diam venenatis sit felis pulvinar adipiscing in nec vitae.. Donec at convallis ullamcorper a vulputate eros orci vel sit.. Auctor facilisis fames et et netus in hac vel fusce vitae nibh.
             </p>
-          </div>
+          </motion.div>
 
-          {/* Middle column - Logo carousel with fixed dimensions */}
-          <div className="lg:w-1/3 flex justify-center">
+          {/* Middle column - Logo carousel with slide-up animation */}
+          <motion.div 
+            ref={carouselRef}
+            className="lg:w-1/3 flex justify-center"
+            initial={{ opacity: 0, y: 50 }}
+            animate={isCarouselInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
             <div className="bg-white rounded-3xl shadow-lg p-8 flex flex-col justify-center items-center relative w-full h-96 sm:h-80 md:h-96">
               {/* Carousel container with fixed height */}
               <div className="relative w-full h-64 overflow-hidden">
@@ -114,12 +155,23 @@ const SecondSection = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Right column - Two image cards */}
-          <div className="lg:w-1/3 flex flex-col sm:flex-row gap-4">
+          {/* Right column - Two image cards with slide-in from right animation */}
+          <motion.div 
+            ref={rightColumnRef}
+            className="lg:w-1/3 flex flex-col sm:flex-row gap-4"
+            initial={{ opacity: 0, x: 100 }}
+            animate={isRightColumnInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+            transition={{ duration: 0.7, ease: "easeOut", staggerChildren: 0.2 }}
+          >
             {/* Expert Guidance Card */}
-            <div className="relative rounded-3xl overflow-hidden h-64 sm:h-96 shadow-lg w-full sm:w-1/2">
+            <motion.div 
+              className="relative rounded-3xl overflow-hidden h-64 sm:h-96 shadow-lg w-full sm:w-1/2"
+              initial={{ opacity: 0, x: 50 }}
+              animate={isRightColumnInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+            >
               <Image 
                 src={boy1} 
                 alt="Expert Guidance" 
@@ -129,10 +181,15 @@ const SecondSection = () => {
               <div className="absolute bottom-12 left-0 bg-red-600 px-4 py-3 w-32">
                 <h4 className="text-white text-xl font-medium">Expert Guidance</h4>
               </div>
-            </div>
+            </motion.div>
 
             {/* Career Programs Card */}
-            <div className="relative rounded-3xl overflow-hidden h-64 sm:h-96 shadow-lg w-full sm:w-1/2 mt-4 sm:mt-0">
+            <motion.div 
+              className="relative rounded-3xl overflow-hidden h-64 sm:h-96 shadow-lg w-full sm:w-1/2 mt-4 sm:mt-0"
+              initial={{ opacity: 0, x: 50 }}
+              animate={isRightColumnInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
               <Image 
                 src={girl1} 
                 alt="Career Programs" 
@@ -142,11 +199,11 @@ const SecondSection = () => {
               <div className="absolute bottom-12 left-0 bg-pink-600 px-4 py-3 w-32">
                 <h4 className="text-white text-xl font-medium">Career Programs</h4>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

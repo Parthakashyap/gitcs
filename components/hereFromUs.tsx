@@ -76,23 +76,23 @@ const NetworkingSection: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full py-16 overflow-hidden">
+    <div className="relative w-full md:mt-12 mt-4 py-16 overflow-hidden">
       {/* Curved lines */}
-      <div className="absolute top-0 left-0">
+      <div className="absolute top-0 left-0 md:block hidden">
         <svg width="180" height="200" viewBox="0 0 180 200">
           <path d="M0,200 Q180,120 0,0" fill="none" stroke="#30004a" strokeWidth="2" />
         </svg>
       </div>
       
-      <div className="absolute bottom-0 right-0">
+      <div className="absolute bottom-0 right-0 md:block hidden">
         <svg width="180" height="200" viewBox="0 0 180 200">
           <path d="M180,0 Q0,80 180,200" fill="none" stroke="#30004a" strokeWidth="2" />
         </svg>
       </div>
       {/* Header section */}
       <div className="text-center mb-10">
-        <h2 className="text-4xl font-bold text-purple-900 mb-1">HERE FORM US</h2>
-        <p className="text-blue-400">Networking</p>
+        <h2 className="md:text-5xl text-3xl font-bold mb-4 text-[#230344]">HERE FORM US</h2>
+        <p className="text-[#1F94F3] mb-2">Networking</p>
       </div>
       
       {/* Cards container */}

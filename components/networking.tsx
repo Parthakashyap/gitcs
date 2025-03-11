@@ -180,7 +180,7 @@ const NetworkingGrid = () => {
     >
       {/* Header */}
       <div className="text-center mb-8">
-        <h1 className="text-white text-5xl font-bold mb-4">NETWORKING</h1>
+        <h1 className="text-white md:text-5xl text-3xl font-bold mb-4 ">NETWORKING</h1>
         <p className="text-[#1F94F3] mb-2">Early Career Growth</p>
       </div>
 

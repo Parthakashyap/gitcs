@@ -28,7 +28,7 @@ export default function FourthSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="mt-32">
+    <section ref={sectionRef} className="mt-14 md:mt-24">
       <div className="bg-white">
         <div className="container mx-auto px-4 sm:px-8 h-full">
           <div className="max-w-7xl mx-auto h-full flex items-center">
@@ -41,6 +41,7 @@ export default function FourthSection() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="space-y-6 md:space-y-8 text-center md:text-left"
               >
+                
                 <div>
                   <h2 className="md:text-5xl text-3xl font-bold mb-4 text-[#230344]">
                     WHO WE ARE

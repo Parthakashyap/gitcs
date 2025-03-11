@@ -182,7 +182,7 @@ export default function HeroSection() {
                     <a href="#" className="px-6 flex items-center font-medium">
                       Skillverse <ChevronDown className="w-4 h-4 ml-1" />
                     </a>
-                    <a href="#" className="px-6 flex items-center font-medium">
+                    <a href="/university" className="px-6 flex items-center font-medium">
                       School/University <ChevronDown className="w-4 h-4 ml-1" />
                     </a>
                     <a href="#" className="px-6 flex items-center font-medium">
@@ -197,12 +197,12 @@ export default function HeroSection() {
                     <a href="#" className="px-6 flex items-center font-medium">
                       Event <ChevronDown className="w-4 h-4 ml-1" />
                     </a>
-                    <a href="#" className="px-6 flex items-center font-medium">
+                    <a href="/aboutUs" className="px-6 flex items-center font-medium">
                       About Us <ChevronDown className="w-4 h-4 ml-1" />
                     </a>
                     <a
                       href="#"
-                      className="px-6 border border-purple-900 rounded-md py-1 ml-2"
+                      className="px-4 transition duration-200 ease-in-out hover:bg-purple-900 hover:text-white   border border-purple-900 rounded-md py-0 ml-2"
                     >
                       Login
                     </a>

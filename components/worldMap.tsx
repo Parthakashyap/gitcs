@@ -104,15 +104,15 @@ const WorldMap: React.FC = () => {
     }
   };
   
-  // Jiggle animation
+  // Continuous jiggle animation
   const jiggleVariants: Variants = {
-    initial: { rotate: 0 },
     jiggle: {
-      rotate: [0, -6, 6, -4, 4, 0],
+      rotate: [0, -3, 3, -2, 2, 0],
       transition: {
-        delay: 0.1,
-        duration: 0.9,
-        ease: "easeOut"
+        duration: 2,
+        ease: "easeInOut",
+        repeat: Infinity,
+        repeatType: "mirror"
       }
     }
   };
@@ -149,9 +149,8 @@ const WorldMap: React.FC = () => {
               >
                 <motion.div 
                   className="flex flex-col items-center"
-                  variants={jiggleVariants}
-                  initial="initial"
                   animate="jiggle"
+                  variants={jiggleVariants}
                 >
                   {/* Circle with flag image - size scales with container width */}
                   <div 
