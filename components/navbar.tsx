@@ -116,39 +116,66 @@ export const Navbar = () => {
 
                 {/* Centered logo with arrow-like element - only for desktop */}
                 <div
-                  className="absolute left-1/2 -translate-x-1/2 z-20"
-                  style={{ width: "300px", top: "-40px" }}
-                >
-                  <div
-                    className="bg-white shadow-2xl relative shadow-black flex items-center px-5 py-4"
-                    style={{
-                      clipPath:
-                        "polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%)",
-                      filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.1))",
-                    }}
-                  >
-                    <div className="mr-4 flex-shrink-0">
-                      <div>
-                        <Image
-                          src={logo}
-                          alt="NETWORKING"
-                          className="h-16 p-2 w-auto"
-                        />
-                      </div>
-                    </div>
-                    <div className="flex flex-col items-start">
-                      <h3
-                        className="text-[#230344] text-[24px] font-bold leading-none tracking-wider"
-                        style={{ letterSpacing: "1px" }}
-                      >
-                        NETWORKING
-                      </h3>
-                      <p className="text-[#230344] text-[10px] tracking-[0.2em] mt-1">
-                        EVERY CAREER COUNTS
-                      </p>
-                    </div>
-                  </div>
-                </div>
+  className="absolute left-1/2 -translate-x-1/2 z-20"
+  style={{ width: "300px", top: "-40px" }}
+>
+  <svg
+    width="0"
+    height="0"
+    className="absolute"
+  >
+    <defs>
+      <clipPath id="roundedPolygon" clipPathUnits="objectBoundingBox">
+        <path d="
+          M 0.02 0.02 
+          H 0.98 
+          Q 1 0.02 1 0.04 
+          V 0.78 
+          Q 1 0.80 0.98 0.82 
+          L 0.52 0.98 
+          Q 0.50 1 0.48 0.98 
+          L 0.02 0.82 
+          Q 0 0.80 0 0.78 
+          V 0.04 
+          Q 0 0.02 0.02 0.02 
+          Z
+        " />
+      </clipPath>
+    </defs>
+  </svg>
+
+  <div
+    className="bg-white shadow-2xl relative shadow-black flex items-center px-5 py-4"
+    style={{
+      WebkitClipPath: "url(#roundedPolygon)",
+      clipPath: "url(#roundedPolygon)",
+      filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.1))",
+    }}
+  >
+    <div className="mr-4 flex-shrink-0">
+      <div>
+        <Image
+          src={logo}
+          alt="NETWORKING"
+          className="h-16 p-2 w-auto"
+        />
+      </div>
+    </div>
+
+    <div className="flex flex-col items-center">
+      <h3
+        className="text-[#230344] text-[24px] font-bold leading-none tracking-wider"
+        style={{ letterSpacing: "1px" }}
+      >
+        NETWORKING
+      </h3>
+      <p className="text-[#230344] text-[10px] tracking-[0.2em] mt-1">
+        EVERY CAREER COUNTS
+      </p>
+    </div>
+  </div>
+</div>
+
               </div>
             </nav>
 
