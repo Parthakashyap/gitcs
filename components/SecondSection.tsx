@@ -116,7 +116,7 @@ const SecondSection = () => {
         {/* Three-column layout that exactly matches the image */}
         <div className="flex flex-col lg:flex-row gap-6">
           {/* Cards container - 4 cards side by side with exact spacing */}
-          <div className="flex flex-nowrap gap-4 lg:w-2/3">
+          <div className="md:flex flex-nowrap gap-4 lg:w-2/3 hidden">
             {/* Card 1 - talkEd */}
             <div className="w-1/4">
               <div className="rounded-3xl overflow-hidden shadow-lg relative">
@@ -222,6 +222,45 @@ const SecondSection = () => {
           </div>
         </div>
       </div>
+
+      <div className="bg-white rounded-3xl shadow-lg p-32 md:hidden flex flex-col justify-center items-center relative w-full h-96 sm:h-80 md:h-96">
+              {/* Carousel container with fixed height */}
+              <div className="relative w-full h-64 overflow-hidden">
+                {/* Carousel items */}
+                {carouselItems.map((item, index) => (
+                  <div 
+                    key={index} 
+                    className={`absolute inset-0 flex items-center justify-center transition-opacity duration-1000 ease-in-out ${
+                      index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                    }`}
+                  >
+                    <div className="relative w-full h-full flex items-center justify-center">
+                      <Image 
+                        src={item.src} 
+                        alt={item.alt}
+                        className="object-contain max-h-full max-w-full"
+                        width={500}
+                        height={350}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Carousel indicators */}
+              <div className="absolute bottom-4 flex justify-center gap-2 z-20 w-full">
+                {carouselItems.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`w-2 h-2 rounded-full transition-colors ${
+                      index === currentSlide ? 'bg-[#30004a]' : 'bg-gray-300'
+                    }`}
+                    onClick={() => setCurrentSlide(index)}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
     </motion.div>
   );
 };
